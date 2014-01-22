@@ -16,9 +16,7 @@
 static t_mal	*ft_lstnew_mal(void *s)
 {
 	t_mal			*mal;
-	int				i;
 
-	i = 0;
 	if (!(mal = (t_mal *)malloc(sizeof(*mal))))
 	{
 		ft_putendl_fd("Problem malloc", 2);
