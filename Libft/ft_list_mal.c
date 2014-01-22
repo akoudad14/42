@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/22 19:49:22 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 21:23:42 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/22 22:03:57 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ static t_mal	*ft_lstnew_mal(void *s)
 	return (mal);
 }
 
-static t_mal	*ft_list_mal_clean(int i, void *s, t_mal *mal, t_mal *move)
+static void		ft_list_mal_clean(int i, void *s, t_mal **mal)
 {
 	t_mal			*tmp;
+	t_mal			*move;
 
-	tmp = mal;
+	tmp = *mal;
+	move = *mal;
 	if (i == 0)
 	{
 		while (move->s != s)
@@ -41,22 +43,18 @@ static t_mal	*ft_list_mal_clean(int i, void *s, t_mal *mal, t_mal *move)
 			tmp = move;
 			move = move->next;
 		}
-		mal = (move == mal) ? mal->next : mal;
+		*mal = (move == *mal) ? (*mal)->next : *mal;
 		tmp->next = move->next;
 		free(move->s);
 		free((void *)move);
-		return (mal);
 	}
-	while (tmp->next)
+	while (i != 0 && move)
 	{
-		tmp = tmp->next;
-		free(mal->s);
-		free((void *)mal);
-		mal = tmp;
+		move = move->next;
+		free((*mal)->s);
+		free((void *)*mal);
+		*mal = move;
 	}
-	free(mal->s);
-	free((void *)mal);
-	return (NULL);
 }
 
 void			ft_list_mal(int i, void *s)
@@ -65,13 +63,6 @@ void			ft_list_mal(int i, void *s)
 	t_mal			*move;
 
 	move = mal;
-	while (mal)
-	{
-		ft_putendl_fd("P", 2);
-		mal = mal->next;
-	}
-	ft_putendl_fd("\n", 2);
-	mal = move;
 	if (mal == NULL && i == 1)
 	{
 		if (!(mal = ft_lstnew_mal(s)))
@@ -86,5 +77,5 @@ void			ft_list_mal(int i, void *s)
 		move = move->next;
 	}
 	else
-		mal = ft_list_mal_clean(i, s, mal, move);
+		ft_list_mal_clean(i, s, &mal);
 }
