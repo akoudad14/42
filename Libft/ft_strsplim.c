@@ -6,14 +6,14 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 10:17:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 09:51:01 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/22 18:12:30 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static int		ft_s_w_m(char const *s,  int i)
+static int		ft_s_w_m(char const *s, int i)
 {
 	int		m;
 

@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 17:08:59 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 09:15:59 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/22 18:09:28 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ char	*ft_strdup(const char *s1)
 	if (!(s2 = (char *)malloc(sizeof(*s2) * (ft_strlen(s1) + 1))))
 		ft_error("malloc", "not enough space");
 	i = 0;
-	if (s2 == NULL)
-		return (NULL);
 	while (*(s1 + i))
 	{
 		*(s2 + i) = *(s1 + i);
