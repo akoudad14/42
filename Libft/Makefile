@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 13:06:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/01/22 09:50:15 by makoudad         ###   ########.fr        #
+#    Updated: 2014/01/22 20:30:22 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,7 +14,8 @@ GCC = 		gcc -Wall -Wextra -Werror -pedantic
 
 NAME = 		libft.a
 
-SRC = 		ft_atoi.c						\
+SRC = 		cfree.c							\
+			ft_atoi.c						\
 			ft_bzero.c						\
 			ft_char2_len.c					\
 			ft_error.c						\
@@ -26,6 +27,7 @@ SRC = 		ft_atoi.c						\
 			ft_isdigit.c					\
 			ft_isprint.c					\
 			ft_itoa.c						\
+			ft_list_mal.c					\
 			ft_lstadd.c						\
 			ft_lstdel.c						\
 			ft_lstdelone.c					\
@@ -82,7 +84,9 @@ SRC = 		ft_atoi.c						\
 			ft_tolower.c					\
 			ft_toupper.c 					\
 			ft_wc_w.c						\
-			get_next_line.c
+			get_next_line.c					\
+			gfree.c							\
+			gmalloc.c
 
 OBJ = 		$(SRC:.c=.o)
 
