@@ -6,13 +6,15 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/22 19:41:19 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 21:15:36 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 13:05:24 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		gfree(void *s)
+int			gfree(void *s)
 {
-	ft_list_mal(0, s);
+	if (!(ft_list_mal(0, s)))
+		return (0);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 13:36:55 by makoudad          #+#    #+#             */
-/*   Updated: 2013/11/27 20:42:15 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 13:18:46 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 void	ft_memdel(void **ap)
 {
-	free(*ap);
+	free((void *)*ap);
 	*ap = NULL;
 }

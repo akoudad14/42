@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 11:44:25 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 20:39:13 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 14:02:23 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ typedef struct		s_list
 }					t_list;
 
 # endif
-
-void				cfree(void);
+int					cfree(void);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 int					ft_char2_len(char **str);
@@ -50,7 +49,7 @@ int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
 char				*ft_itoa(int n);
-void				ft_list_mal(int i, void *s);
+int					ft_list_mal(int i, void *s);
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
@@ -110,7 +109,7 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_wc_w(char const *s, char c);
 int					get_next_line(int const fd, char **line);
-void				gfree(void *s);
+int					gfree(void *s);
 void				*gmalloc(size_t size);
 
 #endif	/* !LIBFT_H */

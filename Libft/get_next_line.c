@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/02 17:01:51 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 09:08:32 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 13:04:24 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,17 @@ static int		ft_no_new_line(char **line, char *buf, int j)
 {
 	char			*tmp;
 
-	tmp = (char *)malloc(sizeof(*tmp) * BUFF_SIZE * j + 1);
-	if (tmp == NULL)
+	if (!(tmp = (char *)gmalloc(sizeof(*tmp) * BUFF_SIZE * j + 1)))
 		return (-1);
 	ft_strclr(tmp);
 	ft_strcpy(tmp, *line);
-	free((void *)*line);
+	gfree((void *)*line);
 	j++;
-	*line = (char *)malloc(sizeof(**line) * BUFF_SIZE * j + 1);
-	if (*line == NULL)
+	if (!(*line = (char *)gmalloc(sizeof(**line) * BUFF_SIZE * j + 1)))
 		return (-1);
 	ft_strclr(*line);
 	ft_strcpy(*line, tmp);
-	free((void *)tmp);
+	gfree((void *)tmp);
 	ft_strcat(*line, buf);
 	buf[0] = '\0';
 	return (j);

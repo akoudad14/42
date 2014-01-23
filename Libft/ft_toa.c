@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 19:27:12 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 09:31:41 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 13:02:46 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ char					*ft_toa(unsigned int n, char *base)
 
 	i = 0;
 	k = n;
-	if (!(s = (char *)malloc(sizeof(*s) * 120)))
-		ft_error("malloc", "not enough space");
+	if (!(s = (char *)gmalloc(sizeof(*s) * 120)))
+		return (NULL);
 	if (n == 0)
 	{
 		*s = '0';

@@ -6,11 +6,12 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/21 11:04:28 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 14:02:44 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 void		ft_free_char2(char **s)
 {
@@ -19,8 +20,8 @@ void		ft_free_char2(char **s)
 	i = 0;
 	while (s[i])
 	{
-		free((void *)s[i]);
+		gfree((void *)s[i]);
 		++i;
 	}
-	free((void *)s);
+	gfree((void *)s);
 }

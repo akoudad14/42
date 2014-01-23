@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 10:17:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 09:47:08 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 14:05:31 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ char			**ft_strsplit(char const *s, char c)
 	int		i;
 	int		k;
 
-	if (!(s3 = (char **)malloc(sizeof(*s3) * (ft_wc_w(s, c) + 1))))
-		ft_error("malloc", "not enough space");
+	if (!(s3 = (char **)gmalloc(sizeof(*s3) * (ft_wc_w(s, c) + 1))))
+		return (NULL);
 	i = 0;
 	k = 0;
 	while (*(s + i))
@@ -56,14 +56,15 @@ char			**ft_strsplit(char const *s, char c)
 			++i;
 		if (*(s + i))
 		{
-			if (!(s3[k] = (char *)malloc(sizeof(char) * (ft_s_w(s, c, i) + 1))))
-				ft_error("malloc", "not enough space");
+			s3[k] = (char *)gmalloc(sizeof(char) * (ft_s_w(s, c, i) + 1));
+			if (!(s3[k]))
+				return (NULL);
 			s3[k] = ft_fill_t(s3[k], c, &i, s);
 			++k;
 		}
 	}
-	if (!(s3[k] = (char *)malloc(sizeof(char) * (1 + 1))))
-		ft_error("malloc", "not enough space");
+	if (!(s3[k] = (char *)gmalloc(sizeof(char) * (1 + 1))))
+		return (NULL);
 	s3[k] = '\0';
 	return (s3);
 }

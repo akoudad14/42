@@ -6,11 +6,10 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/03 10:29:31 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 08:59:11 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 14:07:20 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void		ft_error(char *error, char *str)
@@ -26,5 +25,5 @@ void		ft_error(char *error, char *str)
 	else if (ft_strcmp(error, "ac") == 0)
 		ft_putstr_fd("Wrong number of argument: ", 2);
 	ft_putendl_fd(str, 2);
-	exit(-1);
+	cfree();
 }

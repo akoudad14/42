@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 13:35:08 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 09:32:49 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 13:18:00 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ void	*ft_memalloc(size_t size)
 {
 	char	*s;
 
-	if (!(s = (char *)malloc(sizeof(*s) * (size + 1))))
-		ft_error("malloc", "not enough space");
-	if (s == NULL)
+	if (!(s = (char *)gmalloc(sizeof(*s) * (size + 1))))
 		return (NULL);
 	s = 0;
 	return ((void *)s);

@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 19:27:12 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 09:11:35 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 13:08:03 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ char			*ft_itoa(int n)
 
 	i = 0;
 	k = n;
-	if (!(s = (char *)malloc(sizeof(*s) * 12)))
-		ft_error("malloc", "not enough space");
-	if (s == NULL)
+	if (!(s = (char *)gmalloc(sizeof(*s) * 12)))
 		return (NULL);
 	if (n == -2147483648)
 		return (ft_strcpy(s, "-2147483648"));

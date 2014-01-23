@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/26 12:15:39 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/22 09:31:04 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 14:03:19 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ char			*ft_strtrim(char const *s)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	if (!(trim = (char *)malloc(sizeof(*trim) * (ft_strlen(s) + 1))))
-		ft_error("malloc", "not enough space");
+	if (!(trim = (char *)gmalloc(sizeof(*trim) * (ft_strlen(s) + 1))))
+		return (NULL);
 	while ((*(s + i) == ' ' || *(s + i) == '\n' || *(s + i) == '\t')
 	&& *(s + i))
 		i++;
