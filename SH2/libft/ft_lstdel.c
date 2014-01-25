@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/28 15:50:10 by makoudad          #+#    #+#             */
+/*   Updated: 2014/01/23 13:14:55 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int			ft_free_char2(char **s)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	int		i;
+	t_list	*tdel;
 
-	i = 0;
-	while (s[i])
+	if (alst == NULL)
+		return ;
+	tdel = *alst;
+	while (tdel != NULL)
 	{
-		gfree((void *)s[i]);
-		++i;
+		del(tdel->content, tdel->content_size);
+		gfree((void *)tdel);
+		*alst = (*alst)->next;
+		tdel = *alst;
 	}
-	gfree((void *)s);
-	return (0);
+	*alst = NULL;
 }

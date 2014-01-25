@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   gfree.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2014/01/22 19:41:19 by makoudad          #+#    #+#             */
+/*   Updated: 2014/01/23 13:05:24 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-int			ft_free_char2(char **s)
+int			gfree(void *s)
 {
-	int		i;
-
-	i = 0;
-	while (s[i])
-	{
-		gfree((void *)s[i]);
-		++i;
-	}
-	gfree((void *)s);
-	return (0);
+	if (!(ft_list_mal(0, s)))
+		return (0);
+	return (1);
 }

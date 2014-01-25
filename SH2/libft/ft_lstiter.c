@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/28 19:06:47 by makoudad          #+#    #+#             */
+/*   Updated: 2014/01/12 13:49:34 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-int			ft_free_char2(char **s)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	int		i;
+	t_list	*iter;
 
-	i = 0;
-	while (s[i])
+	if (lst == NULL)
+		return ;
+	iter = lst;
+	while (lst != NULL)
 	{
-		gfree((void *)s[i]);
-		++i;
+		f(iter);
+		lst = lst->next;
+		iter = lst;
 	}
-	gfree((void *)s);
-	return (0);
 }

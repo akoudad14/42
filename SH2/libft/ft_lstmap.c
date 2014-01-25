@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gmalloc.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/22 19:29:22 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 13:40:01 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/28 20:28:56 by makoudad          #+#    #+#             */
+/*   Updated: 2014/01/23 13:16:43 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void		*gmalloc(size_t size)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	void	*s;
+	t_list	*map;
+	t_list	*tmp;
+	t_list	*map2;
 
-	if (!(s = malloc(size * 10000)))
+	if (lst == NULL)
+		return (NULL);
+	tmp = lst;
+	tmp = f(tmp);
+	if (!(map = ft_lstnew(tmp->content, tmp->content_size)))
+		return (NULL);
+	map2 = map;
+	lst = lst->next;
+	while (lst != NULL)
 	{
-		ft_putendl_fd("Problem malloc" , 2);
-		return (NULL);
+		tmp = lst;
+		tmp = f(tmp);
+		if (!(map->next = ft_lstnew(tmp->content, tmp->content_size)))
+			return (NULL);
+		map = map->next;
+		lst = lst->next;
 	}
-	if (!(ft_list_mal(1, s)))
-		return (NULL);
-	return (s);
+	return (map2);
 }

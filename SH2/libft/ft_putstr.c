@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/19 17:56:05 by makoudad          #+#    #+#             */
+/*   Updated: 2014/01/12 13:53:41 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-int			ft_free_char2(char **s)
+void	ft_putstr(char const *s)
 {
-	int		i;
-
-	i = 0;
-	while (s[i])
+	if (s == NULL)
+		return ;
+	while (*s)
 	{
-		gfree((void *)s[i]);
-		++i;
+		ft_putchar(*s);
+		s++;
 	}
-	gfree((void *)s);
-	return (0);
 }

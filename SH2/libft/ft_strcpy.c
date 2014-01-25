@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/20 10:31:28 by makoudad          #+#    #+#             */
+/*   Updated: 2013/12/04 13:47:45 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-int			ft_free_char2(char **s)
+char	*ft_strcpy(char *s1, const char *s2)
 {
 	int		i;
+	int		j;
 
 	i = 0;
-	while (s[i])
+	j = 0;
+	while (*(s2 + i))
 	{
-		gfree((void *)s[i]);
-		++i;
+		*(s1 + j) = *(s2 + i);
+		i++;
+		j++;
 	}
-	gfree((void *)s);
-	return (0);
+	*(s1 + j) = '\0';
+	return (s1);
 }

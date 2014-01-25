@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/19 18:58:38 by makoudad          #+#    #+#             */
+/*   Updated: 2013/12/01 11:50:11 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <string.h>
 
-int			ft_free_char2(char **s)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	int		i;
+	size_t		i;
 
 	i = 0;
-	while (s[i])
+	if ((s1 == NULL) || (s2 == NULL))
+		return (0);
+	if (n == 0)
+		return (1);
+	while (*(s1 + i) && *(s2 + i) && (i < n))
 	{
-		gfree((void *)s[i]);
-		++i;
+		if (*(s1 + i) != *(s2 + i))
+			return (0);
+		i++;
+		if ((*(s1 + i) && *(s2 + i) == '\0' && i < n)
+			|| (*(s1 + i) == '\0' && *(s2 + i) && i < n))
+			return (0);
 	}
-	gfree((void *)s);
-	return (0);
+	return (1);
 }

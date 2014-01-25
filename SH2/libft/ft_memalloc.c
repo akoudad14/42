@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/22 13:35:08 by makoudad          #+#    #+#             */
+/*   Updated: 2014/01/23 13:18:00 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int			ft_free_char2(char **s)
+void	*ft_memalloc(size_t size)
 {
-	int		i;
+	char	*s;
 
-	i = 0;
-	while (s[i])
-	{
-		gfree((void *)s[i]);
-		++i;
-	}
-	gfree((void *)s);
-	return (0);
+	if (!(s = (char *)gmalloc(sizeof(*s) * (size + 1))))
+		return (NULL);
+	s = 0;
+	return ((void *)s);
 }

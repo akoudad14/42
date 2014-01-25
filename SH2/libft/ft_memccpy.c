@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/20 18:43:46 by makoudad          #+#    #+#             */
+/*   Updated: 2013/12/01 15:16:57 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <string.h>
 
-int			ft_free_char2(char **s)
+void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
-	int		i;
+	unsigned char		*s3;
+	unsigned char		*s4;
+	size_t				i;
 
 	i = 0;
-	while (s[i])
+	s3 = (unsigned char *)s1;
+	s4 = (unsigned char *)s2;
+	while (i < n)
 	{
-		gfree((void *)s[i]);
-		++i;
+		*(s3 + i) = *(s4 + i);
+		if (*(s4 + i) == (unsigned char)c)
+			return (s3 + 1 + i);
+		i++;
 	}
-	gfree((void *)s);
-	return (0);
+	return (NULL);
 }

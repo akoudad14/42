@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/21 14:42:52 by makoudad          #+#    #+#             */
+/*   Updated: 2013/11/30 18:05:50 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <string.h>
 
-int			ft_free_char2(char **s)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int		i;
 
+	if (f == NULL || s == NULL)
+		return ;
 	i = 0;
-	while (s[i])
+	while (*(s + i))
 	{
-		gfree((void *)s[i]);
-		++i;
+		f(i, s + i);
+		i++;
 	}
-	gfree((void *)s);
-	return (0);
 }

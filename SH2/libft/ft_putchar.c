@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/19 17:51:01 by makoudad          #+#    #+#             */
+/*   Updated: 2013/11/26 11:20:54 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <unistd.h>
 
-int			ft_free_char2(char **s)
+void	ft_putchar(char c)
 {
-	int		i;
-
-	i = 0;
-	while (s[i])
-	{
-		gfree((void *)s[i]);
-		++i;
-	}
-	gfree((void *)s);
-	return (0);
+	write(1, &c, 1);
 }

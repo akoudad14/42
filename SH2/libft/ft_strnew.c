@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/22 10:03:46 by makoudad          #+#    #+#             */
+/*   Updated: 2014/01/23 12:59:42 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int			ft_free_char2(char **s)
+char	*ft_strnew(size_t size)
 {
-	int		i;
+	char		*s;
+	size_t		i;
 
 	i = 0;
-	while (s[i])
+	if (!(s = (char *)gmalloc(sizeof(*s) * (size + 1))))
+		return (NULL);
+	while (i < size)
 	{
-		gfree((void *)s[i]);
-		++i;
+		*(s + i) = '\0';
+		i++;
 	}
-	gfree((void *)s);
-	return (0);
+	*(s + i) = '\0';
+	return (s);
 }

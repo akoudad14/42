@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/20 12:34:11 by makoudad          #+#    #+#             */
+/*   Updated: 2014/01/12 13:57:46 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-int			ft_free_char2(char **s)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		i;
+	size_t		i;
 
-	i = 0;
-	while (s[i])
+	if (size > ft_strlen(dst))
 	{
-		gfree((void *)s[i]);
-		++i;
+		i = ft_strlen(dst) + ft_strlen(src);
+		ft_strncat(dst, src, (size - ft_strlen(dst) - 1));
 	}
-	gfree((void *)s);
-	return (0);
+	else
+		i = size + ft_strlen(src);
+	return (i);
 }

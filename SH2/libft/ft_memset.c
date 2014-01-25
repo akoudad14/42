@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/20 17:54:49 by makoudad          #+#    #+#             */
+/*   Updated: 2013/11/30 11:35:59 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <string.h>
 
-int			ft_free_char2(char **s)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int		i;
+	unsigned char	*d;
 
-	i = 0;
-	while (s[i])
-	{
-		gfree((void *)s[i]);
-		++i;
-	}
-	gfree((void *)s);
-	return (0);
+	d = (unsigned char *)b;
+	while (len--)
+		*(d + len) = (unsigned char)c;
+	return (b);
 }

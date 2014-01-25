@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/19 17:53:21 by makoudad          #+#    #+#             */
+/*   Updated: 2014/01/12 13:53:00 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-int			ft_free_char2(char **s)
+void	ft_putnbr(int n)
 {
-	int		i;
-
-	i = 0;
-	while (s[i])
+	if (n <= -10)
 	{
-		gfree((void *)s[i]);
-		++i;
+		ft_putchar('-');
+		ft_putnbr(-(n / 10));
+		ft_putchar(-(n % 10) + '0');
 	}
-	gfree((void *)s);
-	return (0);
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar('-');
+			n *= -1;
+		}
+		if (n < 10)
+			ft_putchar(n + '0');
+		else
+		{
+			ft_putnbr(n / 10);
+			ft_putchar(n % 10 + '0');
+		}
+	}
 }

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_wc_w.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/27 14:37:21 by makoudad          #+#    #+#             */
+/*   Updated: 2013/12/29 11:58:29 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-int			ft_free_char2(char **s)
+int		ft_wc_w(char const *s, char c)
 {
 	int		i;
+	int		j;
 
+	j = 0;
 	i = 0;
-	while (s[i])
+	while (*(s + i))
 	{
-		gfree((void *)s[i]);
-		++i;
+		if (*((char *)s + i) != c)
+		{
+			j++;
+			while (*((char *)s + i) != c && *((char *)s + i))
+				i++;
+		}
+		i++;
 	}
-	gfree((void *)s);
-	return (0);
+	return (j);
 }

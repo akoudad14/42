@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/19 17:38:28 by makoudad          #+#    #+#             */
+/*   Updated: 2014/01/12 14:00:57 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <string.h>
 
-int			ft_free_char2(char **s)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		i;
+	size_t		i;
 
 	i = 0;
-	while (s[i])
+	if (n == 0)
+		return (0);
+	while (i < n)
 	{
-		gfree((void *)s[i]);
-		++i;
+		if ((*(s1 + i) != *(s2 + i)) || (!(s1 + i) && !(s2 + i)))
+			return (*(s1 + i) - *(s2 + i));
+		i++;
 	}
-	gfree((void *)s);
 	return (0);
 }

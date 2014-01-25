@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/19 12:01:26 by makoudad          #+#    #+#             */
+/*   Updated: 2013/12/30 21:13:15 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-int			ft_free_char2(char **s)
+int		ft_atoi(const char *str)
 {
 	int		i;
+	int		j;
 
-	i = 0;
-	while (s[i])
+	i = 1;
+	j = 0;
+	while (*str == ' ' || *str == '\n' || *str == '\v' || *str == '\t'
+	|| *str == '\f' || *str == '\r')
+		str++;
+	if ((str[0] == '+' && str[1] == '-') || (str[0] == '-' && str[1] == '+'))
+		return (0);
+	if (*str == '-')
 	{
-		gfree((void *)s[i]);
-		++i;
+		i = -1;
+		str++;
 	}
-	gfree((void *)s);
-	return (0);
+	if (*str == '+')
+		str++;
+	while (*str <= '9' && *str >= '0')
+	{
+		j = *str - '0' + j * 10;
+		str++;
+	}
+	return (j * i);
 }

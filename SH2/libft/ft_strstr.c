@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char2.c                                    :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/21 11:00:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:54 by makoudad         ###   ########.fr       */
+/*   Created: 2013/11/19 17:28:34 by makoudad          #+#    #+#             */
+/*   Updated: 2013/12/01 14:55:12 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <string.h>
 
-int			ft_free_char2(char **s)
+char	*ft_strstr(const char *s1, const char *s2)
 {
 	int		i;
+	int		j;
+	int		length;
 
 	i = 0;
-	while (s[i])
+	j = 0;
+	length = 0;
+	while (*(s2 + length))
+		length++;
+	if (*(s2 + j) == '\0')
+		return ((char *)(s1 + i));
+	while (*(s1 + i))
 	{
-		gfree((void *)s[i]);
-		++i;
+		while (*(s1 + i) == *(s2 + j))
+		{
+			i++;
+			j++;
+			if (j == length)
+				return ((char *)(s1 + i - j));
+		}
+		i = i - j + 1;
+		j = 0;
 	}
-	gfree((void *)s);
-	return (0);
+	return (NULL);
 }
