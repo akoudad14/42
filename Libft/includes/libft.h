@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 11:44:25 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 12:43:31 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 21:09:27 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,6 @@ int					ft_wc_w(char const *s, char c);
 int					get_next_line(int const fd, char **line);
 int					gfree(void *s);
 void				*gmalloc(size_t size);
+void				*ft_realloc(void *old, size_t size);
 
 #endif	/* !LIBFT_H */

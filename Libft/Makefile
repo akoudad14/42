@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 13:06:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/01/24 11:46:32 by makoudad         ###   ########.fr        #
+#    Updated: 2014/01/26 15:01:08 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -87,7 +87,8 @@ SRC = 		c_call.c						\
 			ft_wc_w.c						\
 			get_next_line.c					\
 			gfree.c							\
-			gmalloc.c
+			gmalloc.c						\
+			realloc.c						\
 
 OBJ = 		$(SRC:.c=.o)
 
