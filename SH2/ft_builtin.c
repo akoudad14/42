@@ -6,11 +6,13 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/24 15:47:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 23:37:37 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 16:55:42 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "sh2.h"
+#include "libft.h"
 
 static t_env	*ft_good_env(t_env *e, char *pwd, char *oldpwd)
 {
@@ -94,7 +96,8 @@ void			ft_pwd(char *line)
 	int		i;
 
 	i = -1;
-	buf = ft_strsplim(line);
+	if (!(buf = ft_strsplim(line)))
+		return ;
 	while (buf[++i])
 		buf[i] = (char *)c_call("ft_strtrim", buf[i]);
 	if (buf[1] != '\0')
@@ -104,7 +107,7 @@ void			ft_pwd(char *line)
 		return ;
 	}
 	if (!(buf[0] = ft_strnew(2000)))
-		ft_putendl_fd("pwd: fail", 2);
+		return ;
 	ft_putendl(getcwd(buf[0], 2000));
 	ft_free_char2(buf);
 }

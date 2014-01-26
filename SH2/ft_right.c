@@ -6,13 +6,18 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/18 18:03:48 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 23:40:52 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 17:59:54 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include "sh2.h"
+#include "libft.h"
 
-int					ft_creat(char *file)
+static int			ft_creat(char *file)
 {
 	int		fd;
 

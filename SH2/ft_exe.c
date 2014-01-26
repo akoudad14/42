@@ -6,11 +6,14 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/18 14:52:23 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 18:44:51 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 17:59:56 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sh2.h"
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include "libft.h"
 
 static int		ft_execution(char *path, char **exe, char **env, struct stat *b)
 {

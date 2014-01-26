@@ -6,11 +6,14 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/21 18:21:54 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/26 14:22:20 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 18:38:36 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <unistd.h>
 #include "sh2.h"
+#include "libft.h"
 
 static int		ft_pipe_n_n(t_env *e, char **tab)
 {
@@ -56,7 +59,7 @@ static int		ft_pipe_next(t_env *e, char **tab)
 	return (1);
 }
 
-void			ft_pipe(char *line, t_env *e)
+int				ft_pipe(char *line, t_env *e)
 {
 	char	**tab;
 	int		i;
@@ -65,20 +68,20 @@ void			ft_pipe(char *line, t_env *e)
 	i = 0;
 	k = 0;
 	if (!(tab = (char **)gmalloc(sizeof(char *) * 2)))
-		return ;
+		return (-1);
 	while (*(line + k) && *(line + k) != '|')
 		++k;
 	if (k == 0)
 	{
 		gfree((void *)tab);
-		return ;
+		write(2, "Warning pipe: Missing file and/or command\n", 42);
+		return (-1);
 	}
 	tab[0] = ft_strsub(line, 0, k);
 	tab[0] = (char *)c_call("ft_strtrim", tab[0]);
 	tab[1] = ft_strsub(line, k + 1, ft_strlen(line) - k - 1);
 	tab[1] = (char *)c_call("ft_strtrim", tab[1]);
-	if (tab[1])
-		ft_pipe_next(e, tab);
-	else
-		ft_free_char2(tab);
+	ft_pipe_next(e, tab);
+	ft_free_char2(tab);
+	return (0);
 }

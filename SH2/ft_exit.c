@@ -6,11 +6,11 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/25 18:15:32 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 18:16:47 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 18:05:30 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sh2.h"
+#include "libft.h"
 
 int			ft_check_exit(char *line)
 {

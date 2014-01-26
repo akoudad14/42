@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/01/25 23:08:46 by makoudad         ###   ########.fr        #
+#    Updated: 2014/01/26 17:28:10 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -25,7 +25,6 @@ MAKELIB =	make -C libft/
 NAME =		ft_minishell2
 
 SRC =		main.c							\
-			ft_init.c						\
 			ft_special.c					\
 			ft_direct.c						\
 			ft_env.c						\

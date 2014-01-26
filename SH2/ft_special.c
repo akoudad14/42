@@ -6,30 +6,13 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/21 09:19:09 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 23:15:11 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 17:59:09 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "sh2.h"
-
-static char		*ft_good_part(char *line, int n)
-{
-	char	*part;
-	int		i;
-
-	i = 0;
-	if (n < 0)
-		return (NULL);
-	if (!(part = (char *)gmalloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	while (i <= n)
-	{
-		*(part + i) = *(line + i);
-		++i;
-	}
-	*(part + i) = '\0';
-	return (part);
-}
+#include "libft.h"
 
 static int		ft_what_part(char *line)
 {
@@ -40,7 +23,7 @@ static int		ft_what_part(char *line)
 		++i;
 	i += 2;
 	if (!*(line + i))
-		return (-1);
+		return (-1 * write(2, "Missing file\n", 13));
 	while (*(line + i))
 	{
 		if (*(line + i) == '<' || *(line + i) == '>')
@@ -88,11 +71,12 @@ t_env			*ft_check_special(char *line, t_env *e, int n)
 	while (n-- && line)
 	{
 		i = ft_what_part(line);
-		if (!(part = ft_good_part(line, i)))
+		if (i < 0 || !(part = ft_strsub(line, 0, i + 1)))
 			return (e);
-		if ((j += 1) && (ft_find(part, ">") || ft_find(part, ">>")))
+		if ((ft_find(part, ">") || ft_find(part, ">>")) && (j += 1))
 			ft_right(part, e);
-		else if ((j += 1) == 1 && (ft_find(part, "<") || ft_find(part, "<<")))
+		else if ((ft_find(part, "<") || ft_find(part, "<<"))
+				&& ((j += 1) == 1 || !ft_strncmp(part, "cat", 3)))
 			ft_left(part, e);
 		line = ft_new_line(ft_strdup(line));
 		gfree((void *)part);

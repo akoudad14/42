@@ -6,13 +6,15 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 10:27:26 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 23:22:55 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 18:03:01 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "sh2.h"
+#include "libft.h"
 
-char			**ft_copy_tab_tab(char **tab)
+static char		**ft_copy_tab_tab(char **tab)
 {
 	char	**tabc;
 	int		i;
@@ -35,13 +37,17 @@ char			**ft_copy_tab_tab(char **tab)
 	return (tabc);
 }
 
-int				ft_check_built(char *line)
+static int		ft_init(t_env *e, char **env, char **av, int ac)
 {
-	if (ft_strncmp(line, "pwd", 3) == 0
-		|| ft_strncmp(line, "env", 3) == 0
-		|| ft_strncmp(line, "setenv", 6) == 0
-		|| ft_strncmp(line, "unsetenv", 8) == 0)
-		return (1);
+	av = NULL;
+	ac = 0;
+	if (!ft_check_env_and_signal(env))
+		return (-2);
+	if (!(e->envc = ft_copy_tab_tab(env)))
+		return (-2);
+	if (!(e->env = ft_copy_tab_tab(env)))
+		return (-2);
+	ft_putstr("42makoudad$> ");
 	return (0);
 }
 
@@ -94,23 +100,24 @@ void			ft_check(char *line, t_env *e, int i)
 
 int				main(int ac, char **av, char **env)
 {
-	char	*l;
+	char	*line;
 	t_env	e;
 	char	**exe;
 	int		i;
 	int		j;
 
-	j = ft_init(&e, env);
-	while (j != -2 && (i = -1) == -1 && get_next_line(0, &l))
+	j = ft_init(&e, env, av, ac);
+	while (j != -2 && get_next_line(0, &line))
 	{
-		exe = ft_strsplit(l, ';');
-		while (j != 1 && exe[++i] && (av = NULL) == NULL && ac > 0)
+		i = -1;
+		exe = ft_strsplit(line, ';');
+		while (exe && j != 1 && exe[++i])
 		{
 			exe[i] = (char *)c_call("ft_strtrim", exe[i]);
 			if (ft_strncmp(exe[i], "", 1) != 0 && !(j = ft_check_exit(exe[i])))
 				ft_check(exe[i], &e, ft_check_spe(exe[i]));
 		}
-		gfree(l);
+		gfree(line);
 		if (j == 1)
 			return (ft_exit(exe[i]));
 		ft_free_char2(exe);

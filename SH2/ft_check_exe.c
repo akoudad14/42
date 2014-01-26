@@ -6,11 +6,12 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/18 18:19:45 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 18:47:40 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 15:26:08 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sh2.h"
+#include <sys/stat.h>
+#include "libft.h"
 
 static char		*ft_path(char *path, char *cmd)
 {

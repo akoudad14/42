@@ -6,11 +6,12 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/17 20:53:48 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 18:48:37 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 16:16:53 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sh2.h"
+#include <unistd.h>
+#include "libft.h"
 
 static int		ft_c_exe(char *str, char c)
 {
@@ -76,7 +77,7 @@ static char		**ft_replace(char **env, char **tab, int i)
 	while (tmp[++i])
 		env[i] = (char *)c_call("ft_strdup", (void *)tmp[i]);
 	gfree((void *)tmp);
-	env[i] = ft_strjoin(tab[0], "=");
+	env[i] = ft_strdup(tab[0]);
 	gfree((void *)tab[0]);
 	tab[0] = (char *)c_call("ft_strdup", env[i]);
 	env[i] = ft_strjoin(tab[0], tab[1]);
@@ -104,12 +105,13 @@ char			**ft_setenv(char *line, char **env)
 		return (env);
 	}
 	i = -1;
+	tab[0] = ft_strjoin(tab[0], "=");
 	size = ft_strlen(tab[0]);
 	while (env[++i] && ft_strncmp(env[i], tab[0], size))
 		;
 	if (!env[i])
 		return (env = ft_replace(env, tab, i));
-	ft_strcpy(&env[i][size + 1], tab[1]);
+	ft_strcpy(&env[i][size], tab[1]);
 	ft_free_char2(tab);
 	return (env);
 }
@@ -125,6 +127,7 @@ char			**ft_unsetenv(char *line, char **env)
 		return (env + 0 * (write(2, "Problem arg unsetenv\n", 21)
 							+ ft_free_char2(tab)));
 	i = -1;
+	tab[0] = ft_strjoin((char *)c_call("ft_strdup", tab[0]), "=");
 	while (env[++i])
 	{
 		if (ft_strncmp(env[i], tab[0], ft_strlen(tab[0])) == 0)

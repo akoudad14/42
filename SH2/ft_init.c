@@ -6,11 +6,12 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/24 10:27:01 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/24 19:14:01 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 15:13:52 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sh2.h"
+#include "libft.h"
 
 int		ft_init(t_env *e, char **env)
 {

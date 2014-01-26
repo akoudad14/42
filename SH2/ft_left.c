@@ -6,29 +6,15 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/19 16:42:54 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 22:39:02 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/26 16:41:24 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdlib.h>
 #include "sh2.h"
-
-char			*ft_new_l(char **exe, char c)
-{
-	char	*line;
-	char	*tmp;
-	int		i;
-
-	i = 0;
-	line = ft_strdup(exe[0]);
-	while (exe[++i][0] != c)
-	{
-		tmp = ft_strjoin(line, exe[i]);
-		gfree(line);
-		line = ft_strdup(tmp);
-		gfree(tmp);
-	}
-	return (line);
-}
+#include "libft.h"
 
 int				ft_left(char *line, t_env *e)
 {
