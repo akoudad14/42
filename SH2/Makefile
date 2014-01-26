@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/01/25 18:17:00 by makoudad         ###   ########.fr        #
+#    Updated: 2014/01/25 23:08:46 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -32,7 +32,6 @@ SRC =		main.c							\
 			ft_exe.c						\
 			ft_check_env_and_signal.c		\
 			ft_right.c						\
-			ft_right_built.c				\
 			ft_left.c						\
 			ft_pipe.c						\
 			ft_check_exe.c					\

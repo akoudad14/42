@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/28 19:19:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 18:34:52 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/25 23:08:34 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,21 +85,16 @@ int			ft_check_env_and_signal(char **env);
 ** In file ft_right.c
 */
 
-int			ft_right(char *line, char **env);
+int			ft_right(char *line, t_env *e);
 int			ft_creat(char *file);
 void		ft_free_r_l(t_r *r);
-
-/*
-** In file ft_right_built.c
-*/
-
-t_env		*ft_right_built(char *line, t_env *e);
 
 /*
 ** In file ft_left.c
 */
 
-int			ft_left(char *line, char **env);
+int			ft_left(char *line, t_env *e);
+char		*ft_new_l(char **exe, char c);
 
 /*
 ** In file ft_pipe.c

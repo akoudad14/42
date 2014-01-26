@@ -6,58 +6,55 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/19 16:42:54 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 18:50:32 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/25 22:39:02 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sh2.h"
 
-static int		ft_exec(t_r *r, char **env, int i, int in)
+char			*ft_new_l(char **exe, char c)
 {
-	pid_t	father;
+	char	*line;
+	char	*tmp;
+	int		i;
 
-	r->exe[i] = '\0';
+	i = 0;
+	line = ft_strdup(exe[0]);
+	while (exe[++i][0] != c)
+	{
+		tmp = ft_strjoin(line, exe[i]);
+		gfree(line);
+		line = ft_strdup(tmp);
+		gfree(tmp);
+	}
+	return (line);
+}
+
+int				ft_left(char *line, t_env *e)
+{
+	int		in;
+	pid_t	father;
+	char	**exe;
+	int		i;
+
+	i = -1;
+	if (!(exe = ft_strsplit(line, '<')))
+		return (-1);
+	while (exe[++i])
+		exe[i] = (char *)c_call("ft_strtrim", exe[i]);
+	if ((in = open(exe[1], O_RDONLY)) == -1)
+		return (-1 + 0 * (write(2, exe[1], ft_strlen(exe[1]))
+							+ write(2, ": open fail\n", 12)));
 	father = fork();
 	if (father > 0)
-	{
 		wait(&father);
-		close(in);
-		ft_free_r_l(r);
-		return (0);
-	}
 	else
 	{
 		dup2(in, 0);
-		execve(r->path, r->exe, env);
+		ft_check(exe[0], e, 0);
 		exit(1);
 	}
-	return (1);
-}
-
-int				ft_left(char *line, char **env)
-{
-	t_r		*r;
-	char	*fpath;
-	int		i;
-	int		in;
-
-	i = 0;
-	fpath = ft_strdup(&env[0][5]);
-	if (!(r = (t_r *)gmalloc(sizeof(*r))))
-		return (-1 + 0 * write(2, "Problem malloc t_r\n", 19));
-	if (!(r->exe = ft_strsplim(line)))
-		return (-1 + 0 * write(2, "Problem split left\n", 20));
-	while (r->exe[i][0] != '<')
-		++i;
-	if ((in = open(r->exe[i + 1], O_RDONLY)) == -1)
-		return (-1 + 0 * (write(2, r->exe[i + 1], ft_strlen(r->exe[i + 1]))
-							+ write(2, ": open impossible\n", 18)));
-	if (r->exe[i + 2] != '\0')
-		return (-1 + 0 * write(2, "Right: Too args\n", 16));
-	if ((r->path = ft_check_exe(r->exe[0], fpath)) == NULL)
-		return (-1 + 0 * (write(2, r->exe[0], ft_strlen(r->exe[0]))
-							+ write(2, ": command not found\n", 20)));
-	if (ft_strcmp(r->exe[0], "cat") == 0)
-		return (0 * ft_exec(r, env, i, in));
+	close(in);
+	ft_free_char2(exe);
 	return (1);
 }

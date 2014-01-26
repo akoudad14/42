@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/21 09:19:09 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 15:22:28 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/25 23:15:11 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,51 +78,22 @@ static char		*ft_new_line(char *line)
 	return (line);
 }
 
-static t_env	*ft_check_spe_next(char *line, t_env *e)
-{
-	int		i;
-
-	i = 0;
-	if (ft_find(line, "<") || ft_find(line, "<<"))
-	{
-		while (*(line + i) != '<')
-			++i;
-		*(line + i - 1) = '\0';
-	}
-	if (ft_strncmp(line, "pwd", 3) == 0
-		&& (*(line + 3) == ' ' || *(line + 3) == '\0'))
-		ft_env(line, e->envc);
-	else if (ft_strncmp(line, "setenv", 6) == 0 && *(line + 6) == ' ')
-		e->envc = ft_setenv(line + 6, e->envc);
-	else if (ft_strncmp(line, "unsetenv", 8) == 0 && *(line + 8) == ' ')
-		e->envc = ft_unsetenv(line + 9, e->envc);
-	else if (line)
-		ft_executable(line, e->env);
-	return (e);
-}
-
 t_env			*ft_check_special(char *line, t_env *e, int n)
 {
 	int		i;
 	char	*part;
+	int		j;
 
+	j = 0;
 	while (n-- && line)
 	{
 		i = ft_what_part(line);
 		if (!(part = ft_good_part(line, i)))
 			return (e);
-		if ((ft_find(part, ">") || ft_find(part, ">>"))
-			&& ft_check_built(part) == 0)
-			ft_right(part, e->env);
-		else if (ft_find(part, ">") || ft_find(part, ">>"))
-			e = ft_right_built(part, e);
-		else if (ft_find(part, "<") || ft_find(part, "<<"))
-		{
-			if ((i = ft_left(part, e->env)) == 1)
-				e = ft_check_spe_next(part, e);
-		}
-		else
-			e = ft_check_spe_next(part, e);
+		if ((j += 1) && (ft_find(part, ">") || ft_find(part, ">>")))
+			ft_right(part, e);
+		else if ((j += 1) == 1 && (ft_find(part, "<") || ft_find(part, "<<")))
+			ft_left(part, e);
 		line = ft_new_line(ft_strdup(line));
 		gfree((void *)part);
 	}
