@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/03 22:01:20 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/03 22:05:47 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/04 11:18:17 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		ft_print(t_hl **hlist, int *cursor, t_sl **list, int flag)
 	while (--i)
 		tputs(tgetstr("le", NULL), 1, ft_putc);
 	tputs(tgetstr("cd", NULL), 1, ft_putc);
-	ft_slist_print((*hlist)->hist);
 	*list = ft_listdup((*hlist)->hist);
+	ft_slist_print(*list);
 	*cursor = ft_slist_len(*list);
 }

@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 13:23:21 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/03 21:50:25 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/04 16:32:21 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <termios.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "libft.h"
 #include "ft_minishell3.h"
 
 int		ft_init_terminal_mode(void)

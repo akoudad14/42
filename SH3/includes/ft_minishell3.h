@@ -6,7 +6,7 @@
 /*   By: jaubert <jaubert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/27 18:08:25 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/03 22:06:28 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/04 19:37:41 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define	MINISHELL3_H
 
 # define	MAX_KEY_LEN					6
+# define	P_LEN						4
 
 # define	KEY_ENTER(buf)				ft_is_key_enter(buf)
 # define	KEY_DEL_LEFT(buf)			ft_is_key_del_left(buf)
@@ -22,6 +23,8 @@
 # define	KEY_ARROW_DOWN(buf)			ft_is_key_arrow_down(buf)
 # define	KEY_ARROW_LEFT(buf)			ft_is_key_arrow_left(buf)
 # define	KEY_ARROW_RIGHT(buf)		ft_is_key_arrow_right(buf)
+# define	KEY_OPT_ARROW_UP(buf)		ft_is_key_opt_arrow_up(buf)
+# define	KEY_OPT_ARROW_DOWN(buf)		ft_is_key_opt_arrow_down(buf)
 # define	KEY_OPT_ARROW_LEFT(buf)		ft_is_key_opt_arrow_left(buf)
 # define	KEY_OPT_ARROW_RIGHT(buf)	ft_is_key_opt_arrow_right(buf)
 # define	KEY_CTRL_A(buf)				ft_is_key_ctrl_a(buf)
@@ -41,10 +44,7 @@ typedef struct		s_sl
 
 typedef struct		s_hl
 {
-	t_sl			**ptrl;
 	t_sl			*hist;
-	int				hist_nb;
-	int				i;
 	struct s_hl		*next;
 	struct s_hl		*prev;
 }					t_hl;
@@ -52,9 +52,12 @@ typedef struct		s_hl
 typedef struct		s_save
 {
 	int				cursor;
+	int				co;
 	int				hist_nb;
+	int				fd;
 }					t_save;
 
+int			ft_change_line(char *buf, t_sl **list, int *cursor, int co);
 void		ft_slist_print(t_sl *list);
 void		ft_print(t_hl **hlist, int *cursor, t_sl **list, int flag);
 t_sl		*ft_listdup(t_sl *list);
@@ -62,10 +65,12 @@ int			ft_in_history(t_hl **hlist, t_sl **list);
 t_sl		*ft_list_new_elem(char c);
 int			ft_replace_in_history(t_hl **hlist, t_sl **list);
 int			ft_add_in_history(t_hl **hlist, t_sl **list);
-void		ft_go_to_prev_word(t_sl **list, int *cursor);
-void		ft_go_to_next_word(t_sl **list, int *cursor);
+void		ft_go_to_prev_word(t_sl **list, int *cursor, int co);
+void		ft_go_to_next_word(t_sl **list, int *cursor, int co);
 void		ft_list_del_elem(t_sl **list, int cursor);
 int			ft_putc(int c);
+int			ft_is_key_opt_arrow_up(char *buf);
+int			ft_is_key_opt_arrow_down(char *buf);
 int			ft_is_key_opt_arrow_left(char *buf);
 int			ft_is_key_opt_arrow_right(char *buf);
 int			ft_is_key_arrow_up(char *buf);
