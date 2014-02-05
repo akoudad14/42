@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/03 22:01:20 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/04 11:18:17 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/05 18:03:16 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,22 @@
 #include "libft.h"
 #include "ft_minishell3.h"
 
-void		ft_slist_print(t_sl *list)
+void		ft_slist_print(t_sl *list, int co)
 {
+	int		i;
+
+	i = P_LEN;
 	while (list)
 	{
 		ft_putchar_fd(list->c, 2);
 		list = list->next;
+		++i;
+		if (i % co == 0)
+			tputs(tgetstr("do", NULL), 1, ft_putc);
 	}
 }
 
-
-void		ft_print(t_hl **hlist, int *cursor, t_sl **list, int flag)
+void		ft_hlist_print(t_hl **hlist, int *cursor, t_sl **list, int flag)
 {
 	int		i;
 
@@ -37,8 +42,8 @@ void		ft_print(t_hl **hlist, int *cursor, t_sl **list, int flag)
 	i += 1;
 	while (--i)
 		tputs(tgetstr("le", NULL), 1, ft_putc);
-	tputs(tgetstr("cd", NULL), 1, ft_putc);
+	tputs(tgetstr("ce", NULL), 1, ft_putc);
 	*list = ft_listdup((*hlist)->hist);
-	ft_slist_print(*list);
+	ft_slist_print(*list, 0);
 	*cursor = ft_slist_len(*list);
 }

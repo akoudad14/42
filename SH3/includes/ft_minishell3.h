@@ -6,7 +6,7 @@
 /*   By: jaubert <jaubert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/27 18:08:25 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/04 19:37:41 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/05 18:03:31 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ typedef struct		s_save
 }					t_save;
 
 int			ft_change_line(char *buf, t_sl **list, int *cursor, int co);
-void		ft_slist_print(t_sl *list);
-void		ft_print(t_hl **hlist, int *cursor, t_sl **list, int flag);
+void		ft_slist_print(t_sl *list, int co);
+void		ft_hlist_print(t_hl **hlist, int *cursor, t_sl **list, int flag);
 t_sl		*ft_listdup(t_sl *list);
 int			ft_in_history(t_hl **hlist, t_sl **list);
 t_sl		*ft_list_new_elem(char c);
