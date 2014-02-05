@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 14:30:45 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/05 18:04:35 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/05 18:33:18 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int		ft_historic(char *buf, t_sl **list, t_save *save, t_hl **hlist)
 	if (KEY_ARROW_UP(buf) && *hlist && save->hist_nb < ft_hlist_len(*hlist))
 	{
 		if (save->hist_nb)
-			ft_hlist_print(hlist, &(save->cursor), list, +1);
+			ft_hlist_print(hlist, &(save->cursor), list, 1);
 		else
 			ft_hlist_print(hlist, &(save->cursor), list, 0);
 		++(save->hist_nb);
@@ -34,11 +34,12 @@ static int		ft_historic(char *buf, t_sl **list, t_save *save, t_hl **hlist)
 			 ft_hlist_print(hlist, &save->cursor, list, -1);
 		else
 		{
-			save->cursor = ft_slist_len(*list) + 1;
+/*			save->cursor = ft_slist_len(*list) + 1;*/
 			*list = NULL;
-			while (--save->cursor)
+			save->cursor = 0;
+/*			while (--save->cursor)
 				tputs(tgetstr("le", NULL), 1, ft_putc);
-			tputs(tgetstr("ce", NULL), 1, ft_putc);
+			tputs(tgetstr("ce", NULL), 1, ft_putc);*/
 		}
 	}
 	else
@@ -67,13 +68,6 @@ static int		ft_little_move(char *buf, t_sl **list, int *cursor)
 		--(*cursor);
 	else if (*cursor < ft_slist_len(*list) && KEY_ARROW_RIGHT(buf))
 		++(*cursor);
-	else if (*cursor > 0 && KEY_DEL_LEFT(buf))
-	{
-		--(*cursor);
-		ft_list_del_elem(list, *cursor);
-	}
-	else if (*cursor < ft_slist_len(*list) && KEY_DEL_RIGHT(buf))
-		ft_list_del_elem(list, *cursor);
 	else
 		return (1);
 	return (0);
@@ -85,16 +79,23 @@ static int		ft_put_char(char *buf, t_sl **list, t_save *save, t_hl **hlist)
 	{
 		if (ft_list_put_elem(buf[0], list, save->cursor) == -1)
 			return (-1);
-		if (save->hist_nb)
-		{
-			save->hist_nb = 0;
-			while ((*hlist)->prev)
-				*hlist = (*hlist)->prev;
-		}
 		++(save->cursor);
 	}
+	else if (save->cursor > 0 && KEY_DEL_LEFT(buf))
+	{
+		--(save->cursor);
+		ft_list_del_elem(list, save->cursor);
+	}
+	else if (save->cursor < ft_slist_len(*list) && KEY_DEL_RIGHT(buf))
+		ft_list_del_elem(list, save->cursor);
 	else
 		return (1);
+	if (save->hist_nb)
+	{
+		save->hist_nb = 0;
+		while ((*hlist)->prev)
+			*hlist = (*hlist)->prev;
+	}
 	return (0);
 }
 

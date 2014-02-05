@@ -17587,3 +17587,4446 @@ linemax = 0
 cursor = 8
 col 92
 linemax = 0
+cursor = 5
+col 91
+linemax = 0
+cursor = 6
+col 91
+linemax = 0
+cursor = 7
+col 91
+linemax = 0
+cursor = 8
+col 91
+linemax = 0
+cursor = 9
+col 91
+linemax = 0
+cursor = 10
+col 91
+linemax = 0
+cursor = 11
+col 91
+linemax = 0
+cursor = 12
+col 91
+linemax = 0
+cursor = 13
+col 91
+linemax = 0
+cursor = 14
+col 91
+linemax = 0
+cursor = 15
+col 91
+linemax = 0
+cursor = 16
+col 91
+linemax = 0
+cursor = 17
+col 91
+linemax = 0
+cursor = 18
+col 91
+linemax = 0
+cursor = 19
+col 91
+linemax = 0
+cursor = 20
+col 91
+linemax = 0
+cursor = 21
+col 91
+linemax = 0
+cursor = 22
+col 91
+linemax = 0
+cursor = 23
+col 91
+linemax = 0
+cursor = 24
+col 91
+linemax = 0
+cursor = 25
+col 91
+linemax = 0
+cursor = 26
+col 91
+linemax = 0
+cursor = 27
+col 91
+linemax = 0
+cursor = 28
+col 91
+linemax = 0
+cursor = 29
+col 91
+linemax = 0
+cursor = 30
+col 91
+linemax = 0
+cursor = 31
+col 91
+linemax = 0
+cursor = 32
+col 91
+linemax = 0
+cursor = 33
+col 91
+linemax = 0
+cursor = 34
+col 91
+linemax = 0
+cursor = 35
+col 91
+linemax = 0
+cursor = 36
+col 91
+linemax = 0
+cursor = 37
+col 91
+linemax = 0
+cursor = 38
+col 91
+linemax = 0
+cursor = 39
+col 91
+linemax = 0
+cursor = 40
+col 91
+linemax = 0
+cursor = 41
+col 91
+linemax = 0
+cursor = 42
+col 91
+linemax = 0
+cursor = 43
+col 91
+linemax = 0
+cursor = 44
+col 91
+linemax = 0
+cursor = 45
+col 91
+linemax = 0
+cursor = 46
+col 91
+linemax = 0
+cursor = 47
+col 91
+linemax = 0
+cursor = 48
+col 91
+linemax = 0
+cursor = 49
+col 91
+linemax = 0
+cursor = 50
+col 91
+linemax = 0
+cursor = 51
+col 91
+linemax = 0
+cursor = 52
+col 91
+linemax = 0
+cursor = 52
+col 91
+linemax = 0
+cursor = 53
+col 91
+linemax = 0
+cursor = 54
+col 91
+linemax = 0
+cursor = 55
+col 91
+linemax = 0
+cursor = 56
+col 91
+linemax = 0
+cursor = 57
+col 91
+linemax = 0
+cursor = 58
+col 91
+linemax = 0
+cursor = 59
+col 91
+linemax = 0
+cursor = 60
+col 91
+linemax = 0
+cursor = 61
+col 91
+linemax = 0
+cursor = 62
+col 91
+linemax = 0
+cursor = 63
+col 91
+linemax = 0
+cursor = 64
+col 91
+linemax = 0
+cursor = 65
+col 91
+linemax = 0
+cursor = 66
+col 91
+linemax = 0
+cursor = 67
+col 91
+linemax = 0
+cursor = 68
+col 91
+linemax = 0
+cursor = 69
+col 91
+linemax = 0
+cursor = 70
+col 91
+linemax = 0
+cursor = 71
+col 91
+linemax = 0
+cursor = 72
+col 91
+linemax = 0
+cursor = 73
+col 91
+linemax = 0
+cursor = 74
+col 91
+linemax = 0
+cursor = 75
+col 91
+linemax = 0
+cursor = 76
+col 91
+linemax = 0
+cursor = 77
+col 91
+linemax = 0
+cursor = 78
+col 91
+linemax = 0
+cursor = 79
+col 91
+linemax = 0
+cursor = 80
+col 91
+linemax = 0
+cursor = 81
+col 91
+linemax = 0
+cursor = 82
+col 91
+linemax = 0
+cursor = 83
+col 91
+linemax = 0
+cursor = 84
+col 91
+linemax = 0
+cursor = 85
+col 91
+linemax = 0
+cursor = 86
+col 91
+linemax = 0
+cursor = 87
+col 91
+linemax = 0
+cursor = 88
+col 91
+linemax = 0
+cursor = 89
+col 91
+linemax = 0
+cursor = 90
+col 91
+linemax = 0
+cursor = 0
+col 91
+linemax = 1
+cursor = 1
+col 91
+linemax = 1
+cursor = 2
+col 91
+linemax = 1
+cursor = 3
+col 91
+linemax = 1
+cursor = 4
+col 91
+linemax = 1
+cursor = 5
+col 91
+linemax = 1
+cursor = 6
+col 91
+linemax = 1
+cursor = 7
+col 91
+linemax = 1
+cursor = 8
+col 91
+linemax = 1
+cursor = 9
+col 91
+linemax = 1
+cursor = 10
+col 91
+linemax = 1
+cursor = 11
+col 91
+linemax = 1
+cursor = 12
+col 91
+linemax = 1
+cursor = 13
+col 91
+linemax = 1
+cursor = 14
+col 91
+linemax = 1
+cursor = 15
+col 91
+linemax = 1
+cursor = 16
+col 91
+linemax = 1
+cursor = 17
+col 91
+linemax = 1
+cursor = 18
+col 91
+linemax = 1
+cursor = 19
+col 91
+linemax = 1
+cursor = 20
+col 91
+linemax = 1
+cursor = 21
+col 91
+linemax = 1
+cursor = 22
+col 91
+linemax = 1
+cursor = 23
+col 91
+linemax = 1
+cursor = 24
+col 91
+linemax = 1
+cursor = 25
+col 91
+linemax = 1
+cursor = 26
+col 91
+linemax = 1
+cursor = 27
+col 91
+linemax = 1
+cursor = 28
+col 91
+linemax = 1
+cursor = 29
+col 91
+linemax = 1
+cursor = 30
+col 91
+linemax = 1
+cursor = 31
+col 91
+linemax = 1
+cursor = 32
+col 91
+linemax = 1
+cursor = 33
+col 91
+linemax = 1
+cursor = 34
+col 91
+linemax = 1
+cursor = 35
+col 91
+linemax = 1
+cursor = 36
+col 91
+linemax = 1
+cursor = 37
+col 91
+linemax = 1
+cursor = 38
+col 91
+linemax = 1
+cursor = 39
+col 91
+linemax = 1
+cursor = 40
+col 91
+linemax = 1
+cursor = 41
+col 91
+linemax = 1
+cursor = 42
+col 91
+linemax = 1
+cursor = 43
+col 91
+linemax = 1
+cursor = 44
+col 91
+linemax = 1
+cursor = 45
+col 91
+linemax = 1
+cursor = 46
+col 91
+linemax = 1
+cursor = 47
+col 91
+linemax = 1
+cursor = 48
+col 91
+linemax = 1
+cursor = 49
+col 91
+linemax = 1
+cursor = 50
+col 91
+linemax = 1
+cursor = 51
+col 91
+linemax = 1
+cursor = 52
+col 91
+linemax = 1
+cursor = 53
+col 91
+linemax = 1
+cursor = 54
+col 91
+linemax = 1
+cursor = 55
+col 91
+linemax = 1
+cursor = 56
+col 91
+linemax = 1
+cursor = 57
+col 91
+linemax = 1
+cursor = 58
+col 91
+linemax = 1
+cursor = 59
+col 91
+linemax = 1
+cursor = 60
+col 91
+linemax = 1
+cursor = 61
+col 91
+linemax = 1
+cursor = 62
+col 91
+linemax = 1
+cursor = 63
+col 91
+linemax = 1
+cursor = 64
+col 91
+linemax = 1
+cursor = 65
+col 91
+linemax = 1
+cursor = 66
+col 91
+linemax = 1
+cursor = 67
+col 91
+linemax = 1
+cursor = 68
+col 91
+linemax = 1
+cursor = 69
+col 91
+linemax = 1
+cursor = 70
+col 91
+linemax = 1
+cursor = 71
+col 91
+linemax = 1
+cursor = 72
+col 91
+linemax = 1
+cursor = 73
+col 91
+linemax = 1
+cursor = 74
+col 91
+linemax = 1
+cursor = 75
+col 91
+linemax = 1
+cursor = 76
+col 91
+linemax = 1
+cursor = 77
+col 91
+linemax = 1
+cursor = 78
+col 91
+linemax = 1
+cursor = 79
+col 91
+linemax = 1
+cursor = 80
+col 91
+linemax = 1
+cursor = 81
+col 91
+linemax = 1
+cursor = 82
+col 91
+linemax = 1
+cursor = 83
+col 91
+linemax = 1
+cursor = 84
+col 91
+linemax = 1
+cursor = 85
+col 91
+linemax = 1
+cursor = 86
+col 91
+linemax = 1
+cursor = 87
+col 91
+linemax = 1
+cursor = 88
+col 91
+linemax = 1
+cursor = 89
+col 91
+linemax = 1
+cursor = 90
+col 91
+linemax = 1
+cursor = 0
+col 91
+linemax = 2
+cursor = 1
+col 91
+linemax = 2
+cursor = 2
+col 91
+linemax = 2
+cursor = 3
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 5
+col 91
+linemax = 2
+cursor = 6
+col 91
+linemax = 2
+cursor = 7
+col 91
+linemax = 2
+cursor = 8
+col 91
+linemax = 2
+cursor = 9
+col 91
+linemax = 2
+cursor = 10
+col 91
+linemax = 2
+cursor = 11
+col 91
+linemax = 2
+cursor = 12
+col 91
+linemax = 2
+cursor = 13
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 15
+col 91
+linemax = 2
+cursor = 16
+col 91
+linemax = 2
+cursor = 17
+col 91
+linemax = 2
+cursor = 18
+col 91
+linemax = 2
+cursor = 19
+col 91
+linemax = 2
+cursor = 20
+col 91
+linemax = 2
+cursor = 21
+col 91
+linemax = 2
+cursor = 22
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 0
+cursor = 5
+col 91
+linemax = 0
+cursor = 6
+col 91
+linemax = 0
+cursor = 7
+col 91
+linemax = 0
+cursor = 8
+col 91
+linemax = 0
+cursor = 9
+col 91
+linemax = 0
+cursor = 10
+col 91
+linemax = 0
+cursor = 11
+col 91
+linemax = 0
+cursor = 12
+col 91
+linemax = 0
+cursor = 13
+col 91
+linemax = 0
+cursor = 14
+col 91
+linemax = 0
+cursor = 15
+col 91
+linemax = 0
+cursor = 16
+col 91
+linemax = 0
+cursor = 17
+col 91
+linemax = 0
+cursor = 18
+col 91
+linemax = 0
+cursor = 19
+col 91
+linemax = 0
+cursor = 20
+col 91
+linemax = 0
+cursor = 21
+col 91
+linemax = 0
+cursor = 22
+col 91
+linemax = 0
+cursor = 23
+col 91
+linemax = 0
+cursor = 24
+col 91
+linemax = 0
+cursor = 25
+col 91
+linemax = 0
+cursor = 26
+col 91
+linemax = 0
+cursor = 27
+col 91
+linemax = 0
+cursor = 28
+col 91
+linemax = 0
+cursor = 29
+col 91
+linemax = 0
+cursor = 30
+col 91
+linemax = 0
+cursor = 31
+col 91
+linemax = 0
+cursor = 32
+col 91
+linemax = 0
+cursor = 33
+col 91
+linemax = 0
+cursor = 34
+col 91
+linemax = 0
+cursor = 35
+col 91
+linemax = 0
+cursor = 36
+col 91
+linemax = 0
+cursor = 37
+col 91
+linemax = 0
+cursor = 37
+col 91
+linemax = 0
+cursor = 38
+col 91
+linemax = 0
+cursor = 39
+col 91
+linemax = 0
+cursor = 40
+col 91
+linemax = 0
+cursor = 41
+col 91
+linemax = 0
+cursor = 42
+col 91
+linemax = 0
+cursor = 43
+col 91
+linemax = 0
+cursor = 44
+col 91
+linemax = 0
+cursor = 45
+col 91
+linemax = 0
+cursor = 46
+col 91
+linemax = 0
+cursor = 47
+col 91
+linemax = 0
+cursor = 48
+col 91
+linemax = 0
+cursor = 49
+col 91
+linemax = 0
+cursor = 50
+col 91
+linemax = 0
+cursor = 51
+col 91
+linemax = 0
+cursor = 52
+col 91
+linemax = 0
+cursor = 53
+col 91
+linemax = 0
+cursor = 54
+col 91
+linemax = 0
+cursor = 55
+col 91
+linemax = 0
+cursor = 56
+col 91
+linemax = 0
+cursor = 57
+col 91
+linemax = 0
+cursor = 58
+col 91
+linemax = 0
+cursor = 59
+col 91
+linemax = 0
+cursor = 60
+col 91
+linemax = 0
+cursor = 61
+col 91
+linemax = 0
+cursor = 62
+col 91
+linemax = 0
+cursor = 63
+col 91
+linemax = 0
+cursor = 64
+col 91
+linemax = 0
+cursor = 65
+col 91
+linemax = 0
+cursor = 66
+col 91
+linemax = 0
+cursor = 67
+col 91
+linemax = 0
+cursor = 68
+col 91
+linemax = 0
+cursor = 69
+col 91
+linemax = 0
+cursor = 70
+col 91
+linemax = 0
+cursor = 71
+col 91
+linemax = 0
+cursor = 72
+col 91
+linemax = 0
+cursor = 73
+col 91
+linemax = 0
+cursor = 74
+col 91
+linemax = 0
+cursor = 75
+col 91
+linemax = 0
+cursor = 76
+col 91
+linemax = 0
+cursor = 77
+col 91
+linemax = 0
+cursor = 78
+col 91
+linemax = 0
+cursor = 79
+col 91
+linemax = 0
+cursor = 80
+col 91
+linemax = 0
+cursor = 81
+col 91
+linemax = 0
+cursor = 82
+col 91
+linemax = 0
+cursor = 83
+col 91
+linemax = 0
+cursor = 84
+col 91
+linemax = 0
+cursor = 85
+col 91
+linemax = 0
+cursor = 86
+col 91
+linemax = 0
+cursor = 87
+col 91
+linemax = 0
+cursor = 88
+col 91
+linemax = 0
+cursor = 89
+col 91
+linemax = 0
+cursor = 90
+col 91
+linemax = 0
+cursor = 0
+col 91
+linemax = 1
+cursor = 1
+col 91
+linemax = 1
+cursor = 2
+col 91
+linemax = 1
+cursor = 3
+col 91
+linemax = 1
+cursor = 4
+col 91
+linemax = 1
+cursor = 5
+col 91
+linemax = 1
+cursor = 6
+col 91
+linemax = 1
+cursor = 7
+col 91
+linemax = 1
+cursor = 8
+col 91
+linemax = 1
+cursor = 9
+col 91
+linemax = 1
+cursor = 10
+col 91
+linemax = 1
+cursor = 11
+col 91
+linemax = 1
+cursor = 12
+col 91
+linemax = 1
+cursor = 13
+col 91
+linemax = 1
+cursor = 14
+col 91
+linemax = 1
+cursor = 15
+col 91
+linemax = 1
+cursor = 16
+col 91
+linemax = 1
+cursor = 17
+col 91
+linemax = 1
+cursor = 18
+col 91
+linemax = 1
+cursor = 19
+col 91
+linemax = 1
+cursor = 20
+col 91
+linemax = 1
+cursor = 21
+col 91
+linemax = 1
+cursor = 22
+col 91
+linemax = 1
+cursor = 23
+col 91
+linemax = 1
+cursor = 24
+col 91
+linemax = 1
+cursor = 25
+col 91
+linemax = 1
+cursor = 26
+col 91
+linemax = 1
+cursor = 27
+col 91
+linemax = 1
+cursor = 28
+col 91
+linemax = 1
+cursor = 29
+col 91
+linemax = 1
+cursor = 30
+col 91
+linemax = 1
+cursor = 31
+col 91
+linemax = 1
+cursor = 32
+col 91
+linemax = 1
+cursor = 33
+col 91
+linemax = 1
+cursor = 34
+col 91
+linemax = 1
+cursor = 35
+col 91
+linemax = 1
+cursor = 36
+col 91
+linemax = 1
+cursor = 37
+col 91
+linemax = 1
+cursor = 38
+col 91
+linemax = 1
+cursor = 39
+col 91
+linemax = 1
+cursor = 40
+col 91
+linemax = 1
+cursor = 41
+col 91
+linemax = 1
+cursor = 42
+col 91
+linemax = 1
+cursor = 43
+col 91
+linemax = 1
+cursor = 43
+col 91
+linemax = 1
+cursor = 44
+col 91
+linemax = 1
+cursor = 45
+col 91
+linemax = 1
+cursor = 46
+col 91
+linemax = 1
+cursor = 47
+col 91
+linemax = 1
+cursor = 48
+col 91
+linemax = 1
+cursor = 49
+col 91
+linemax = 1
+cursor = 50
+col 91
+linemax = 1
+cursor = 51
+col 91
+linemax = 1
+cursor = 52
+col 91
+linemax = 1
+cursor = 53
+col 91
+linemax = 1
+cursor = 54
+col 91
+linemax = 1
+cursor = 55
+col 91
+linemax = 1
+cursor = 56
+col 91
+linemax = 1
+cursor = 57
+col 91
+linemax = 1
+cursor = 58
+col 91
+linemax = 1
+cursor = 59
+col 91
+linemax = 1
+cursor = 60
+col 91
+linemax = 1
+cursor = 61
+col 91
+linemax = 1
+cursor = 62
+col 91
+linemax = 1
+cursor = 62
+col 91
+linemax = 1
+cursor = 63
+col 91
+linemax = 1
+cursor = 64
+col 91
+linemax = 1
+cursor = 65
+col 91
+linemax = 1
+cursor = 66
+col 91
+linemax = 1
+cursor = 67
+col 91
+linemax = 1
+cursor = 68
+col 91
+linemax = 1
+cursor = 69
+col 91
+linemax = 1
+cursor = 70
+col 91
+linemax = 1
+cursor = 71
+col 91
+linemax = 1
+cursor = 72
+col 91
+linemax = 1
+cursor = 73
+col 91
+linemax = 1
+cursor = 74
+col 91
+linemax = 1
+cursor = 75
+col 91
+linemax = 1
+cursor = 76
+col 91
+linemax = 1
+cursor = 77
+col 91
+linemax = 1
+cursor = 78
+col 91
+linemax = 1
+cursor = 79
+col 91
+linemax = 1
+cursor = 79
+col 91
+linemax = 1
+cursor = 80
+col 91
+linemax = 1
+cursor = 81
+col 91
+linemax = 1
+cursor = 82
+col 91
+linemax = 1
+cursor = 83
+col 91
+linemax = 1
+cursor = 84
+col 91
+linemax = 1
+cursor = 85
+col 91
+linemax = 1
+cursor = 86
+col 91
+linemax = 1
+cursor = 87
+col 91
+linemax = 1
+cursor = 88
+col 91
+linemax = 1
+cursor = 89
+col 91
+linemax = 1
+cursor = 90
+col 91
+linemax = 1
+cursor = 0
+col 91
+linemax = 2
+cursor = 1
+col 91
+linemax = 2
+cursor = 2
+col 91
+linemax = 2
+cursor = 3
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 5
+col 91
+linemax = 2
+cursor = 6
+col 91
+linemax = 2
+cursor = 7
+col 91
+linemax = 2
+cursor = 8
+col 91
+linemax = 2
+cursor = 9
+col 91
+linemax = 2
+cursor = 10
+col 91
+linemax = 2
+cursor = 11
+col 91
+linemax = 2
+cursor = 12
+col 91
+linemax = 2
+cursor = 13
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 0
+cursor = 4
+col 91
+linemax = 0
+cursor = 4
+col 91
+linemax = 0
+cursor = 4
+col 91
+linemax = 0
+cursor = 4
+col 91
+linemax = 0
+cursor = 4
+col 91
+linemax = 0
+cursor = 4
+col 91
+linemax = 0
+cursor = 4
+col 91
+linemax = 0
+cursor = 4
+col 91
+linemax = 0
+cursor = 4
+col 91
+linemax = 0
+cursor = 4
+col 91
+linemax = 0
+cursor = 14
+col 91
+linemax = 2
+cursor = 15
+col 91
+linemax = 2
+cursor = 16
+col 91
+linemax = 2
+cursor = 17
+col 91
+linemax = 2
+cursor = 18
+col 91
+linemax = 2
+cursor = 19
+col 91
+linemax = 2
+cursor = 20
+col 91
+linemax = 2
+cursor = 21
+col 91
+linemax = 2
+cursor = 22
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 24
+col 91
+linemax = 2
+cursor = 25
+col 91
+linemax = 2
+cursor = 26
+col 91
+linemax = 2
+cursor = 27
+col 91
+linemax = 2
+cursor = 28
+col 91
+linemax = 2
+cursor = 29
+col 91
+linemax = 2
+cursor = 30
+col 91
+linemax = 2
+cursor = 31
+col 91
+linemax = 2
+cursor = 32
+col 91
+linemax = 2
+cursor = 33
+col 91
+linemax = 2
+cursor = 34
+col 91
+linemax = 2
+cursor = 35
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 37
+col 91
+linemax = 2
+cursor = 38
+col 91
+linemax = 2
+cursor = 39
+col 91
+linemax = 2
+cursor = 40
+col 91
+linemax = 2
+cursor = 41
+col 91
+linemax = 2
+cursor = 42
+col 91
+linemax = 2
+cursor = 43
+col 91
+linemax = 2
+cursor = 44
+col 91
+linemax = 2
+cursor = 45
+col 91
+linemax = 2
+cursor = 46
+col 91
+linemax = 2
+cursor = 47
+col 91
+linemax = 2
+cursor = 48
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 0
+cursor = 14
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 24
+col 91
+linemax = 2
+cursor = 25
+col 91
+linemax = 2
+cursor = 26
+col 91
+linemax = 2
+cursor = 27
+col 91
+linemax = 2
+cursor = 28
+col 91
+linemax = 2
+cursor = 29
+col 91
+linemax = 2
+cursor = 30
+col 91
+linemax = 2
+cursor = 31
+col 91
+linemax = 2
+cursor = 32
+col 91
+linemax = 2
+cursor = 33
+col 91
+linemax = 2
+cursor = 34
+col 91
+linemax = 2
+cursor = 35
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 44
+col 91
+linemax = 2
+cursor = 60
+col 91
+linemax = 2
+cursor = 70
+col 91
+linemax = 2
+cursor = 75
+col 91
+linemax = 2
+cursor = 82
+col 91
+linemax = 2
+cursor = 90
+col 91
+linemax = 2
+cursor = 7
+col 91
+linemax = 2
+cursor = 17
+col 91
+linemax = 2
+cursor = 25
+col 91
+linemax = 2
+cursor = 28
+col 91
+linemax = 2
+cursor = 34
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 34
+col 91
+linemax = 2
+cursor = 28
+col 91
+linemax = 2
+cursor = 25
+col 91
+linemax = 2
+cursor = 17
+col 91
+linemax = 2
+cursor = 7
+col 91
+linemax = 2
+cursor = 90
+col 91
+linemax = 2
+cursor = 82
+col 91
+linemax = 2
+cursor = 75
+col 91
+linemax = 2
+cursor = 70
+col 91
+linemax = 2
+cursor = 60
+col 91
+linemax = 2
+cursor = 44
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 22
+col 91
+linemax = 2
+cursor = 13
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 2
+cursor = 9
+col 91
+linemax = 2
+cursor = 17
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 28
+col 91
+linemax = 2
+cursor = 35
+col 91
+linemax = 2
+cursor = 35
+col 91
+linemax = 2
+cursor = 35
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 36
+col 91
+linemax = 2
+cursor = 35
+col 91
+linemax = 2
+cursor = 34
+col 91
+linemax = 2
+cursor = 33
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 0
+cursor = 14
+col 91
+linemax = 2
+cursor = 13
+col 91
+linemax = 2
+cursor = 12
+col 91
+linemax = 2
+cursor = 11
+col 91
+linemax = 2
+cursor = 10
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 0
+cursor = 14
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 0
+cursor = 4
+col 91
+linemax = 0
+cursor = 14
+col 91
+linemax = 2
+cursor = 13
+col 91
+linemax = 2
+cursor = 12
+col 91
+linemax = 2
+cursor = 11
+col 91
+linemax = 2
+cursor = 10
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 13
+col 91
+linemax = 2
+cursor = 12
+col 91
+linemax = 2
+cursor = 11
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 0
+cursor = 14
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 0
+cursor = 14
+col 91
+linemax = 2
+cursor = 13
+col 91
+linemax = 2
+cursor = 12
+col 91
+linemax = 2
+cursor = 11
+col 91
+linemax = 2
+cursor = 10
+col 91
+linemax = 2
+cursor = 23
+col 91
+linemax = 2
+cursor = 14
+col 91
+linemax = 2
+cursor = 4
+col 91
+linemax = 0
+cursor = 14
+col 91
+linemax = 2
+cursor = 13
+col 91
+linemax = 2
+cursor = 12
+col 91
+linemax = 2
+cursor = 11
+col 91
+linemax = 2
+cursor = 10
+col 91
+linemax = 2
+cursor = 11
+col 91
+linemax = 2
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 24
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 26
+col 92
+linemax = 0
+cursor = 27
+col 92
+linemax = 0
+cursor = 28
+col 92
+linemax = 0
+cursor = 29
+col 92
+linemax = 0
+cursor = 30
+col 92
+linemax = 0
+cursor = 31
+col 92
+linemax = 0
+cursor = 32
+col 92
+linemax = 0
+cursor = 33
+col 92
+linemax = 0
+cursor = 34
+col 92
+linemax = 0
+cursor = 35
+col 92
+linemax = 0
+cursor = 36
+col 92
+linemax = 0
+cursor = 37
+col 92
+linemax = 0
+cursor = 38
+col 92
+linemax = 0
+cursor = 39
+col 92
+linemax = 0
+cursor = 40
+col 92
+linemax = 0
+cursor = 41
+col 92
+linemax = 0
+cursor = 42
+col 92
+linemax = 0
+cursor = 43
+col 92
+linemax = 0
+cursor = 44
+col 92
+linemax = 0
+cursor = 45
+col 92
+linemax = 0
+cursor = 46
+col 92
+linemax = 0
+cursor = 47
+col 92
+linemax = 0
+cursor = 48
+col 92
+linemax = 0
+cursor = 49
+col 92
+linemax = 0
+cursor = 50
+col 92
+linemax = 0
+cursor = 51
+col 92
+linemax = 0
+cursor = 52
+col 92
+linemax = 0
+cursor = 53
+col 92
+linemax = 0
+cursor = 54
+col 92
+linemax = 0
+cursor = 55
+col 92
+linemax = 0
+cursor = 56
+col 92
+linemax = 0
+cursor = 57
+col 92
+linemax = 0
+cursor = 58
+col 92
+linemax = 0
+cursor = 59
+col 92
+linemax = 0
+cursor = 60
+col 92
+linemax = 0
+cursor = 61
+col 92
+linemax = 0
+cursor = 62
+col 92
+linemax = 0
+cursor = 63
+col 92
+linemax = 0
+cursor = 64
+col 92
+linemax = 0
+cursor = 65
+col 92
+linemax = 0
+cursor = 66
+col 92
+linemax = 0
+cursor = 67
+col 92
+linemax = 0
+cursor = 68
+col 92
+linemax = 0
+cursor = 69
+col 92
+linemax = 0
+cursor = 70
+col 92
+linemax = 0
+cursor = 71
+col 92
+linemax = 0
+cursor = 72
+col 92
+linemax = 0
+cursor = 73
+col 92
+linemax = 0
+cursor = 74
+col 92
+linemax = 0
+cursor = 75
+col 92
+linemax = 0
+cursor = 76
+col 92
+linemax = 0
+cursor = 77
+col 92
+linemax = 0
+cursor = 78
+col 92
+linemax = 0
+cursor = 79
+col 92
+linemax = 0
+cursor = 80
+col 92
+linemax = 0
+cursor = 81
+col 92
+linemax = 0
+cursor = 82
+col 92
+linemax = 0
+cursor = 83
+col 92
+linemax = 0
+cursor = 84
+col 92
+linemax = 0
+cursor = 85
+col 92
+linemax = 0
+cursor = 86
+col 92
+linemax = 0
+cursor = 87
+col 92
+linemax = 0
+cursor = 88
+col 92
+linemax = 0
+cursor = 89
+col 92
+linemax = 0
+cursor = 90
+col 92
+linemax = 0
+cursor = 91
+col 92
+linemax = 0
+cursor = 0
+col 92
+linemax = 1
+cursor = 1
+col 92
+linemax = 1
+cursor = 2
+col 92
+linemax = 1
+cursor = 3
+col 92
+linemax = 1
+cursor = 4
+col 92
+linemax = 1
+cursor = 5
+col 92
+linemax = 1
+cursor = 6
+col 92
+linemax = 1
+cursor = 7
+col 92
+linemax = 1
+cursor = 8
+col 92
+linemax = 1
+cursor = 9
+col 92
+linemax = 1
+cursor = 10
+col 92
+linemax = 1
+cursor = 11
+col 92
+linemax = 1
+cursor = 12
+col 92
+linemax = 1
+cursor = 13
+col 92
+linemax = 1
+cursor = 14
+col 92
+linemax = 1
+cursor = 15
+col 92
+linemax = 1
+cursor = 16
+col 92
+linemax = 1
+cursor = 17
+col 92
+linemax = 1
+cursor = 18
+col 92
+linemax = 1
+cursor = 19
+col 92
+linemax = 1
+cursor = 20
+col 92
+linemax = 1
+cursor = 21
+col 92
+linemax = 1
+cursor = 22
+col 92
+linemax = 1
+cursor = 23
+col 92
+linemax = 1
+cursor = 24
+col 92
+linemax = 1
+cursor = 25
+col 92
+linemax = 1
+cursor = 26
+col 92
+linemax = 1
+cursor = 27
+col 92
+linemax = 1
+cursor = 28
+col 92
+linemax = 1
+cursor = 29
+col 92
+linemax = 1
+cursor = 30
+col 92
+linemax = 1
+cursor = 31
+col 92
+linemax = 1
+cursor = 32
+col 92
+linemax = 1
+cursor = 33
+col 92
+linemax = 1
+cursor = 34
+col 92
+linemax = 1
+cursor = 35
+col 92
+linemax = 1
+cursor = 36
+col 92
+linemax = 1
+cursor = 37
+col 92
+linemax = 1
+cursor = 38
+col 92
+linemax = 1
+cursor = 39
+col 92
+linemax = 1
+cursor = 40
+col 92
+linemax = 1
+cursor = 41
+col 92
+linemax = 1
+cursor = 42
+col 92
+linemax = 1
+cursor = 43
+col 92
+linemax = 1
+cursor = 44
+col 92
+linemax = 1
+cursor = 45
+col 92
+linemax = 1
+cursor = 46
+col 92
+linemax = 1
+cursor = 47
+col 92
+linemax = 1
+cursor = 48
+col 92
+linemax = 1
+cursor = 49
+col 92
+linemax = 1
+cursor = 50
+col 92
+linemax = 1
+cursor = 51
+col 92
+linemax = 1
+cursor = 52
+col 92
+linemax = 1
+cursor = 53
+col 92
+linemax = 1
+cursor = 54
+col 92
+linemax = 1
+cursor = 55
+col 92
+linemax = 1
+cursor = 56
+col 92
+linemax = 1
+cursor = 57
+col 92
+linemax = 1
+cursor = 58
+col 92
+linemax = 1
+cursor = 59
+col 92
+linemax = 1
+cursor = 60
+col 92
+linemax = 1
+cursor = 61
+col 92
+linemax = 1
+cursor = 62
+col 92
+linemax = 1
+cursor = 63
+col 92
+linemax = 1
+cursor = 64
+col 92
+linemax = 1
+cursor = 65
+col 92
+linemax = 1
+cursor = 66
+col 92
+linemax = 1
+cursor = 67
+col 92
+linemax = 1
+cursor = 68
+col 92
+linemax = 1
+cursor = 69
+col 92
+linemax = 1
+cursor = 70
+col 92
+linemax = 1
+cursor = 71
+col 92
+linemax = 1
+cursor = 72
+col 92
+linemax = 1
+cursor = 73
+col 92
+linemax = 1
+cursor = 74
+col 92
+linemax = 1
+cursor = 75
+col 92
+linemax = 1
+cursor = 76
+col 92
+linemax = 1
+cursor = 77
+col 92
+linemax = 1
+cursor = 78
+col 92
+linemax = 1
+cursor = 78
+col 92
+linemax = 1
+cursor = 79
+col 92
+linemax = 1
+cursor = 80
+col 92
+linemax = 1
+cursor = 81
+col 92
+linemax = 1
+cursor = 82
+col 92
+linemax = 1
+cursor = 83
+col 92
+linemax = 1
+cursor = 84
+col 92
+linemax = 1
+cursor = 85
+col 92
+linemax = 1
+cursor = 86
+col 92
+linemax = 1
+cursor = 87
+col 92
+linemax = 1
+cursor = 88
+col 92
+linemax = 1
+cursor = 89
+col 92
+linemax = 1
+cursor = 90
+col 92
+linemax = 1
+cursor = 91
+col 92
+linemax = 1
+cursor = 0
+col 92
+linemax = 2
+cursor = 1
+col 92
+linemax = 2
+cursor = 2
+col 92
+linemax = 2
+cursor = 3
+col 92
+linemax = 2
+cursor = 4
+col 92
+linemax = 2
+cursor = 5
+col 92
+linemax = 2
+cursor = 6
+col 92
+linemax = 2
+cursor = 7
+col 92
+linemax = 2
+cursor = 8
+col 92
+linemax = 2
+cursor = 9
+col 92
+linemax = 2
+cursor = 10
+col 92
+linemax = 2
+cursor = 11
+col 92
+linemax = 2
+cursor = 12
+col 92
+linemax = 2
+cursor = 13
+col 92
+linemax = 2
+cursor = 14
+col 92
+linemax = 2
+cursor = 15
+col 92
+linemax = 2
+cursor = 16
+col 92
+linemax = 2
+cursor = 17
+col 92
+linemax = 2
+cursor = 18
+col 92
+linemax = 2
+cursor = 19
+col 92
+linemax = 2
+cursor = 20
+col 92
+linemax = 2
+cursor = 21
+col 92
+linemax = 2
+cursor = 22
+col 92
+linemax = 2
+cursor = 23
+col 92
+linemax = 2
+cursor = 24
+col 92
+linemax = 2
+cursor = 25
+col 92
+linemax = 2
+cursor = 26
+col 92
+linemax = 2
+cursor = 27
+col 92
+linemax = 2
+cursor = 28
+col 92
+linemax = 2
+cursor = 29
+col 92
+linemax = 2
+cursor = 30
+col 92
+linemax = 2
+cursor = 31
+col 92
+linemax = 2
+cursor = 32
+col 92
+linemax = 2
+cursor = 33
+col 92
+linemax = 2
+cursor = 34
+col 92
+linemax = 2
+cursor = 35
+col 92
+linemax = 2
+cursor = 36
+col 92
+linemax = 2
+cursor = 37
+col 92
+linemax = 2
+cursor = 38
+col 92
+linemax = 2
+cursor = 39
+col 92
+linemax = 2
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 24
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 26
+col 92
+linemax = 0
+cursor = 27
+col 92
+linemax = 0
+cursor = 28
+col 92
+linemax = 0
+cursor = 29
+col 92
+linemax = 0
+cursor = 30
+col 92
+linemax = 0
+cursor = 31
+col 92
+linemax = 0
+cursor = 32
+col 92
+linemax = 0
+cursor = 33
+col 92
+linemax = 0
+cursor = 34
+col 92
+linemax = 0
+cursor = 35
+col 92
+linemax = 0
+cursor = 36
+col 92
+linemax = 0
+cursor = 37
+col 92
+linemax = 0
+cursor = 38
+col 92
+linemax = 0
+cursor = 39
+col 92
+linemax = 0
+cursor = 40
+col 92
+linemax = 0
+cursor = 41
+col 92
+linemax = 0
+cursor = 42
+col 92
+linemax = 0
+cursor = 43
+col 92
+linemax = 0
+cursor = 44
+col 92
+linemax = 0
+cursor = 45
+col 92
+linemax = 0
+cursor = 46
+col 92
+linemax = 0
+cursor = 47
+col 92
+linemax = 0
+cursor = 48
+col 92
+linemax = 0
+cursor = 49
+col 92
+linemax = 0
+cursor = 50
+col 92
+linemax = 0
+cursor = 51
+col 92
+linemax = 0
+cursor = 52
+col 92
+linemax = 0
+cursor = 53
+col 92
+linemax = 0
+cursor = 54
+col 92
+linemax = 0
+cursor = 55
+col 92
+linemax = 0
+cursor = 56
+col 92
+linemax = 0
+cursor = 57
+col 92
+linemax = 0
+cursor = 58
+col 92
+linemax = 0
+cursor = 59
+col 92
+linemax = 0
+cursor = 60
+col 92
+linemax = 0
+cursor = 61
+col 92
+linemax = 0
+cursor = 62
+col 92
+linemax = 0
+cursor = 63
+col 92
+linemax = 0
+cursor = 64
+col 92
+linemax = 0
+cursor = 65
+col 92
+linemax = 0
+cursor = 66
+col 92
+linemax = 0
+cursor = 67
+col 92
+linemax = 0
+cursor = 68
+col 92
+linemax = 0
+cursor = 69
+col 92
+linemax = 0
+cursor = 70
+col 92
+linemax = 0
+cursor = 71
+col 92
+linemax = 0
+cursor = 72
+col 92
+linemax = 0
+cursor = 73
+col 92
+linemax = 0
+cursor = 74
+col 92
+linemax = 0
+cursor = 75
+col 92
+linemax = 0
+cursor = 76
+col 92
+linemax = 0
+cursor = 77
+col 92
+linemax = 0
+cursor = 78
+col 92
+linemax = 0
+cursor = 79
+col 92
+linemax = 0
+cursor = 80
+col 92
+linemax = 0
+cursor = 81
+col 92
+linemax = 0
+cursor = 82
+col 92
+linemax = 0
+cursor = 83
+col 92
+linemax = 0
+cursor = 84
+col 92
+linemax = 0
+cursor = 85
+col 92
+linemax = 0
+cursor = 86
+col 92
+linemax = 0
+cursor = 87
+col 92
+linemax = 0
+cursor = 88
+col 92
+linemax = 0
+cursor = 89
+col 92
+linemax = 0
+cursor = 90
+col 92
+linemax = 0
+cursor = 91
+col 92
+linemax = 0
+cursor = 0
+col 92
+linemax = 1
+cursor = 1
+col 92
+linemax = 1
+cursor = 2
+col 92
+linemax = 1
+cursor = 3
+col 92
+linemax = 1
+cursor = 4
+col 92
+linemax = 1
+cursor = 5
+col 92
+linemax = 1
+cursor = 6
+col 92
+linemax = 1
+cursor = 7
+col 92
+linemax = 1
+cursor = 8
+col 92
+linemax = 1
+cursor = 9
+col 92
+linemax = 1
+cursor = 10
+col 92
+linemax = 1
+cursor = 11
+col 92
+linemax = 1
+cursor = 12
+col 92
+linemax = 1
+cursor = 13
+col 92
+linemax = 1
+cursor = 14
+col 92
+linemax = 1
+cursor = 15
+col 92
+linemax = 1
+cursor = 16
+col 92
+linemax = 1
+cursor = 17
+col 92
+linemax = 1
+cursor = 17
+col 92
+linemax = 1
+cursor = 17
+col 92
+linemax = 1
+cursor = 39
+col 92
+linemax = 2
+cursor = 17
+col 92
+linemax = 1
+cursor = 17
+col 92
+linemax = 1
+cursor = 17
+col 92
+linemax = 1
+cursor = 17
+col 92
+linemax = 1
+cursor = 39
+col 92
+linemax = 2
+cursor = 17
+col 92
+linemax = 1
+cursor = 17
+col 92
+linemax = 1
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 24
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 26
+col 92
+linemax = 0
+cursor = 27
+col 92
+linemax = 0
+cursor = 28
+col 92
+linemax = 0
+cursor = 29
+col 92
+linemax = 0
+cursor = 30
+col 92
+linemax = 0
+cursor = 31
+col 92
+linemax = 0
+cursor = 32
+col 92
+linemax = 0
+cursor = 33
+col 92
+linemax = 0
+cursor = 34
+col 92
+linemax = 0
+cursor = 35
+col 92
+linemax = 0
+cursor = 36
+col 92
+linemax = 0
+cursor = 37
+col 92
+linemax = 0
+cursor = 38
+col 92
+linemax = 0
+cursor = 39
+col 92
+linemax = 0
+cursor = 40
+col 92
+linemax = 0
+cursor = 41
+col 92
+linemax = 0
+cursor = 42
+col 92
+linemax = 0
+cursor = 43
+col 92
+linemax = 0
+cursor = 44
+col 92
+linemax = 0
+cursor = 45
+col 92
+linemax = 0
+cursor = 46
+col 92
+linemax = 0
+cursor = 46
+col 92
+linemax = 0
+cursor = 47
+col 92
+linemax = 0
+cursor = 48
+col 92
+linemax = 0
+cursor = 49
+col 92
+linemax = 0
+cursor = 50
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 50
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 50
+col 92
+linemax = 0
+cursor = 49
+col 92
+linemax = 0
+cursor = 48
+col 92
+linemax = 0
+cursor = 49
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 50
+col 92
+linemax = 0
+cursor = 49
+col 92
+linemax = 0
+cursor = 49
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 50
+col 92
+linemax = 0
+cursor = 49
+col 92
+linemax = 0
+cursor = 48
+col 92
+linemax = 0
+cursor = 49
+col 92
+linemax = 0
+cursor = 50
+col 92
+linemax = 0
+cursor = 51
+col 92
+linemax = 0
+cursor = 52
+col 92
+linemax = 0
+cursor = 53
+col 92
+linemax = 0
+cursor = 54
+col 92
+linemax = 0
+cursor = 55
+col 92
+linemax = 0
+cursor = 56
+col 92
+linemax = 0
+cursor = 57
+col 92
+linemax = 0
+cursor = 58
+col 92
+linemax = 0
+cursor = 59
+col 92
+linemax = 0
+cursor = 60
+col 92
+linemax = 0
+cursor = 61
+col 92
+linemax = 0
+cursor = 62
+col 92
+linemax = 0
+cursor = 63
+col 92
+linemax = 0
+cursor = 64
+col 92
+linemax = 0
+cursor = 65
+col 92
+linemax = 0
+cursor = 66
+col 92
+linemax = 0
+cursor = 67
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 50
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 50
+col 92
+linemax = 0
+cursor = 49
+col 92
+linemax = 0
+cursor = 48
+col 92
+linemax = 0
+cursor = 47
+col 92
+linemax = 0
+cursor = 46
+col 92
+linemax = 0
+cursor = 45
+col 92
+linemax = 0
+cursor = 44
+col 92
+linemax = 0
+cursor = 43
+col 92
+linemax = 0
+cursor = 42
+col 92
+linemax = 0
+cursor = 42
+col 92
+linemax = 0
+cursor = 42
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 50
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 24
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 26
+col 92
+linemax = 0
+cursor = 27
+col 92
+linemax = 0
+cursor = 28
+col 92
+linemax = 0
+cursor = 29
+col 92
+linemax = 0
+cursor = 30
+col 92
+linemax = 0
+cursor = 31
+col 92
+linemax = 0
+cursor = 32
+col 92
+linemax = 0
+cursor = 33
+col 92
+linemax = 0
+cursor = 34
+col 92
+linemax = 0
+cursor = 35
+col 92
+linemax = 0
+cursor = 36
+col 92
+linemax = 0
+cursor = 37
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 24
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 24
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 26
+col 92
+linemax = 0
+cursor = 27
+col 92
+linemax = 0
+cursor = 28
+col 92
+linemax = 0
+cursor = 29
+col 92
+linemax = 0
+cursor = 30
+col 92
+linemax = 0
+cursor = 31
+col 92
+linemax = 0
+cursor = 32
+col 92
+linemax = 0
+cursor = 33
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 4
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 5
+col 92
+linemax = 0
+cursor = 6
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 24
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 13
+col 92
+linemax = 0
+cursor = 14
+col 92
+linemax = 0
+cursor = 15
+col 92
+linemax = 0
+cursor = 16
+col 92
+linemax = 0
+cursor = 17
+col 92
+linemax = 0
+cursor = 18
+col 92
+linemax = 0
+cursor = 19
+col 92
+linemax = 0
+cursor = 20
+col 92
+linemax = 0
+cursor = 21
+col 92
+linemax = 0
+cursor = 22
+col 92
+linemax = 0
+cursor = 23
+col 92
+linemax = 0
+cursor = 24
+col 92
+linemax = 0
+cursor = 25
+col 92
+linemax = 0
+cursor = 26
+col 92
+linemax = 0
+cursor = 27
+col 92
+linemax = 0
+cursor = 28
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 11
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
+cursor = 9
+col 92
+linemax = 0
+cursor = 8
+col 92
+linemax = 0
+cursor = 7
+col 92
+linemax = 0
+cursor = 12
+col 92
+linemax = 0
+cursor = 10
+col 92
+linemax = 0
