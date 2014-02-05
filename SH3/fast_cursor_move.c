@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/02 10:54:59 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/05 17:37:17 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/05 19:17:32 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "libft.h"
 #include "ft_minishell3.h"
 
-void		ft_go_to_prev_word(t_sl **list, int *cursor, int co)
+static void		ft_go_to_prev_word(t_sl **list, int *cursor, int co)
 {
 	int		i;
 	t_sl	*move;
@@ -37,7 +37,7 @@ void		ft_go_to_prev_word(t_sl **list, int *cursor, int co)
 	}
 }
 
-void		ft_go_to_next_word(t_sl **list, int *cursor, int co)
+static void		ft_go_to_next_word(t_sl **list, int *cursor, int co)
 {
 	int		i;
 	t_sl	*move;
@@ -58,4 +58,20 @@ void		ft_go_to_next_word(t_sl **list, int *cursor, int co)
 	}
 	if (*cursor < len)
 		++(*cursor);
+}
+
+
+int				ft_fast_move(char *buf, t_sl **list, int *cursor, int co)
+{
+	if (*cursor > 0 && KEY_OPT_ARROW_LEFT(buf))
+		ft_go_to_prev_word(list, cursor, co);
+	else if (*cursor < ft_slist_len(*list) && KEY_OPT_ARROW_RIGHT(buf))
+		ft_go_to_next_word(list, cursor, co);
+	else if (KEY_CTRL_A(buf))
+		*cursor = 0;
+	else if (KEY_CTRL_E(buf))
+		*cursor = ft_slist_len(*list);
+	else
+		return (1);
+	return (0);
 }
