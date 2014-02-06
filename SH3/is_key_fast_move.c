@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/02 10:55:46 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/03 12:54:27 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/06 11:43:54 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 int			ft_is_key_opt_arrow_left(char *buf)
 {
-	if (buf[0] == 27 && buf[1] == 27 && buf[2] == 91 && buf[3] == 68
+	if ((buf[0] == 27 && buf[1] == 27 && buf[2] == 91 && buf[3] == 68
 		&& buf[4] == 0 && buf[5] == 0)
+		|| (buf[0] == 27 && buf[1] == 91 && buf[2] == 49 && buf[3] == 59
+			&& buf[4] == 50 && buf[5] == 68))
 		return (1);
 	return (0);
 }
 
 int			ft_is_key_opt_arrow_right(char *buf)
 {
-	if (buf[0] == 27 && buf[1] == 27 && buf[2] == 91 && buf[3] == 67
+	if ((buf[0] == 27 && buf[1] == 27 && buf[2] == 91 && buf[3] == 67
 		&& buf[4] == 0 && buf[5] == 0)
+		|| (buf[0] == 27 && buf[1] == 91 && buf[2] == 49 && buf[3] == 59
+			&& buf[4] == 50 && buf[5] == 67))
 		return (1);
 	return (0);
 }
