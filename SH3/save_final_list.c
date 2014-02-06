@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 14:30:45 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/06 11:48:32 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/06 11:57:37 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,13 +107,15 @@ static int 		ft_check(char *buf, t_sl **list, t_save *save, t_hl **hlist)
 	return (0);
 }
 
-int				ft_save_final_list(t_sl **list, t_hl **hlist)
+int				ft_save_final_list(t_hl **hlist)
 {
 	int				n;
 	char			buf[MAX_KEY_LEN + 1];
 	t_hl			*move;
 	t_save			save;
+	t_sl			*list;
 
+	list = NULL;
 	save.cursor = 0;
 	save.hist_nb = 0;
 	save.cut = NULL;
@@ -127,10 +129,10 @@ int				ft_save_final_list(t_sl **list, t_hl **hlist)
 		buf[++n] = 0;
 		if (read(STDIN_FILENO, buf, MAX_KEY_LEN) == -1)
 			return (-1);
-		if (ft_check(buf, list, &save, &move) == -1)
+		if (ft_check(buf, &list, &save, &move) == -1)
 			return (-1);
 	}
-	if (ft_in_history(hlist, list) == -1)
+	if (ft_in_history(hlist, &list) == -1)
 		return (-1);
 	ft_putchar('\n');
 	return (0);

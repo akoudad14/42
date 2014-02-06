@@ -6,7 +6,7 @@
 /*   By: jaubert <jaubert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/27 18:08:25 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/05 20:28:57 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/06 11:57:02 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int			ft_is_key_ctrl_f(char *buf);
 int			ft_is_key_ctrl_g(char *buf);
 int			ft_slist_len(t_sl *list);
 int			ft_hlist_len(t_hl *list);
-int			ft_save_final_list(t_sl **list, t_hl **hlist);
+int			ft_save_final_list(t_hl **hlist);
 int			ft_list_put_elem(char c, t_sl **list, int cursor);
 int			ft_mysh_exit(char *line);
 void		ft_pwd(char **all);

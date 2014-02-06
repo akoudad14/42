@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 13:23:21 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/04 16:32:21 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/06 11:57:22 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,15 @@ int		ft_default_terminal_mode(void)
 
 int		main(void)
 {
-	t_sl		*list;
 	t_hl		*hlist;
 
 	ft_init_terminal_mode();
-	list = NULL;
 	hlist = NULL;
-	if (ft_save_final_list(&list, &hlist) == -1)
+	if (ft_save_final_list(&hlist) == -1)
 		return (-1);
-	list = NULL;
-	if (ft_save_final_list(&list, &hlist) == -1)
+	if (ft_save_final_list(&hlist) == -1)
 		return (-1);
-	list = NULL;
-	if (ft_save_final_list(&list, &hlist) == -1)
+	if (ft_save_final_list(&hlist) == -1)
 		return (-1);
 	ft_default_terminal_mode();
 	return (0);
