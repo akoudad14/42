@@ -6,40 +6,40 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/02/08 22:00:36 by makoudad         ###   ########.fr        #
+#    Updated: 2014/02/08 21:27:08 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME =	serveur
+GCC =		gcc -Wall -Werror -Wextra
 
-NAMECL = client
+LIBH =		../libft/includes/
 
-MAKELIB =	make -C libft/
+SERVH =		./
 
-MAKESERV =	make -C dserveur/
+LIBA =		../libft/libft.a
 
-MAKECLI =	make -C dclient/
+HDFLAGS =	-I$(LIBH) -I$(SERVH)
+
+NAME =		serveur
+
+SRC =		serveur.c singleton.c ft_bin_to.c
+
+OBJ =		$(SRC:.c=.o)
 
 all:		$(NAME)
 
-$(NAME):
-			$(MAKELIB) all
-			$(MAKESERV) all
-			$(MAKECLI) all
-			mv dserveur/serveur .
-			mv dclient/client .
+$(NAME):	$(OBJ)
+			$(GCC) -o $(NAME) $(OBJ) $(LIBA) $(HDFLAGS)
+
 clean:
-			$(MAKELIB)	clean
-			$(MAKESERV)	clean
-			$(MAKECLI)	clean
+			rm -f $(OBJ)
 
 fclean:		clean
-			$(MAKELIB)	fclean
-			$(MAKESERV)	fclean
-			$(MAKECLI)	fclean
-			rm serveur
-			rm client
+			rm -f $(NAME)
 
 re:			fclean all
 
-.PHONY:		clean fclean re all
+.PHONY:		clean fclean re
+
+%.o:		%.c
+			$(GCC) $(HDFLAGS) -c $< -o $@
