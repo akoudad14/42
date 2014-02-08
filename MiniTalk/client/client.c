@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/08 09:14:55 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/08 16:36:39 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/08 19:35:48 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,10 @@ void	ft_send_bit_by_bit(char c, pid_t pid_s)
 			kill(pid_s, SIGUSR1);
 		else
 			kill(pid_s, SIGUSR2);
-		if (usleep(20) == 0)
+		usleep(100);
+/*		if (usleep(1000) == 0)
 			--i;
-		else
+		else*/
 			tmp = tmp << 1;
 	}
 }
@@ -55,7 +56,7 @@ void	ft_send_pid_bit_by_bit(pid_t pid_c, pid_t pid_s)
 			kill(pid_s, SIGUSR1);
 		else
 			kill(pid_s, SIGUSR2);
-		usleep(20);
+		usleep(100);
 		tmp = tmp << 1;
 	}
 }
