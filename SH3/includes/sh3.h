@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/28 19:19:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 18:32:45 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/09 16:48:15 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define	P_LEN						4
 
 # define	KEY_ENTER(buf)				ft_is_key_enter(buf)
+# define	KEY_CTRL_D(buf)				ft_is_key_ctrl_d(buf)
 # define	KEY_DEL_LEFT(buf)			ft_is_key_del_left(buf)
 # define	KEY_DEL_RIGHT(buf)			ft_is_key_del_right(buf)
 # define	KEY_ARROW_UP(buf)			ft_is_key_arrow_up(buf)
@@ -166,6 +167,7 @@ int			ft_do_line(char **line, t_sl *list);
 ** In files is_key*.c
 */
 
+int			ft_is_key_ctrl_d(char *buf);
 int			ft_is_key_arrow_left(char *buf);
 int			ft_is_key_arrow_right(char *buf);
 int			ft_is_key_arrow_down(char *buf);

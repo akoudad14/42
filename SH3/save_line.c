@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 14:30:45 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 19:10:25 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/09 18:21:12 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,12 @@ static int		ft_check_key(char *buf, t_sl **l, t_save *s, t_hl **hl)
 	ioctl(STDIN_FILENO, TIOCGWINSZ, &w);
 	s->co = w.ws_col;
 	old_line = (P_LEN + s->cursor_l) / s->co;
-	if (buf[0] == 4 && buf[1] == 0)
-		return (-1);
-	if (do_it && (do_it = ft_put_or_del_char(buf, l, s, hl)) == -1)
+	if (KEY_ENTER(buf))
+	{
+		s->cursor_l = -1;
+		return (0);
+	}
+	if ((do_it = ft_put_or_del_char(buf, l, s, hl)) == -1)
 		return (-1);
 	if (do_it && (do_it = ft_little_move(buf, l, &(s->cursor_l), s->co)) == -1)
 		return (-1);
@@ -110,21 +113,20 @@ int				ft_save_line(t_hl **hlist, char **line)
 	t_sl			*list;
 
 	list = NULL;
+	save.co = 0;
 	save.copy = NULL;
 	save.cursor_l = 0;
 	save.cursor_hl = 0;
 	move = *hlist;
-	while (1)
+	while (save.cursor_l != -1)
 	{
 		ft_bzero(buf, MAX_KEY_LEN + 1);
 		if (read(STDIN_FILENO, buf, MAX_KEY_LEN) == -1)
 			return (-1);
-		if (KEY_ENTER(buf))
-			break ;
-		if (ft_check_key(buf, &list, &save, &move))
+		if (KEY_CTRL_D(buf) || ft_check_key(buf, &list, &save, &move))
 			return (-1);
 	}
-	save.cursor_l = (list) ? ft_slist_len(list) : 0;
+	save.cursor_l = ft_slist_len(list);
 	ft_print(list, &save, (P_LEN + save.cursor_l) / save.co);
 	if ((ft_put_in_hist(hlist, list) == -1) || (ft_do_line(line, list)) == -1)
 		return (-1);

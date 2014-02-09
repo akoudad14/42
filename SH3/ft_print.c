@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/03 22:01:20 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 19:21:51 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/09 16:42:13 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ static int		ft_clean(int old_line, int cursor_line)
 		tputs(tgetstr("up", NULL), 1, ft_putc);
 		--i;
 	}
+	tputs(tgoto(tgetstr("ch", NULL), 0, 0), 1, ft_putc);
 	return (0);
 }
 
@@ -53,16 +54,14 @@ int				ft_print(t_sl *list, t_save *save, int old_line)
 	char	*go;
 
 	cursor_line = (P_LEN + save->cursor_l) / save->co;
-	if (list)
-		ft_clean(old_line, cursor_line);
-	tputs(tgoto(tgetstr("ch", NULL), 0, 0), 1, ft_putc);
+	ft_clean(old_line, cursor_line);
 	i = cursor_line + 1;
-	while (list && --i > 0)
+	while (--i > 0)
 		tputs(tgetstr("up", NULL), 1, ft_putc);
 	tputs(tgetstr("cd", NULL), 1, ft_putc);
 	ft_putstr_fd("_$> ", 1);
 	ft_slist_print(list, save->co);
-	if (list && save->cursor_l != ft_slist_len(list))
+	if (save->cursor_l != ft_slist_len(list))
 	{
 		go = tgoto(tgetstr("ch", NULL), 0, (P_LEN + save->cursor_l) % save->co);
 		tputs(go, 1, ft_putc);

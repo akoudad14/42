@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/02/07 12:00:00 by makoudad         ###   ########.fr        #
+#    Updated: 2014/02/09 16:46:12 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -28,6 +28,7 @@ SRC =		main.c							\
 			change_terminal_mode.c			\
 			save_line.c						\
 			is_key_arrow.c					\
+			is_key_ctrl_d.c					\
 			is_key_change_line.c			\
 			is_key_copy.c					\
 			is_key_cut_paste.c				\

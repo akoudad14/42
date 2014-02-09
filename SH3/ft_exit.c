@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/25 18:15:32 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 14:27:52 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/09 18:12:47 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int		ft_verif_num_exit(char **ts)
 	{
 		if (!ft_isdigit(ts[1][i]))
 		{
-			ft_putendl_fd("Numeric argument required", 2);
+			ft_putendl_fd("Num argument required between 0 and 2147483647", 2);
 			ft_free_char2(ts);
 			return (-1);
 		}

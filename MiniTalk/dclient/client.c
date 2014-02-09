@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/08 09:14:55 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/08 21:38:43 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/09 15:51:00 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,7 @@ int		main(int ac, char **av)
 	pid_s = (pid_t)ft_atoi(av[1]);
 	pid_c = getpid();
 	ft_send_pid_bit_by_bit(pid_c, pid_s);
-	ft_putstr("pid_c = ");
-	ft_putnbr(pid_c);
-	ft_putchar('\n');
 	len = (pid_t)ft_strlen(av[2]);
-	ft_putstr("len = ");
-	ft_putnbr(len);
-	ft_putchar('\n');
 	ft_send_pid_bit_by_bit(len, pid_s);
 	ft_send_string(av[2], pid_s);
 	return (0);
