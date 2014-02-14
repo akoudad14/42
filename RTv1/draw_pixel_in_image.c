@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/12 19:41:50 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/13 18:14:15 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/14 11:35:43 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,26 @@ void	ft_put_plane_pixel(t_mlx *mlx, int i, int j, t_sol sol)
 	mlx->i.data[i * 4 + 2 + j * mlx->i.sl] = move->plan.clr.r;
 }
 
+void	ft_put_cylinder_pixel(t_mlx *mlx, int i, int j, t_sol sol)
+{
+	t_cyll	*move;
+	int		k;
+
+	move = mlx->obj.cyll;
+	k = -1;
+	while (++k < sol.ind)
+		move = move->next;
+	mlx->i.data[i * 4 + 0 + j * mlx->i.sl] = move->cyl.clr.b;
+	mlx->i.data[i * 4 + 1 + j * mlx->i.sl] = move->cyl.clr.g;
+	mlx->i.data[i * 4 + 2 + j * mlx->i.sl] = move->cyl.clr.r;
+}
+
 void	ft_put_pixel_in_image(t_mlx *mlx, int i, int j, t_sol sol)
 {
 	if (sol.c == 's')
 		ft_put_sphere_pixel(mlx, i, j, sol);
 	else if (sol.c == 'p')
 		ft_put_plane_pixel(mlx, i, j, sol);
+	else if (sol.c == 'y')
+		ft_put_cylinder_pixel(mlx, i, j, sol);
 }

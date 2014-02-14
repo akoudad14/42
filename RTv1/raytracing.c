@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/12 16:46:51 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/13 19:42:52 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/14 13:17:45 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int			ft_raytracing(t_mlx *mlx)
 	t_cam		cam;
 	t_sol		sol;
 
-	ft_init_vect(&(cam.e), 0, 2, 0);
+	ft_init_vect(&(cam.e), CAM_X, CAM_Y, CAM_Z);
 	j = -1;
 	while (++j < W_H)
 	{

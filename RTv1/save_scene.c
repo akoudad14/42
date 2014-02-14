@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/13 14:35:20 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/13 18:19:39 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/14 11:02:05 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ int			ft_save_scene(t_obj *obj, char *file)
 		else if (ft_strcmp("#Plane", line) == 0)
 		{
 			if (ft_save_plane_in_list(&(obj->pl), fd) == -1)
+				return (-1);
+		}
+		else if (ft_strcmp("#Cylinder", line) == 0)
+		{
+			if (ft_save_cylinder_in_list(&(obj->cyll), fd) == -1)
 				return (-1);
 		}
 		else if (ft_strcmp("", line) != 0)

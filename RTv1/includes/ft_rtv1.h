@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/12 16:07:28 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/13 18:21:37 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/14 20:53:43 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # define	B			-0.5
 # define	PRJ_X(i)	(L + (R - L) * i / W_W)
 # define	PRJ_Y(j)	(T - (T - B) * j / W_H)
-/*# define	CAM_X	0
-# define	CAM_Y	0
-# define	CAM_Z	0*/
+# define	CAM_X		2
+# define	CAM_Y		2
+# define	CAM_Z		0
 
 typedef struct		s_clr
 {
@@ -46,6 +46,13 @@ typedef struct		s_v
 	double			y;
 	double			z;
 }					t_v;
+
+typedef struct		s_base
+{
+	t_v				v1;
+	t_v				v2;
+	t_v				v3;
+}					t_base;
 
 typedef struct		s_cam
 {
@@ -82,6 +89,23 @@ typedef struct		s_pl
 	struct s_pl		*next;
 }					t_pl;
 
+
+typedef struct		s_cyl
+{
+	t_v				c;
+	t_v				a;
+	double			r;
+	double			ind;
+	t_clr			clr;
+	double			**mat;
+}					t_cyl;
+
+typedef struct		s_cyll
+{
+	t_cyl			cyl;
+	struct s_cyll	*next;
+}					t_cyll;
+
 typedef struct		s_light
 {
 	t_v				c;
@@ -99,6 +123,7 @@ typedef struct		s_obj
 	t_ll			*ll;
 	t_sl			*sl;
 	t_pl			*pl;
+	t_cyll			*cyll;
 }					t_obj;
 
 typedef struct		s_sol
@@ -128,10 +153,14 @@ double		ft_atod(const char *str);
 void		ft_find_nearest_object(t_sol *sol, t_mlx *mlx, t_cam cam);
 double		ft_find_nearest_sphere(int *ind, t_cam cam, t_sl *sl);
 double		ft_find_nearest_plane(int *ind, t_cam cam, t_pl *pl);
-int			ft_save_light_in_list(t_ll **ll, int fd);
-int			ft_save_light_in_list(t_ll **ll, int fd);
+double		ft_find_nearest_cylinder(int *ind, t_cam cam, t_cyll *cll);
 int			ft_save_light_in_list(t_ll **ll, int fd);
 int			ft_save_sphere_in_list(t_sl **sl, int fd);
+int			ft_save_cylinder_in_list(t_cyll **cyll, int fd);
 int			ft_save_plane_in_list(t_pl **pl, int fd);
+void		ft_transform_in_unit_vect(t_v *vect);
+double		ft_vect_norm(t_v vect);
+void		ft_save_transfer_matrix_inverse(double ***mat, t_v w);
+void		ft_save_transfer_matrix(double ***mat, t_v w);
 
 #endif /* !FT_RTV1_H */

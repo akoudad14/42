@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/13 16:32:07 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/13 18:17:56 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/14 11:34:50 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,12 @@ void		ft_find_nearest_object(t_sol *sol, t_mlx *mlx, t_cam cam)
 		min = dist;
 		sol->ind = ind;
 		sol->c = 'p';
+	}
+	dist = ft_find_nearest_cylinder(&ind, cam, mlx->obj.cyll);
+	if (dist != -1 && (min == -1 || min > dist))
+	{
+		min = dist;
+		sol->ind = ind;
+		sol->c = 'y';
 	}
 }
