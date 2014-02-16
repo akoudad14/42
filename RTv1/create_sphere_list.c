@@ -6,14 +6,13 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/13 14:54:32 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/13 18:55:18 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/16 14:58:21 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rtv1.h"
 #include "libft.h"
 
-#include <stdio.h>
 t_sl		*ft_create_sphere_elem(t_sph sph)
 {
 	t_sl	*new;

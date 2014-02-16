@@ -6,7 +6,7 @@
 #    By: jaubert <jaubert@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/06 16:07:00 by jaubert           #+#    #+#              #
-#    Updated: 2014/02/14 18:59:33 by makoudad         ###   ########.fr        #
+#    Updated: 2014/02/16 13:46:39 by makoudad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ CFILE =			main.c						\
 				raytracing.c				\
 				sol_equ_quadratic.c			\
 				operation_on_vectors.c		\
+				create_orthonormal_basis.c	\
 				create_light_list.c			\
 				create_cylinder_list.c		\
 				create_plane_list.c			\

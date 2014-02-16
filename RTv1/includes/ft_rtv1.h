@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/12 16:07:28 by jaubert           #+#    #+#             */
-/*   Updated: 2014/02/14 20:53:43 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/16 15:05:14 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # define	B			-0.5
 # define	PRJ_X(i)	(L + (R - L) * i / W_W)
 # define	PRJ_Y(j)	(T - (T - B) * j / W_H)
-# define	CAM_X		2
+# define	CAM_X		0
 # define	CAM_Y		2
-# define	CAM_Z		0
+# define	CAM_Z		10
 
 typedef struct		s_clr
 {
@@ -89,7 +89,6 @@ typedef struct		s_pl
 	struct s_pl		*next;
 }					t_pl;
 
-
 typedef struct		s_cyl
 {
 	t_v				c;
@@ -98,6 +97,10 @@ typedef struct		s_cyl
 	double			ind;
 	t_clr			clr;
 	double			**mat;
+	t_base			b;
+	t_v				c2;
+	t_v				e2;
+	t_v				ce;
 }					t_cyl;
 
 typedef struct		s_cyll
@@ -145,6 +148,7 @@ int			ft_raytracing(t_mlx *mlx);
 void		ft_put_pixel_in_image(t_mlx *mlx, int i, int j, t_sol sol);
 double		ft_nearest_solution(double a, double b, double c);
 t_v			ft_diff_vect(t_v vect1, t_v vect2);
+t_v			ft_cross_product(t_v vect1, t_v vect2);
 double		ft_dot_product(t_v vect1, t_v vect2);
 int			ft_save_scene(t_obj *obj, char *file);
 void		ft_find_nearest_object(t_sol *sol, t_mlx *mlx, t_cam cam);
@@ -156,11 +160,12 @@ double		ft_find_nearest_plane(int *ind, t_cam cam, t_pl *pl);
 double		ft_find_nearest_cylinder(int *ind, t_cam cam, t_cyll *cll);
 int			ft_save_light_in_list(t_ll **ll, int fd);
 int			ft_save_sphere_in_list(t_sl **sl, int fd);
-int			ft_save_cylinder_in_list(t_cyll **cyll, int fd);
+int			ft_save_cylinder_in_list(t_cam cam, t_cyll **cyll, int fd);
 int			ft_save_plane_in_list(t_pl **pl, int fd);
-void		ft_transform_in_unit_vect(t_v *vect);
 double		ft_vect_norm(t_v vect);
-void		ft_save_transfer_matrix_inverse(double ***mat, t_v w);
-void		ft_save_transfer_matrix(double ***mat, t_v w);
+void		ft_save_transfer_matrix_inverse(double ***mat, t_base *b, t_v w);
+void		ft_save_transfer_matrix(double ***mat, t_base *b, t_v w);
+void		ft_create_orthonormal_basis(t_v *u, t_v *v, t_v *w);
+t_v			ft_transform_in_new_basis(t_v old, double **mat);
 
 #endif /* !FT_RTV1_H */
