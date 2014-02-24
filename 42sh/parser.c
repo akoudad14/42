@@ -6,72 +6,38 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/22 13:06:58 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/22 18:36:58 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/24 19:16:02 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42sh.h"
+#include "libft.h"
+#include "sh3.h"
 
-int		ft_is_no_quote(t_sl *list, int *ind)
+void	ft_print_pl(t_p *p)
 {
-	if (list->c == '|' && list->next && list->next->c == '|')
-		return (OR);
-	if (list->c == '&' && list->next && list->next->c == '&')
-		return (AND);
-	if (list->c == '>' && list->next && list->next->c == '>')
-		return (AND);
-	if (list->c == ';')
-		return (SEMI_C);
-	if (list->c == '<')
-		return (RED_L);
-	if (list->c == '>')
-		return (RED_R);
-	if (list->c == '|')
-		return (PIPE);
-	if (list->c == ' ')
-		return (SPACE);
-	return (WORD);
+	t_p		*move;
+
+	move = p;
+	while (move)
+	{
+		ft_putstr(move->tok);
+		ft_putstr(" ");
+		ft_putnbr(move->type);
+		ft_putstr("\n");
+		move = move->next;
+	}
 }
 
-int		ft_is_operand(t_sl *list, int *ind)
-{
-	if (list->prev && list->prev->c == '\\')
-		return (WORD);
-	if (*ind == 1 && list->c == '\'')
-	{
-		*ind = 0;
-		return (QUO_S);
-	}
-	if (*ind == 2 && list->c == '\"')
-	{
-		*ind = 0;
-		return (QUO_D);
-	}
-	if (*ind == 1 || *ind == 2)
-		return (WORD);
-	if (list->c == '\'')
-	{
-		*ind = 1;
-		return (QUO_S);
-	}
-	if (list->c == '\"')
-	{
-		*ind = 2;
-		return (QUO_D);
-	}
-	return (ft_is_no_quote(list, ind));
-}
-
-int		ft_new_token(t_p **p, t_sl **tl, int *type)
+int		ft_new_token(t_p **p, char **line, int size, int type)
 {
 	t_p		*new;
-	t_sl	*tmp;
 	t_p		*move;
 
 	if (!(new = (t_p *)gmalloc(sizeof(t_p))))
-		return (NULL);
-	new->tok = NULL;
-	ft_do_line(&(new->tok), *tl);
+		return (-1);
+	if (!(new->tok = ft_strsub(*line, 0, size)))
+		return (-1);
+	*line = *line + size;
 	new->type = type;
 	new->next = NULL;
 	new->prev = NULL;
@@ -88,38 +54,29 @@ int		ft_new_token(t_p **p, t_sl **tl, int *type)
 	return (0);
 }
 
-int		ft_parser(t_sl *list)
+int		ft_parser(char *line)
 {
-	t_sl	*move;
 	int		ind;
-	t_sl	*tl;
 	t_p		*p;
 	int		type;
-	int		tmp;
+	int		size;
 
 	ind = 0;
-	move = list;
 	p = NULL;
-	tl = NULL;
-	type = WORD;
-	while (move)
+	while (*line)
 	{
-		if (tl && (tmp = ft_is_operand(move, &ind)) != type)
-		{
-			if (!ft_new_token(&p, &tl, type))
-				return (-1);
-			type = tmp;
-		}
-		if (ind || tmp != SPACE)
-		{
-			if (!tl = ft_list_new_elem(move->c))
-				return (-1);
-		move = move->next;
+		size = ft_word_size_before_ope(line, &ind, &type);
+		if (size != 0)
+			ft_new_token(&p, &line, size, WORD);
+		if (!*line)
+			break ;
+		size = (type == AND || type == OR || type == RED_DR) ? 2 : 1;
+		ft_new_token(&p, &line, size, type);
 	}
-	if (tmp != SPACE)
-	{
-		if (!ft_new_token(&p, &tl, tmp))
-			return (-1);
-	}
+	if (ft_delete_quotes_and_spaces(&p, ind) == -1)
+		return (-1);
+	if (ft_delete_backslashes(&p) == -1)
+		return (-1);
+	ft_print_pl(p);
 	return (0);
 }
