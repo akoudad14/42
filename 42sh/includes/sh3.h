@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/28 19:19:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/24 19:13:04 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/25 19:52:22 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@
 # define	CMD							12
 # define	ARG							13
 # define	SPACE						14
+# define	PTH_B						15
+# define	PTH_E						16
+# define	PTH							17
 
 # include	<term.h>
 
@@ -91,10 +94,21 @@ typedef struct		s_env
 	char			**envc;
 }					t_env;
 
+typedef struct		s_tree
+{
+	t_p				*p;
+	struct s_tree	*fa;
+	struct s_tree	*le;
+	struct s_tree	*ri;
+}					t_tree;
+
 int			ft_word_size_before_ope(char *line, int *ind, int *type);
 int			ft_delete_quotes_and_spaces(t_p **p, int ind);
 int			ft_delete_backslashes(t_p **p);
 int			ft_parser(char *line);
+int			ft_syntaxical_analyzer(t_p *p, t_tree **t);
+int			ft_check_wrong_nb_of_pth(t_p *p);
+int			ft_init_tree(t_tree **t);
 
 /*
 ** In file ft_exe.c

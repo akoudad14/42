@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/24 18:48:26 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/24 19:27:19 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/25 14:46:49 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,18 @@ static void		ft_delete_plist_elem(t_p **p, t_p **move)
 		ft_delete_plist_last_elem(p, move);
 }
 
+static void		ft_is_empty_string(t_p **p, t_p **move)
+{
+	ft_delete_plist_elem(p, move);
+	(*move)->tok[0] = '\0';
+	(*move)->type = WORD;
+}
+
 int				ft_delete_quotes_and_spaces(t_p **p, int ind)
 {
-	t_p		*move;
+	t_p		*m;
 
-	move = *p;
-	while (move)
-	{
-		if (move->type == SPACE || move->type == QUO_S || move->type == QUO_D)
-			ft_delete_plist_elem(p, &move);
-		else
-			move = move->next;
-	}
+	m = *p;
 	if (ind)
 	{
 		ft_putstr_fd("Unmatched ", 2);
@@ -73,6 +73,17 @@ int				ft_delete_quotes_and_spaces(t_p **p, int ind)
 		else
 			ft_putendl_fd("\".", 2);
 		return (-1);
+	}
+	while (m)
+	{
+		if (m->type == SPACE
+			|| (m->type == QUO_S && (!m->next || m->next->type != QUO_S))
+			|| (m->type == QUO_D && (!m->next || m->next->type != QUO_D)))
+			ft_delete_plist_elem(p, &m);
+		else if (m->type == QUO_S || m->type == QUO_D)
+			ft_is_empty_string(p, &m);
+		else
+			m = m->next;
 	}
 	return (0);
 }

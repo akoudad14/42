@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/02/24 19:14:56 by makoudad         ###   ########.fr        #
+#    Updated: 2014/02/25 15:09:14 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -56,6 +56,7 @@ SRC =		main.c							\
 			operand.c						\
 			delete_while_parsing.c			\
 			parser.c						\
+			syntaxical_analyzer.c			\
 			ft_exit.c
 
 

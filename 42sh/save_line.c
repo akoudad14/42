@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 14:30:45 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/24 13:57:54 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/25 19:51:44 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,8 +135,8 @@ int				ft_save_line(t_hl **hlist, char **line)
 	}
 	save.cursor_l = ft_slist_len(list);
 	ft_print(list, &save, (P_LEN + save.cursor_l) / save.co);
-	if ((ft_put_in_hist(hlist, list) == -1) || (ft_do_line(line, list)) == -1)
+	if ((ft_put_in_hist(hlist, list) == -1) || (ft_do_line(line, list)) == -1
+		|| ((*line)[0] != '\0' && ft_parser(*line) == -1))
 		return (-1);
-	ft_parser(*line);
 	return (0);
 }

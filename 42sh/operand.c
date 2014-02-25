@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/24 18:41:20 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/24 18:47:05 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/25 10:42:44 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ static int		ft_is_no_quote(char *line)
 		return (PIPE);
 	if (*line == ' ')
 		return (SPACE);
+	if (*line == '(')
+		return (PTH_B);
+	if (*line == ')')
+		return (PTH_E);
 	return (WORD);
 }
 
