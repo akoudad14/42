@@ -6,14 +6,14 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/19 16:42:54 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 14:29:40 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 11:03:30 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include "sh3.h"
+#include "42sh.h"
 #include "libft.h"
 
 int				ft_left(char *line, t_env *e)

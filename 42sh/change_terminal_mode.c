@@ -6,13 +6,13 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 13:23:21 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 14:21:05 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 11:01:34 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "sh3.h"
+#include "42sh.h"
 
 int		ft_init_terminal_mode(struct termios tattr)
 {

@@ -6,12 +6,12 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/24 15:47:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 15:01:19 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 11:02:35 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "sh3.h"
+#include "42sh.h"
 #include "libft.h"
 
 static t_env	*ft_good_env(t_env *e, char *pwd, char *oldpwd)

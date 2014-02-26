@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/02/25 15:09:14 by makoudad         ###   ########.fr        #
+#    Updated: 2014/02/26 12:21:47 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -54,9 +54,12 @@ SRC =		main.c							\
 			ft_check_exe.c					\
 			ft_builtin.c					\
 			operand.c						\
-			delete_while_parsing.c			\
+			delete_backslashes.c			\
+			delete_quotes_and_spaces.c		\
 			parser.c						\
 			syntaxical_analyzer.c			\
+			create_tree.c					\
+			read_through_tree.c				\
 			ft_exit.c
 
 

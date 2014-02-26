@@ -6,11 +6,11 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/04 15:39:51 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 16:13:12 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 11:02:42 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sh3.h"
+#include "42sh.h"
 
 int		ft_change_line(char *buf, t_sl **list, int *cursor_l, int co)
 {

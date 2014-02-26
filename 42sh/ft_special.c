@@ -6,12 +6,12 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/21 09:19:09 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 14:35:06 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 11:04:32 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "sh3.h"
+#include "42sh.h"
 #include "libft.h"
 
 static int		ft_what_part(char *line)

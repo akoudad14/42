@@ -6,11 +6,11 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 10:27:26 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/24 10:12:53 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 11:05:14 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sh3.h"
+#include "42sh.h"
 #include "libft.h"
 
 int				ft_check_spe(char *line)

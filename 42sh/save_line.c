@@ -6,14 +6,14 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 14:30:45 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/25 19:51:44 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 11:05:56 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
-#include "sh3.h"
+#include "42sh.h"
 #include "libft.h"
 
 int				ft_putc(int c)
@@ -22,7 +22,7 @@ int				ft_putc(int c)
 	return (0);
 }
 
-static int		ft_little_move(char *buf, t_sl **list, int *cursor_l, int co)
+static int		ft_short_mv(char *buf, t_sl **list, int *cursor_l, int co)
 {
 	int			len;
 
@@ -76,7 +76,7 @@ static int		ft_put_or_del_char(char *buf, t_sl **l, t_save *s, t_hl **hl)
 	return (0);
 }
 
-static int		ft_check_key(char *buf, t_sl **l, t_save *s, t_hl **hl)
+static int		ft_check_key(char *b, t_sl **l, t_save *s, t_hl **hl)
 {
 	int					do_it;
 	struct winsize		w;
@@ -84,29 +84,22 @@ static int		ft_check_key(char *buf, t_sl **l, t_save *s, t_hl **hl)
 
 	do_it = 1;
 	ioctl(STDIN_FILENO, TIOCGWINSZ, &w);
-	s->co = w.ws_col;
-	if (s->co == 0)
+	if ((s->co = w.ws_col) == 0)
 	{
 		s->cursor_l = -1;
-		ft_putendl_fd("Put valid entry", 2);
-		cfree();
-		exit(-1);
+		return (ft_error_msg("Put valid entry"));
 	}
 	old_line = (P_LEN + s->cursor_l) / s->co;
-	if (KEY_ENTER(buf))
+	if (KEY_ENTER(b))
 	{
 		s->cursor_l = -1;
 		return (0);
 	}
-	if ((do_it = ft_put_or_del_char(buf, l, s, hl)) == -1)
-		return (-1);
-	if (do_it && (do_it = ft_little_move(buf, l, &(s->cursor_l), s->co)) == -1)
-		return (-1);
-	if (do_it && (do_it = ft_fast_move(buf, l, &(s->cursor_l))) == -1)
-		return (-1);
-	if (do_it && (do_it = ft_historic(buf, l, s, hl)) == -1)
-		return (-1);
-	if (do_it && (do_it = ft_cut_copy_or_paste(buf, l, s)) == -1)
+	if (((do_it = ft_put_or_del_char(b, l, s, hl)) == -1)
+		|| (do_it && (do_it = ft_short_mv(b, l, &(s->cursor_l), s->co)) == -1)
+		|| (do_it && (do_it = ft_fast_move(b, l, &(s->cursor_l))) == -1)
+		|| (do_it && (do_it = ft_historic(b, l, s, hl)) == -1)
+		|| (do_it && (do_it = ft_cut_copy_or_paste(b, l, s)) == -1))
 		return (-1);
 	ft_print(*l, s, old_line);
 	return (0);

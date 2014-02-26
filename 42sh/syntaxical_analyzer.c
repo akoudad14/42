@@ -6,16 +6,17 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/25 13:26:51 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/25 19:46:26 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 17:00:53 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sh3.h"
+#include "42sh.h"
 #include "libft.h"
 
-int		ft_error_msg(char *str)
+int		ft_error_msg(char *s1, char *s2)
 {
-	ft_putendl_fd(str, 2);
+	ft_putstr_fd(s1, 2);
+	ft_putendl_fd(s2, 2);
 	return (-1);
 }
 
@@ -29,20 +30,22 @@ int		ft_check_wrong_nb_of_pth(t_p *p)
 	while (move)
 	{
 		if ((move->type == PTH_B && move->prev
-			&& (move->prev->type == CMD || move->prev->type == ARG))
+			 && (move->prev->type == CMD || move->prev->type == ARG
+				 || move->prev->type == PTH_E))
 			|| (move->type == PTH_E && move->next
-				&& (move->next->type == CMD || move->next->type == ARG)))
-			return (ft_error_msg("Badly placed ()'s"));
+				&& (move->next->type == CMD || move->next->type == ARG
+					|| move->next->type == PTH_B)))
+			return (ft_error_msg("Badly placed ", "()'s"));
 		if (move->type == PTH_B)
 			++ind_pth;
 		if (move->type == PTH_E)
 			--ind_pth;
 		if (ind_pth < 0)
-			return (ft_error_msg("Too many )'s."));
+			return (ft_error_msg("Too many ", ")'s."));
 		move = move->next;
 	}
 	if (ind_pth > 0)
-		ft_error_msg("Too many ('s.");
+		return (ft_error_msg("Too many ", "('s."));
 	return (0);
 }
 
@@ -52,6 +55,7 @@ t_p		*ft_check_if_type_to_split(t_p *p, int type)
 	int		ind_pth;
 
 	move = p;
+	ind_pth = 0;
 	while (move)
 	{
 		if (move->type == PTH_B)
@@ -92,107 +96,27 @@ void	ft_find_priority_operand(t_p **keep, int *type)
 		*keep = move;
 }
 
-t_p		*ft_p_list_new_elem(char *tok, int type)
-{
-	t_p		*new;
-
-	if (!(new = (t_p *)gmalloc(sizeof(t_p))))
-		return (NULL);
-	new->prev = NULL;
-	new->next = NULL;
-	new->tok = ft_strdup(tok);
-	new->type = type;
-	return (new);
-}
-
-int		ft_p_list_sub(t_p **list, t_p *start, t_p *end)
-{
-	t_p		*new;
-	t_p		*move;
-
-	move = *list;
-	while (start != end)
-	{
-		if (!(new = ft_p_list_new_elem(start->tok, start->type)))
-			return (-1);
-		if (move)
-		{
-			move->next = new;
-			new->prev = move;
-		}
-		move = new;
-		start = start->next;
-	}
-	return (0);
-}
-
-int		ft_new_tree_elem(t_tree **t, t_p *p, t_p *keep)
-{
-	if (ft_init_tree(&((*t)->le)) == -1
-		|| ft_init_tree(&((*t)->ri)) == -1)
-		return (-1);
-	(*t)->le->fa = *t;
-	(*t)->ri->fa = *t;
-	if (ft_p_list_sub(&((*t)->le->p), p, keep) == -1)
-		return (-1);
-	if (ft_p_list_sub(&((*t)->ri->p), keep->next, NULL) == -1)
-		return (-1);
-	if (ft_p_list_sub(&((*t)->p), keep, keep->next) == -1)
-		return (-1);
-	if ((*t)->le->p)
-	{
-		if (ft_syntaxical_analyzer((*t)->le->p, &((*t)->le)) == -1)
-			return (-1);
-	}
-	if ((*t)->ri->p)
-	{
-		if (ft_syntaxical_analyzer((*t)->ri->p, &((*t)->ri)) == -1)
-			return (-1);
-	}
-	return (0);
-}
-
-int		ft_put_parenthesis_in_tree(t_p *p, t_tree **t)
-{
-	t_p		*move;
-
-	move = p;
-	while (move && move->next)
-		move = move->next;
-	if (ft_init_tree(&((*t)->le)) == -1)
-		return (-1);
-	(*t)->le->fa = *t;
-	if (ft_p_list_sub(&((*t)->le->p), p->next, move) == -1)
-		return (-1);
-	(*t)->p->tok = ft_strdup("()");
-	(*t)->p->type = PTH;
-	return (0);
-}
-
-int		ft_syntaxical_analyzer(t_p *p, t_tree **t)
+int		ft_syntaxical_analyzer(t_tree **t)
 {
 	int		ind_pth;
 	t_p		*keep;
 	int		type;
 
 	ind_pth = 0;
-	keep = p;
+	keep = (*t)->p;
 	type = 0;
 	ft_find_priority_operand(&keep, &type);
-	if (type == 0 && p->type != PTH_B)
+	if (type == 0 && (*t)->p->type != PTH_B)
 		return (0);
 	else if (type == 0)
 	{
-		if (ft_put_parenthesis_in_tree(p, t) == -1)
+		if (ft_put_parenthesis_in_tree(t) == -1)
 			return (-1);
-		return (0);
+		return (ft_syntaxical_analyzer(&((*t)->le)));
 	}
 	if (!keep->next || !keep->prev)
-	{
-		ft_putstr_fd("Badly placed ", 2);
-		ft_putendl_fd(keep->tok, 2);
+		return (ft_error_msg("Badly placed ", keep->tok));
+	if (ft_new_tree_elem(t, keep) == -1)
 		return (-1);
-	}
-	ft_new_tree_elem(t, p, keep);
 	return (0);
 }

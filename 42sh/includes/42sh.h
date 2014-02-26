@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   42sh.h                                             :+:      :+:    :+:   */
+/*   sh3.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/28 19:19:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/22 18:32:13 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 16:44:39 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		42SH_H
-# define	42SH_H
+#ifndef		SH3_H
+# define	SH3_H
 
 # define	MAX_KEY_LEN					6
 # define	P_LEN						4
@@ -52,6 +52,9 @@
 # define	CMD							12
 # define	ARG							13
 # define	SPACE						14
+# define	PTH_B						15
+# define	PTH_E						16
+# define	PTH							17
 
 # include	<term.h>
 
@@ -77,19 +80,46 @@ typedef struct		s_save
 	t_sl			*copy;
 }					t_save;
 
-typedef struct		t_p
+typedef struct		s_p
 {
 	char			*tok;
 	int				type;
-	struct s_hl		*next;
-	struct s_hl		*prev;
-}
+	struct s_p		*next;
+	struct s_p		*prev;
+}					t_p;
 
 typedef struct		s_env
 {
 	char			**env;
 	char			**envc;
 }					t_env;
+
+typedef struct		s_tree
+{
+	t_p				*p;
+	struct s_tree	*fa;
+	struct s_tree	*le;
+	struct s_tree	*ri;
+}					t_tree;
+
+
+void		ft_print_pl(t_p *p);          /* A RETIRER !!!!!!!!!!! */
+
+
+
+
+int			ft_word_size_before_ope(char *line, int *ind, int *type);
+int			ft_delete_quotes_and_spaces(t_p **p, int ind);
+int			ft_delete_backslashes(t_p **p);
+int			ft_parser(char *line);
+int			ft_syntaxical_analyzer(t_tree **t);
+int			ft_check_wrong_nb_of_pth(t_p *p);
+int			ft_init_tree(t_tree **t);
+int			ft_error_msg(char *s1, char *s2);
+int			ft_put_parenthesis_in_tree(t_tree **t);
+int			ft_new_tree_elem(t_tree **t, t_p *keep);
+void		ft_print_tree(t_tree *t);
+int			ft_p_list_sub(t_p **list, t_p *start, t_p *end);
 
 /*
 ** In file ft_exe.c
@@ -139,7 +169,6 @@ int			ft_right(char *line, t_env *e);
 /*
 ** In file ft_left.c
 */
-w
 
 int			ft_left(char *line, t_env *e);
 

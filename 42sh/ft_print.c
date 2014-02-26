@@ -6,12 +6,12 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/03 22:01:20 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/09 16:42:13 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 11:04:15 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "sh3.h"
+#include "42sh.h"
 
 static void		ft_slist_print(t_sl *list, int co)
 {

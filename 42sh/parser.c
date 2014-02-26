@@ -6,12 +6,12 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/22 13:06:58 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/25 19:49:45 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 17:30:48 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "sh3.h"
+#include "42sh.h"
 
 void	ft_print_pl(t_p *p)
 {
@@ -88,17 +88,6 @@ int		ft_clean_list(t_p **p, int ind)
 	return (0);
 }
 
-int		ft_init_tree(t_tree **t)
-{
-	if (!(*t = (t_tree *)gmalloc(sizeof(**t))))
-		return (-1);
-	(*t)->fa = NULL;
-	(*t)->le = NULL;
-	(*t)->ri = NULL;
-	(*t)->p = NULL;
-	return (0);
-}
-
 int		ft_parser(char *line)
 {
 	int		ind;
@@ -122,8 +111,13 @@ int		ft_parser(char *line)
 	}
 	if (ft_clean_list(&p, ind) == -1)
 		return (-1);
-/*	ft_print_pl(p);*/
-	if (ft_init_tree(&t) == -1 || ft_syntaxical_analyzer(p, &t) == -1)
+	if (ft_init_tree(&t) == -1)
 		return (-1);
+	if (ft_p_list_sub(&(t->p), p, NULL))
+		return (-1);
+	if (t->p && ft_syntaxical_analyzer(&t) == -1)
+		return (-1);
+	if (p)
+		ft_print_tree(t);
 	return (0);
 }

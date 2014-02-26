@@ -6,12 +6,12 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/05 19:04:06 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 18:16:17 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 11:03:18 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "sh3.h"
+#include "42sh.h"
 
 t_sl			*ft_listdup(t_sl *list)
 {

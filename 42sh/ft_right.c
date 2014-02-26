@@ -6,14 +6,14 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/18 18:03:48 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 14:34:12 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 11:04:25 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include "sh3.h"
+#include "42sh.h"
 #include "libft.h"
 
 static int			ft_creat(char *file)

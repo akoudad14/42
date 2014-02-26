@@ -6,13 +6,13 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/21 18:21:54 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 15:05:16 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 11:04:06 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "sh3.h"
+#include "42sh.h"
 #include "libft.h"
 
 static int		ft_pipe_n_n(t_env *e, char **ts)
