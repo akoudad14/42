@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 14:30:45 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 11:05:56 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 17:36:28 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ static int		ft_check_key(char *b, t_sl **l, t_save *s, t_hl **hl)
 	if ((s->co = w.ws_col) == 0)
 	{
 		s->cursor_l = -1;
-		return (ft_error_msg("Put valid entry"));
+		return (ft_error_msg("Put valid entry", ""));
 	}
 	old_line = (P_LEN + s->cursor_l) / s->co;
 	if (KEY_ENTER(b))

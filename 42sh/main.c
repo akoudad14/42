@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 10:27:26 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 11:05:14 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 18:12:28 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ static int		ft_find_the_line(/*t_env e*/)
 	while (exit <= 0)
 	{
 		ft_putstr_fd("_$> ", 1);
-		if (ft_save_line(&hlist, &line) == -1)
-			return (-1);
+		/*if (*/ft_save_line(&hlist, &line)/* == -1)*/
+			/*return (-1)*/;
 /*		exe = ft_strsplit(line, ';');
 		exit = ft_treatment_of_the_line(&e, exe);
 		ft_free_char2(exe);*/

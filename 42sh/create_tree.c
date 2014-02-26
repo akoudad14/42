@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/26 10:49:40 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 17:29:36 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 18:31:02 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,31 +63,6 @@ int			ft_p_list_sub(t_p **list, t_p *start, t_p *end)
 	return (0);
 }
 
-int			ft_new_tree_elem(t_tree **t, t_p *keep)
-{
-	if (ft_init_tree(&((*t)->le)) == -1 || ft_init_tree(&((*t)->ri)) == -1)
-		return (-1);
-	(*t)->le->fa = *t;
-	(*t)->ri->fa = *t;
-	if (ft_p_list_sub(&((*t)->le->p), (*t)->p, keep) == -1)
-		return (-1);
-	if (ft_p_list_sub(&((*t)->ri->p), keep->next, NULL) == -1)
-		return (-1);
-	if (ft_p_list_sub(&((*t)->p), keep, keep->next) == -1)
-		return (-1);
-	if ((*t)->le->p)
-	{
-		if (ft_syntaxical_analyzer( &((*t)->le)) == -1)
-			return (-1);
-	}
-	if ((*t)->ri->p)
-	{
-		if (ft_syntaxical_analyzer(&((*t)->ri)) == -1)
-			return (-1);
-	}
-	return (0);
-}
-
 void		ft_free_list(t_p *move)
 {
 	while (move->next)
@@ -98,6 +73,34 @@ void		ft_free_list(t_p *move)
 	}
 	gfree((void *)move->tok);
 	gfree((void *)move);
+}
+
+int			ft_new_tree_elem(t_tree **t, t_p *keep)
+{
+	if (ft_init_tree(&((*t)->le)) == -1 || ft_init_tree(&((*t)->ri)) == -1)
+		return (-1);
+	(*t)->le->fa = *t;
+	(*t)->ri->fa = *t;
+	if (ft_p_list_sub(&((*t)->le->p), (*t)->p, keep) == -1)
+		return (-1);
+	if (ft_p_list_sub(&((*t)->ri->p), keep->next, NULL) == -1)
+		return (-1);
+	(*t)->p->type = keep->type;
+	ft_free_list((*t)->p->next);
+	(*t)->p->next = NULL;
+	gfree((void *)(*t)->p->tok);
+	(*t)->p->tok = NULL;
+	if ((*t)->le->p)
+	{
+		if (ft_syntaxical_analyzer(&((*t)->le)) == -1)
+			return (-1);
+	}
+	if ((*t)->ri->p)
+	{
+		if (ft_syntaxical_analyzer(&((*t)->ri)) == -1)
+			return (-1);
+	}
+	return (0);
 }
 
 int			ft_put_parenthesis_in_tree(t_tree **t)
@@ -114,13 +117,10 @@ int			ft_put_parenthesis_in_tree(t_tree **t)
 		move = move->next;
 	if (ft_p_list_sub(&((*t)->le->p), (*t)->p->next, move) == -1)
 		return (-1);
-	move = (*t)->p;
-	gfree((void *)move->tok);
-	move->tok = ft_strdup("()");
-	move = move->next;
-	if (move)
-		ft_free_list(move);
+	ft_free_list((*t)->p->next);
 	(*t)->p->next = NULL;
+	gfree((void *)(*t)->p->tok);
+	(*t)->p->tok = NULL;
 	(*t)->p->type = PTH;
 	return (0);
 }

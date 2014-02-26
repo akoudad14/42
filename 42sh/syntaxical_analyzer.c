@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/25 13:26:51 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 17:00:53 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/26 19:07:22 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,9 @@ int		ft_check_wrong_nb_of_pth(t_p *p)
 	while (move)
 	{
 		if ((move->type == PTH_B && move->prev
-			 && (move->prev->type == CMD || move->prev->type == ARG
-				 || move->prev->type == PTH_E))
+			&& (move->prev->type == WORD || move->prev->type == PTH_E))
 			|| (move->type == PTH_E && move->next
-				&& (move->next->type == CMD || move->next->type == ARG
-					|| move->next->type == PTH_B)))
+				&& (move->next->type == WORD || move->next->type == PTH_B)))
 			return (ft_error_msg("Badly placed ", "()'s"));
 		if (move->type == PTH_B)
 			++ind_pth;
@@ -72,6 +70,7 @@ t_p		*ft_check_if_type_to_split(t_p *p, int type)
 void	ft_find_priority_operand(t_p **keep, int *type)
 {
 	t_p			*move;
+	int			ind_pth;
 
 	if ((move = ft_check_if_type_to_split(*keep, SEMI_C))
 		|| (move = ft_check_if_type_to_split(*keep, OR))
@@ -81,16 +80,34 @@ void	ft_find_priority_operand(t_p **keep, int *type)
 		|| (move = ft_check_if_type_to_split(*keep, RED_DR))
 		|| (move = ft_check_if_type_to_split(*keep, RED_L)))
 		*type = move->type;
+	ind_pth = 0;
 	if (*type == OR)
 	{
-		while ((*keep)->type != OR && (*keep)->type != AND)
+		while ((*keep) != move)
+		{
+			if ((*keep)->type == PTH_B)
+				++ind_pth;
+			else if ((*keep)->type == PTH_E)
+				--ind_pth;
+			else if (ind_pth == 0 && ((*keep)->type == AND || (*keep)->type == OR))
+				break ;
 			*keep = (*keep)->next;
+		}
 	}
 	else if (*type == RED_R || *type == RED_DR)
 	{
-		while ((*keep)->type != RED_R
-				&& (*keep)->type != RED_DR && (*keep)->type != RED_L)
+		while ((*keep) != move)
+		{
+			if ((*keep)->type == PTH_B)
+				++ind_pth;
+			else if ((*keep)->type == PTH_E)
+				--ind_pth;
+			else if (ind_pth == 0 && ((*keep)->type == RED_R
+									  || (*keep)->type == RED_DR
+									  || (*keep)->type == RED_L))
+				break ;
 			*keep = (*keep)->next;
+		}
 	}
 	else if (*type)
 		*keep = move;
