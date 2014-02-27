@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/02/26 12:21:47 by makoudad         ###   ########.fr        #
+#    Updated: 2014/02/27 11:59:11 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -58,8 +58,11 @@ SRC =		main.c							\
 			delete_quotes_and_spaces.c		\
 			parser.c						\
 			syntaxical_analyzer.c			\
+			find_priority_operand.c			\
 			create_tree.c					\
 			read_through_tree.c				\
+			ft_errno.c						\
+			free.c							\
 			ft_exit.c
 
 

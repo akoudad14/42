@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/25 13:26:51 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 19:07:22 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/27 11:50:01 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,72 +45,6 @@ int		ft_check_wrong_nb_of_pth(t_p *p)
 	if (ind_pth > 0)
 		return (ft_error_msg("Too many ", "('s."));
 	return (0);
-}
-
-t_p		*ft_check_if_type_to_split(t_p *p, int type)
-{
-	t_p		*move;
-	int		ind_pth;
-
-	move = p;
-	ind_pth = 0;
-	while (move)
-	{
-		if (move->type == PTH_B)
-			++ind_pth;
-		else if (move->type == PTH_E)
-			--ind_pth;
-		else if (ind_pth == 0 && move->type == type)
-			return (move);
-		move = move->next;
-	}
-	return (move);
-}
-
-void	ft_find_priority_operand(t_p **keep, int *type)
-{
-	t_p			*move;
-	int			ind_pth;
-
-	if ((move = ft_check_if_type_to_split(*keep, SEMI_C))
-		|| (move = ft_check_if_type_to_split(*keep, OR))
-		|| (move = ft_check_if_type_to_split(*keep, AND))
-		|| (move = ft_check_if_type_to_split(*keep, PIPE))
-		|| (move = ft_check_if_type_to_split(*keep, RED_R))
-		|| (move = ft_check_if_type_to_split(*keep, RED_DR))
-		|| (move = ft_check_if_type_to_split(*keep, RED_L)))
-		*type = move->type;
-	ind_pth = 0;
-	if (*type == OR)
-	{
-		while ((*keep) != move)
-		{
-			if ((*keep)->type == PTH_B)
-				++ind_pth;
-			else if ((*keep)->type == PTH_E)
-				--ind_pth;
-			else if (ind_pth == 0 && ((*keep)->type == AND || (*keep)->type == OR))
-				break ;
-			*keep = (*keep)->next;
-		}
-	}
-	else if (*type == RED_R || *type == RED_DR)
-	{
-		while ((*keep) != move)
-		{
-			if ((*keep)->type == PTH_B)
-				++ind_pth;
-			else if ((*keep)->type == PTH_E)
-				--ind_pth;
-			else if (ind_pth == 0 && ((*keep)->type == RED_R
-									  || (*keep)->type == RED_DR
-									  || (*keep)->type == RED_L))
-				break ;
-			*keep = (*keep)->next;
-		}
-	}
-	else if (*type)
-		*keep = move;
 }
 
 int		ft_syntaxical_analyzer(t_tree **t)

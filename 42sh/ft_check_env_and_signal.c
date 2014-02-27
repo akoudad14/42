@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/18 17:52:57 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/25 14:48:31 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/27 10:38:30 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ static void		catch_sign(int sign)
 		ft_putstr_fd("\n_$> ", 1);
 		return ;
 	}
-	if (sign == SIGSEGV)
-	{
-/*		ft_putstr_fd("\nSegfault\n_$>", 1);*/
-		return ;
-	}
 }
 
 int				ft_check_env_and_signal(char **env)
@@ -38,6 +33,5 @@ int				ft_check_env_and_signal(char **env)
 	signal(SIGINT, catch_sign);
 	signal(SIGQUIT, catch_sign);
 	signal(SIGTSTP, catch_sign);
-/*	signal(SIGSEGV, catch_sign);*/
 	return (1);
 }

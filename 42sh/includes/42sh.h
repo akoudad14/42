@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sh3.h                                              :+:      :+:    :+:   */
+/*   42sh.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/28 19:19:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 16:44:39 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/27 11:57:56 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,12 +106,12 @@ typedef struct		s_tree
 void		ft_print_pl(t_p *p);          /* A RETIRER !!!!!!!!!!! */
 
 
-
-
+void		ft_find_priority_operand(t_p **keep, int *type);
+int			*ft_errno(void);
 int			ft_word_size_before_ope(char *line, int *ind, int *type);
 int			ft_delete_quotes_and_spaces(t_p **p, int ind);
 int			ft_delete_backslashes(t_p **p);
-int			ft_parser(char *line);
+int			ft_parser(char *line, t_tree **t);
 int			ft_syntaxical_analyzer(t_tree **t);
 int			ft_check_wrong_nb_of_pth(t_p *p);
 int			ft_init_tree(t_tree **t);
@@ -120,6 +120,8 @@ int			ft_put_parenthesis_in_tree(t_tree **t);
 int			ft_new_tree_elem(t_tree **t, t_p *keep);
 void		ft_print_tree(t_tree *t);
 int			ft_p_list_sub(t_p **list, t_p *start, t_p *end);
+void		ft_free_list(t_p *move);
+void		ft_free_tree(t_tree **t);
 
 /*
 ** In file ft_exe.c
@@ -207,7 +209,7 @@ int			ft_default_terminal_mode(struct termios tattr);
 ** In file save_final_list.c
 */
 
-int			ft_save_line(t_hl **hlist, char **line);
+int			ft_save_line(t_hl **hlist, char **line, t_tree **t, t_hl *move);
 int			ft_putc(int c);
 
 /*

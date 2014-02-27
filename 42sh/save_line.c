@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 14:30:45 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 17:36:28 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/27 11:47:43 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,31 +105,30 @@ static int		ft_check_key(char *b, t_sl **l, t_save *s, t_hl **hl)
 	return (0);
 }
 
-int				ft_save_line(t_hl **hlist, char **line)
+int				ft_save_line(t_hl **hlist, char **line, t_tree **t, t_hl *move)
 {
 	char			buf[MAX_KEY_LEN + 1];
-	t_hl			*move;
 	t_save			save;
 	t_sl			*list;
 
 	list = NULL;
-	save.co = 0;
 	save.copy = NULL;
 	save.cursor_l = 0;
 	save.cursor_hl = 0;
-	move = *hlist;
 	while (save.cursor_l != -1)
 	{
 		ft_bzero(buf, MAX_KEY_LEN + 1);
 		if (read(STDIN_FILENO, buf, MAX_KEY_LEN) == -1)
 			return (-1);
-		if (KEY_CTRL_D(buf) || ft_check_key(buf, &list, &save, &move))
+		if (KEY_CTRL_D(buf))
+			return (-2);
+		if (ft_check_key(buf, &list, &save, &move))
 			return (-1);
 	}
 	save.cursor_l = ft_slist_len(list);
 	ft_print(list, &save, (P_LEN + save.cursor_l) / save.co);
 	if ((ft_put_in_hist(hlist, list) == -1) || (ft_do_line(line, list)) == -1
-		|| ((*line)[0] != '\0' && ft_parser(*line) == -1))
+		|| ((*line)[0] != '\0' && ft_parser(*line, t) == -1))
 		return (-1);
 	return (0);
 }

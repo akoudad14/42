@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/22 13:06:58 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 17:30:48 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/27 11:06:34 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,17 +88,15 @@ int		ft_clean_list(t_p **p, int ind)
 	return (0);
 }
 
-int		ft_parser(char *line)
+int		ft_parser(char *line, t_tree **t)
 {
 	int		ind;
 	t_p		*p;
 	int		type;
 	int		size;
-	t_tree	*t;
 
 	ind = 0;
 	p = NULL;
-	t = NULL;
 	while (*line)
 	{
 		size = ft_word_size_before_ope(line, &ind, &type);
@@ -109,15 +107,11 @@ int		ft_parser(char *line)
 		size = (type == AND || type == OR || type == RED_DR) ? 2 : 1;
 		ft_new_token(&p, &line, size, type);
 	}
-	if (ft_clean_list(&p, ind) == -1)
-		return (-1);
-	if (ft_init_tree(&t) == -1)
-		return (-1);
-	if (ft_p_list_sub(&(t->p), p, NULL))
-		return (-1);
-	if (t->p && ft_syntaxical_analyzer(&t) == -1)
+	if (ft_clean_list(&p, ind) == -1 || ft_init_tree(t) == -1
+		|| ft_p_list_sub(&((*t)->p), p, NULL)
+		|| ((*t)->p && ft_syntaxical_analyzer(t) == -1))
 		return (-1);
 	if (p)
-		ft_print_tree(t);
+		ft_print_tree(*t);
 	return (0);
 }

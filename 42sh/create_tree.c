@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/26 10:49:40 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 18:31:02 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/27 11:56:46 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,6 @@ int			ft_p_list_sub(t_p **list, t_p *start, t_p *end)
 		start = start->next;
 	}
 	return (0);
-}
-
-void		ft_free_list(t_p *move)
-{
-	while (move->next)
-	{
-		move = move->next;
-		gfree((void *)move->prev->tok);
-		gfree((void *)move->prev);
-	}
-	gfree((void *)move->tok);
-	gfree((void *)move);
 }
 
 int			ft_new_tree_elem(t_tree **t, t_p *keep)
