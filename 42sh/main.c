@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 10:27:26 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/27 11:56:02 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/27 13:49:32 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void			ft_check(char *line, t_env *e, int i)
 		ft_executable(line, e->env);
 }
 
-int		ft_treatment_of_the_line(t_env *e, char **exe)
+int				ft_treatment_of_the_line(t_env *e, char **exe)
 {
 	int		exit;
 	int		i;
@@ -90,7 +90,7 @@ static int		ft_find_the_line(/*t_env e*/)
 	t = NULL;
 	exit = 0;
 	while (exit <= 0)
-{
+	{
 		ft_putstr_fd("_$> ", 1);
 		if (ft_save_line(&hlist, &line, &t, hlist) == -2)
 			return (-1);

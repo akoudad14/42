@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 11:48:19 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/27 11:51:34 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/27 13:46:28 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void		ft_find_priority_between_or_and_and(t_p **keep)
 		else if ((*keep)->type == PTH_E)
 			--ind_pth;
 		else if (ind_pth == 0
-				 && ((*keep)->type == AND || (*keep)->type == OR))
+				&& ((*keep)->type == AND || (*keep)->type == OR))
 			break ;
 		*keep = (*keep)->next;
 	}
@@ -62,8 +62,8 @@ static void		ft_find_priority_between_all_the_redir(t_p **keep)
 		else if ((*keep)->type == PTH_E)
 			--ind_pth;
 		else if (ind_pth == 0 && ((*keep)->type == RED_R
-								  || (*keep)->type == RED_DR
-								  || (*keep)->type == RED_L))
+									|| (*keep)->type == RED_DR
+									|| (*keep)->type == RED_L))
 			break ;
 		*keep = (*keep)->next;
 	}
