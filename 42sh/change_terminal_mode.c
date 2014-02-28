@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 13:23:21 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 11:01:34 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/28 14:17:18 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 #include <unistd.h>
 #include "42sh.h"
 
+#include "libft.h"
 int		ft_init_terminal_mode(struct termios tattr)
 {
 	char			*term_name;
 
 	if (!(term_name = getenv("TERM")))
+	{
+		ft_putendl_fd("Couldn't find TERM value", 2);
 		return (-1);
+	}
 	if (tgetent(NULL, term_name) != 1)
+	{
+		ft_putendl_fd("Wrong TERM value", 2);
 		return (-1);
+	}
 	if (tcgetattr(STDIN_FILENO, &tattr) == -1)
 		return (-1);
 	tattr.c_lflag &= ~(OPOST);

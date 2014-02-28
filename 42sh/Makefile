@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/02/27 11:59:11 by makoudad         ###   ########.fr        #
+#    Updated: 2014/02/28 17:09:03 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -56,7 +56,7 @@ SRC =		main.c							\
 			operand.c						\
 			delete_backslashes.c			\
 			delete_quotes_and_spaces.c		\
-			parser.c						\
+			lexical_analyzer.c				\
 			syntaxical_analyzer.c			\
 			find_priority_operand.c			\
 			create_tree.c					\

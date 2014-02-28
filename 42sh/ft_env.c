@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/17 20:53:48 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/10 16:58:29 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/27 14:01:04 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ static char		**ft_replace(char **env, char **tab, int i)
 	gfree((void *)tab[0]);
 	gfree((void *)tab[1]);
 	gfree((void *)tab);
-	ft_putnbr(i);
 	return (env);
 }
 

@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/28 19:19:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/27 11:57:56 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/28 17:08:27 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ typedef struct		s_p
 typedef struct		s_env
 {
 	char			**env;
+	char			**env_s;
 	char			**envc;
 }					t_env;
 
@@ -111,7 +112,7 @@ int			*ft_errno(void);
 int			ft_word_size_before_ope(char *line, int *ind, int *type);
 int			ft_delete_quotes_and_spaces(t_p **p, int ind);
 int			ft_delete_backslashes(t_p **p);
-int			ft_parser(char *line, t_tree **t);
+int			ft_lexical_analyzer(char *line, t_p **p);
 int			ft_syntaxical_analyzer(t_tree **t);
 int			ft_check_wrong_nb_of_pth(t_p *p);
 int			ft_init_tree(t_tree **t);
@@ -209,7 +210,7 @@ int			ft_default_terminal_mode(struct termios tattr);
 ** In file save_final_list.c
 */
 
-int			ft_save_line(t_hl **hlist, char **line, t_tree **t, t_hl *move);
+int			ft_save_line(t_hl **hlist, char **line, t_hl *move);
 int			ft_putc(int c);
 
 /*

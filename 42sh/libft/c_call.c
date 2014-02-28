@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/24 11:34:40 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/31 09:37:51 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/28 15:21:06 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*c_calls(char *str, char *s1)
 	else if (!(ft_strcmp(str, "dup")))
 		s2 = ft_strdup(s1);
 	else if (!(ft_strcmp(str, "plim")))
-		s2 = ft_strtrim(s1);
+		s2 = ft_strsplim(s1);
 	gfree(s1);
 	return (s2);
 }

@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 11:55:12 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/27 11:59:21 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/28 17:03:54 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 
 void		ft_free_list(t_p *move)
 {
-	while (move->next)
+	while (move && move->next)
 	{
 		move = move->next;
 		if (move->prev->tok)
 			gfree((void *)move->prev->tok);
 		gfree((void *)move->prev);
 	}
-	if (move->tok)
+	if (move && move->tok)
 		gfree((void *)move->tok);
-	gfree((void *)move);
+	if (move)
+		gfree((void *)move);
 }
 
 void		ft_free_tree(t_tree **t)
