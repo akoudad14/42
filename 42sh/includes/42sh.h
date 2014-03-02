@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/28 19:19:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/28 17:08:27 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/02 12:30:48 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,12 @@ typedef struct		s_tree
 
 void		ft_print_pl(t_p *p);          /* A RETIRER !!!!!!!!!!! */
 
-
+int			ft_execute_all(t_tree *t, t_env *e);
+int			ft_perform_redir(t_tree *t, t_env *e);
+int			ft_perform_pipe(t_tree *t, t_env *e);
+int			ft_perform_cmd(t_tree *t, t_env *e);
 void		ft_find_priority_operand(t_p **keep, int *type);
-int			*ft_errno(void);
+int			*ft_value(void);
 int			ft_word_size_before_ope(char *line, int *ind, int *type);
 int			ft_delete_quotes_and_spaces(t_p **p, int ind);
 int			ft_delete_backslashes(t_p **p);

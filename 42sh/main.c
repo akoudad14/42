@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 10:27:26 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/28 17:14:32 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/02 11:21:20 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ int				ft_treatment_of_the_line(t_env *e, char **exe)
 static int		ft_find_the_line(t_env e)
 {
 	char	*line;
-	char	**exe;
 	int		exit;
 	t_hl	*hlist;
 	t_tree	*t;
@@ -108,14 +107,14 @@ static int		ft_find_the_line(t_env e)
 			i = ft_p_list_sub(&(t->p), p, NULL);
 		if (i == 0 && t && t->p && line[0] != '\0')
 			i = ft_syntaxical_analyzer(&t);
-		if (i == 0)
+		if (i == 0 && t)
 		{
-			exe = ft_strsplit(line, ';');
+/*			exe = ft_strsplit(line, ';');
 			exit = ft_treatment_of_the_line(&e, exe);
-			ft_free_char2(exe);
-		}
-		if (t)
+			ft_free_char2(exe);*/
+			ft_execute_all(t, &e);
 			ft_free_tree(&t);
+		}
 		t = NULL;
 	}
 	exit -= 1;

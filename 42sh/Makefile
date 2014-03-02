@@ -6,11 +6,11 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/02/28 17:09:03 by makoudad         ###   ########.fr        #
+#    Updated: 2014/03/02 12:31:06 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-GCC =		gcc -Wall -Werror -Wextra -pedantic -g
+GCC =		gcc -Wall -Werror -Wextra -g
 
 LIBH =		./libft/includes/
 
@@ -61,7 +61,10 @@ SRC =		main.c							\
 			find_priority_operand.c			\
 			create_tree.c					\
 			read_through_tree.c				\
-			ft_errno.c						\
+			execute_all.c					\
+			perform_cmd.c					\
+			perform_all_redir.c				\
+			ft_value.c						\
 			free.c							\
 			ft_exit.c
 

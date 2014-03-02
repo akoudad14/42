@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_value.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 17:38:28 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 12:54:20 by makoudad         ###   ########.fr       */
+/*   Created: 2014/03/02 11:28:49 by makoudad          #+#    #+#             */
+/*   Updated: 2014/03/02 11:31:35 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int		*ft_value(void)
 {
-	size_t		i;
+	static int		value = 0;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n)
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
+	return (&value);
 }
