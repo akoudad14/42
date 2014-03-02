@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/28 19:19:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 12:30:48 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/02 16:00:22 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,9 @@ typedef struct		s_tree
 }					t_tree;
 
 
-void		ft_print_pl(t_p *p);          /* A RETIRER !!!!!!!!!!! */
-
+int			ft_cd(t_p *p, t_env *e);
+int			ft_exit(t_p *p);
+void		ft_echo(t_p *p);
 int			ft_execute_all(t_tree *t, t_env *e);
 int			ft_perform_redir(t_tree *t, t_env *e);
 int			ft_perform_pipe(t_tree *t, t_env *e);
@@ -122,85 +123,16 @@ int			ft_init_tree(t_tree **t);
 int			ft_error_msg(char *s1, char *s2);
 int			ft_put_parenthesis_in_tree(t_tree **t);
 int			ft_new_tree_elem(t_tree **t, t_p *keep);
-void		ft_print_tree(t_tree *t);
 int			ft_p_list_sub(t_p **list, t_p *start, t_p *end);
 void		ft_free_list(t_p *move);
 void		ft_free_tree(t_tree **t);
 
-/*
-** In file ft_exe.c
-*/
-
-int			ft_executable(char *line, char **env);
-
-/*
-** In file main.c
-*/
-
-void		ft_check(char *line, t_env *e, int i);
-int			ft_check_spe(char *line);
-
-/*
-** In file ft_special.c
-*/
-
-t_env		*ft_check_special(char *line, t_env *e, int n);
-
-/*
-** In file ft_direct.c
-*/
-
-int			ft_direct(char *line, t_env *e);
-
-/*
-** In file ft_env.c
-*/
-
-void		ft_env(char *line, char **env);
-char		**ft_setenv(char *line, char **env);
-char		**ft_unsetenv(char *line, char **env);
 
 /*
 ** In file ft_check_env_and_signal.c
 */
 
 int			ft_check_env_and_signal(char **env);
-
-/*
-** In file ft_right.c
-*/
-
-int			ft_right(char *line, t_env *e);
-
-/*
-** In file ft_left.c
-*/
-
-int			ft_left(char *line, t_env *e);
-
-/*
-** In file ft_pipe.c
-*/
-int			ft_pipe(char *line, t_env *e);
-
-/*
-** In file ft_check_exe.c
-*/
-
-char		*ft_check_exe(char *s, char *path);
-
-/*
-** In file ft_builtin.c
-*/
-
-t_env		*ft_cd(char *line, t_env *e);
-void		ft_pwd(char *line);
-
-/*
-** In file ft_exit.c
-*/
-
-int			ft_check_exit(char *line);
 
 /*
 ** In file change_terminal_mode.c
@@ -275,7 +207,7 @@ int			ft_fast_move(char *buf, t_sl **list, int *cursor);
 int			ft_change_line(char *buf, t_sl **list, int *cursor, int co);
 
 /*
-** In file ft_historic.c
+** In file historic.c
 */
 
 t_sl		*ft_listdup(t_sl *list);

@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/03/02 12:31:06 by makoudad         ###   ########.fr        #
+#    Updated: 2014/03/02 15:59:53 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -38,21 +38,12 @@ SRC =		main.c							\
 			ft_list_put_elem.c				\
 			fast_cursor_move.c				\
 			ft_change_line.c				\
-			ft_historic.c					\
 			ft_list_del.c					\
-			ft_print.c						\
+			print.c							\
 			ft_cut_copy_or_paste.c			\
 			do_line.c						\
-			ft_special.c					\
-			ft_direct.c						\
-			ft_env.c						\
-			ft_exe.c						\
+			historic.c						\
 			ft_check_env_and_signal.c		\
-			ft_right.c						\
-			ft_left.c						\
-			ft_pipe.c						\
-			ft_check_exe.c					\
-			ft_builtin.c					\
 			operand.c						\
 			delete_backslashes.c			\
 			delete_quotes_and_spaces.c		\
@@ -60,11 +51,12 @@ SRC =		main.c							\
 			syntaxical_analyzer.c			\
 			find_priority_operand.c			\
 			create_tree.c					\
-			read_through_tree.c				\
 			execute_all.c					\
 			perform_cmd.c					\
 			perform_all_redir.c				\
+			echo.c							\
 			ft_value.c						\
+			ft_cd.c							\
 			free.c							\
 			ft_exit.c
 

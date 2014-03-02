@@ -6,27 +6,12 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/22 13:06:58 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/28 17:10:07 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/02 15:59:17 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "42sh.h"
-
-void	ft_print_pl(t_p *p)
-{
-	t_p		*move;
-
-	move = p;
-	while (move)
-	{
-		ft_putstr(move->tok);
-		ft_putstr(" ");
-		ft_putnbr(move->type);
-		ft_putstr("\n");
-		move = move->next;
-	}
-}
 
 int		ft_new_token(t_p **p, char **line, int size, int type)
 {

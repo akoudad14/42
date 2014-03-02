@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/02 11:40:58 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 13:03:21 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/02 15:41:27 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ int			ft_exe_the_cmd(t_tree *t, char *path, char **env)
 	else
 	{
 		execve(path, line_of_cmd, env);
-		ft_putendl_fd("Command not found", 2);
+		ft_putstr_fd(t->p->tok, 2);
+		ft_putendl_fd(": Command not found", 2);
 		*ft_value() = -1;
 		exit(1);
 	}
@@ -115,9 +116,8 @@ int			ft_perform_exe(t_tree *t, t_env *e)
 		paths = ft_strsplit(&(e->env[i][5]), ':');
 	if (!(good_path = ft_find_the_path(t->p->tok, paths)))
 	{
-		ft_putendl_fd("Command not found", 2);
 		ft_free_char2(paths);
-		return (-1);
+		return (ft_error_msg(t->p->tok, ": Command not found"));
 	}
 	value = e->env[i] ? ft_exe_the_cmd(t, good_path, e->env)
 			: ft_exe_the_cmd(t, good_path, e->env_s);
@@ -132,12 +132,13 @@ int		ft_perform_cmd(t_tree *t, t_env *e)
 
 	value = 0;
 	if (!ft_strcmp(t->p->tok, "exit"))
-	{
-		cfree();
-		exit(1);
-	}
-	if (ft_strcmp(t->p->tok, "env") && ft_strcmp(t->p->tok, "setenv")
-		&& ft_strcmp(t->p->tok, "unsetenv"))
+		value = ft_exit(t->p);
+	else if (!ft_strcmp(t->p->tok, "echo"))
+		ft_echo(t->p);
+	else if (!(ft_strcmp(t->p->tok, "cd")))
+		value = ft_cd(t->p, e);
+	else if (ft_strcmp(t->p->tok, "setenv")
+			&& ft_strcmp(t->p->tok, "unsetenv"))
 		value = ft_perform_exe(t, e);
 	else
 		value = -1;

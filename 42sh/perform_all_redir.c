@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/02 10:48:13 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 11:40:25 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/02 14:01:19 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ static int		ft_exe_redir(t_tree *t, t_env *e, int fd)
 		if (t->p->type == RED_R || t->p->type == RED_DR)
 			dup2(fd, 1);
 		else
+		{
+			ft_putendl_fd("AAAA", 2);
 			dup2(fd, 0);
+		}
 		*ft_value() = ft_execute_all(t->le, e);
 		close(fd);
 		exit(1);
@@ -51,18 +54,16 @@ int				ft_perform_redir(t_tree *t, t_env *e)
 		ft_putendl_fd("Invalid null command", 2);
 		return (-1);
 	}
-	if ((t->p->type == RED_R || t->p->type == RED_L)
+	if (t->p->type == RED_R
 		&& ((fd = open(t->ri->p->tok,
 						O_WRONLY | O_CREAT | O_TRUNC, 0644)) == -1))
-	{
-		ft_putendl_fd(ft_strjoin(t->ri->p->tok, ": open impossible"), 2);
-		return (-1);
-	}
-	else if ((fd = open(t->ri->p->tok, O_APPEND | O_WRONLY)) == -1)
-	{
-		ft_putendl_fd(ft_strjoin(t->ri->p->tok, ": open impossible"), 2);
-		return (-1);
-	}
+		return (ft_error_msg(t->ri->p->tok, ": open impossible"));
+	else if (t->p->type == RED_L
+			 && ((fd = open(t->ri->p->tok, O_RDONLY)) == -1))
+		return (ft_error_msg(t->ri->p->tok, ": open impossible"));
+	else if (t->p->type == RED_DR
+			&& (fd = open(t->ri->p->tok, O_APPEND | O_WRONLY)) == -1)
+		return (ft_error_msg(t->ri->p->tok, ": open impossible"));
 	ft_exe_redir(t, e, fd);
 	value = *ft_value();
 	return (value);
@@ -82,13 +83,13 @@ int				ft_perform_pipe2(t_tree *t, t_env *e)
 		wait(&father);
 		dup2(fd_pipe[0], 0);
 		close(fd_pipe[1]);
-		value = ft_execute_all(t, e);
+		value = ft_execute_all(t->ri, e);
 	}
 	else
 	{
-		dup2(fd_pipe[0], 0);
-		close(fd_pipe[1]);
-		value = ft_execute_all(t, e);
+		dup2(fd_pipe[1], 1);
+		close(fd_pipe[0]);
+		value = ft_execute_all(t->le, e);
 	}
 	return (value);
 }
