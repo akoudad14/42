@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/02 11:40:58 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 15:41:27 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/03 19:06:49 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 #include "libft.h"
 #include "42sh.h"
 
-char		**ft_create_the_line_of_cmd(t_tree *t)
+char		**ft_create_the_line_of_cmd(t_p *p)
 {
 	t_p		*move;
 	char	*line_of_cmd;
 
-	line_of_cmd = ft_strdup(t->p->tok);
-	move = t->p->next;
+	line_of_cmd = ft_strdup(p->tok);
+	move = p->next;
 	while (move)
 	{
 		line_of_cmd = c_calld("join", line_of_cmd, " ");
@@ -33,12 +33,12 @@ char		**ft_create_the_line_of_cmd(t_tree *t)
 	return (ft_strsplit(line_of_cmd, ' '));
 }
 
-int			ft_exe_the_cmd(t_tree *t, char *path, char **env)
+int			ft_exe_the_cmd(t_p *p, char *path, char **env)
 {
 	char	**line_of_cmd;
 	pid_t	father;
 
-	line_of_cmd = ft_create_the_line_of_cmd(t);
+	line_of_cmd = ft_create_the_line_of_cmd(p);
 	*ft_value() = 0;
 	father = fork();
 	if (father > 0)
@@ -49,7 +49,7 @@ int			ft_exe_the_cmd(t_tree *t, char *path, char **env)
 	else
 	{
 		execve(path, line_of_cmd, env);
-		ft_putstr_fd(t->p->tok, 2);
+		ft_putstr_fd(p->tok, 2);
 		ft_putendl_fd(": Command not found", 2);
 		*ft_value() = -1;
 		exit(1);
@@ -63,7 +63,8 @@ char		*ft_not_need_variable_env_path(char *cmd)
 
 	if (!(buf = (struct stat *)gmalloc(sizeof(*buf))))
 		return (NULL);
-	if (lstat(cmd, buf) == 0 && buf->st_mode & S_IXUSR)
+	if (lstat(cmd, buf) == 0
+		&& buf->st_mode & S_IXUSR && !(buf->st_mode & S_IFDIR))
 	{
 		gfree(buf);
 		return (cmd);
@@ -99,7 +100,7 @@ char		*ft_find_the_path(char *cmd, char **paths)
 	return (NULL);
 }
 
-int			ft_perform_exe(t_tree *t, t_env *e)
+int			ft_perform_exe(t_p *p, t_env *e)
 {
 	char	**paths;
 	char	*good_path;
@@ -114,13 +115,12 @@ int			ft_perform_exe(t_tree *t, t_env *e)
 		paths = ft_strsplit(&(e->env_s[0][5]), ':');
 	else
 		paths = ft_strsplit(&(e->env[i][5]), ':');
-	if (!(good_path = ft_find_the_path(t->p->tok, paths)))
+	if (!(good_path = ft_find_the_path(p->tok, paths)))
 	{
 		ft_free_char2(paths);
-		return (ft_error_msg(t->p->tok, ": Command not found"));
+		return (ft_error_msg(p->tok, ": Command not found"));
 	}
-	value = e->env[i] ? ft_exe_the_cmd(t, good_path, e->env)
-			: ft_exe_the_cmd(t, good_path, e->env_s);
+	value = ft_exe_the_cmd(p, good_path, e->env);
 	gfree(good_path);
 	ft_free_char2(paths);
 	return (value);
@@ -137,10 +137,13 @@ int		ft_perform_cmd(t_tree *t, t_env *e)
 		ft_echo(t->p);
 	else if (!(ft_strcmp(t->p->tok, "cd")))
 		value = ft_cd(t->p, e);
-	else if (ft_strcmp(t->p->tok, "setenv")
-			&& ft_strcmp(t->p->tok, "unsetenv"))
-		value = ft_perform_exe(t, e);
+	else if (!(ft_strcmp(t->p->tok, "env")))
+		value = ft_env(t->p, e);
+	else if (!(ft_strcmp(t->p->tok, "unsetenv")))
+		value = ft_unsetenv(t->p, &(e->env));
+	else if (!(ft_strcmp(t->p->tok, "setenv")))
+		value = ft_setenv(t->p, &(e->env));
 	else
-		value = -1;
+		value = ft_perform_exe(t->p, e);
 	return (value);
 }

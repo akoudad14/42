@@ -6,12 +6,13 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/28 17:22:25 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 15:50:49 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/03 15:40:30 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "42sh.h"
 
+/**/ #include "libft.h"
 // J'ai utilise un singleton -> ft_value, pour savoir si une commande a fonctionne ou pas, il peut y avoir des cas d'erreurs, j'aimerais que vous testiez differentes cmds
 
 // cd est presque fini , il manque quelques options -> deja fait - et sans rien, avec changement de PWD

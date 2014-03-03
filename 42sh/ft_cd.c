@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/02 14:47:33 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 15:46:08 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/03 14:39:45 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,17 @@
 #include "42sh.h"
 #include "libft.h"
 
-/* La fonction ft_change_value_variable pourra surement etre reutiliser avec setenv*/
 int			ft_change_value_variable(char *var, char *val, char ***env)
 {
 	int		i;
 
 	i = 0;
-	while (ft_strncmp((*env)[i], var, ft_strlen(var)))
+	while ((*env)[i] && ft_strncmp((*env)[i], var, ft_strlen(var)))
 		++i;
 	if (!((*env)[i]))
 		return (-1);
 	gfree((*env)[i]);
-	(*env)[i] = ft_strjoin(var, val);
+	(*env)[i] = val ? ft_strjoin(var, val) : ft_strdup(var);
 	return (0);
 }
 

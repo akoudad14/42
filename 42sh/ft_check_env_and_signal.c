@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/18 17:52:57 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/28 16:12:36 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/03 15:07:11 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,8 @@ static void		catch_sign(int sign)
 	}
 }
 
-int				ft_check_env_and_signal(char **env)
+int				ft_check_signal(void)
 {
-	if (!env[0])
-	{
-		ft_putendl_fd("Warning: env empty", 2);
-		return (0);
-	}
 	signal(SIGINT, catch_sign);
 	signal(SIGQUIT, catch_sign);
 	signal(SIGTSTP, catch_sign);

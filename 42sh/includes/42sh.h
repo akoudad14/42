@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/28 19:19:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 16:00:22 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/03 19:08:12 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,11 @@ typedef struct		s_tree
 	struct s_tree	*ri;
 }					t_tree;
 
-
+int			ft_perform_exe(t_p *p, t_env *e);
+int			ft_change_value_variable(char *var, char *val, char ***env);
+int			ft_env(t_p *p, t_env *e);
+int			ft_setenv(t_p *p, char ***env);
+int			ft_unsetenv(t_p *p, char ***env);
 int			ft_cd(t_p *p, t_env *e);
 int			ft_exit(t_p *p);
 void		ft_echo(t_p *p);
@@ -132,7 +136,7 @@ void		ft_free_tree(t_tree **t);
 ** In file ft_check_env_and_signal.c
 */
 
-int			ft_check_env_and_signal(char **env);
+int			ft_check_signal(void);
 
 /*
 ** In file change_terminal_mode.c

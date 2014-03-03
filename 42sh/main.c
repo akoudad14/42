@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 10:27:26 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 15:49:22 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/03 15:41:22 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int				main(int ac, char **av, char **env)
 	if (ac != 1 || av == NULL)
 		return (-1);
 	exit = 0;
-	if (!ft_check_env_and_signal(env))
+	if (!ft_check_signal())
 		return (-1);
 	if (!(e.envc = ft_copy_ts(env))
 		|| !(e.env = ft_copy_ts(env)))

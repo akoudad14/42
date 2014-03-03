@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/25 18:15:32 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 14:45:28 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/03 11:08:54 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@ static int		ft_verif_num_exit(char *num)
 {
 	int		i;
 
-	i = -1;
-	while (num[++i])
+	i = 0;
+	if (num[i] == '-')
+		++i;
+	while (num[i])
 	{
-		if (num[i] != '-' && !(ft_isdigit((int)num[i])))
+		if (!(ft_isdigit((int)num[i])))
 			return (-1);
+		++i;
 	}
 	return (0);
 }

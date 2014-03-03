@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/21 15:29:57 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 14:20:45 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/03 12:10:50 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		ft_echo(t_p *p)
 	move = p->next;
 	if (move)
 	{
-		while (!ft_strcmp(move->tok, "-n"))
+		while (move && !ft_strcmp(move->tok, "-n"))
 		{
 			++back_to_line;
 			move = move->next;
