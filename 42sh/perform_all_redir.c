@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/02 10:48:13 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/03 10:29:06 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:09:45 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 #include "libft.h"
-#include "42sh.h"
+#include "sh.h"
 
 static int		ft_exe_redir(t_tree *t, t_env *e, int fd)
 {
@@ -59,7 +59,7 @@ int				ft_perform_redir(t_tree *t, t_env *e)
 						O_WRONLY | O_CREAT | O_TRUNC, 0644)) == -1))
 		return (ft_error_msg(t->ri->p->tok, ": open impossible"));
 	else if (t->p->type == RED_L
-			 && ((fd = open(t->ri->p->tok, O_RDONLY)) == -1))
+			&& ((fd = open(t->ri->p->tok, O_RDONLY)) == -1))
 		return (ft_error_msg(t->ri->p->tok, ": open impossible"));
 	else if (t->p->type == RED_DR
 			&& (fd = open(t->ri->p->tok, O_APPEND | O_WRONLY)) == -1)
@@ -80,7 +80,6 @@ int				ft_perform_pipe2(t_tree *t, t_env *e)
 	father = fork();
 	if (father == 0)
 	{
-/*		wait(&father);*/
 		dup2(fd_pipe[0], 0);
 		close(fd_pipe[1]);
 		value = ft_execute_all(t->ri, e);
@@ -102,10 +101,7 @@ int				ft_perform_pipe(t_tree *t, t_env *e)
 	value = 0;
 	father = fork();
 	if (father > 0)
-	{
 		wait(&father);
-		return (0);
-	}
 	else
 	{
 		*ft_value() = ft_perform_pipe2(t, e);

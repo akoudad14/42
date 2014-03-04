@@ -6,13 +6,27 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/03 13:44:10 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/03 16:44:19 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:08:47 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include "42sh.h"
+#include "sh.h"
+
+int		ft_change_value_variable(char *var, char *val, char ***env)
+{
+	int		i;
+
+	i = 0;
+	while ((*env)[i] && ft_strncmp((*env)[i], var, ft_strlen(var)))
+		++i;
+	if (!((*env)[i]))
+		return (-1);
+	gfree((*env)[i]);
+	(*env)[i] = val ? ft_strjoin(var, val) : ft_strdup(var);
+	return (0);
+}
 
 int		ft_add_var(char *var, char *val, char ***env)
 {

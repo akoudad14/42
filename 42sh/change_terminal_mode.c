@@ -6,15 +6,15 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 13:23:21 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/28 14:17:18 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:10:34 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "42sh.h"
-
+#include "sh.h"
 #include "libft.h"
+
 int		ft_init_terminal_mode(struct termios tattr)
 {
 	char			*term_name;

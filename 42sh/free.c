@@ -6,11 +6,11 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 11:55:12 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/28 17:03:54 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:07:48 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42sh.h"
+#include "sh.h"
 #include "libft.h"
 
 void		ft_free_list(t_p *move)

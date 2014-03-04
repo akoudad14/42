@@ -6,12 +6,12 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/06 12:45:47 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 11:02:11 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:07:17 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "42sh.h"
+#include "sh.h"
 
 int				ft_do_line(char **line, t_sl *list)
 {

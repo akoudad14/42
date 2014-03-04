@@ -6,12 +6,12 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 21:49:17 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 11:04:54 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:09:24 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "42sh.h"
+#include "sh.h"
 
 static void		ft_list_del_elem_2(t_sl **list, int cursor_l)
 {

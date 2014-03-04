@@ -6,11 +6,11 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/03 13:05:01 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/03 13:33:34 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:08:52 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42sh.h"
+#include "sh.h"
 #include "libft.h"
 
 void		ft_del_var(char *var, char ***env)

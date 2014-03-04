@@ -6,12 +6,12 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/22 13:06:58 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 15:59:17 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:09:19 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "42sh.h"
+#include "sh.h"
 
 int		ft_new_token(t_p **p, char **line, int size, int type)
 {
@@ -92,7 +92,5 @@ int		ft_lexical_analyzer(char *line, t_p **p)
 	}
 	if (ft_clean_list(p, ind) == -1)
 		return (-1);
-/*	if (p)
-	ft_print_tree(*t);*/
 	return (0);
 }

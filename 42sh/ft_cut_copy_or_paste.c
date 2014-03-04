@@ -6,12 +6,12 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/05 19:49:24 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 11:02:55 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:08:06 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "42sh.h"
+#include "sh.h"
 
 static int		ft_cut_or_copy_left(t_sl **list, t_save *save, int flag)
 {

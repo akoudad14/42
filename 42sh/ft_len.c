@@ -6,11 +6,11 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/03 22:04:02 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 11:03:39 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:08:21 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42sh.h"
+#include "sh.h"
 
 int			ft_slist_len(t_sl *list)
 {

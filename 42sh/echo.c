@@ -6,13 +6,13 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/21 15:29:57 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/03 12:10:50 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:07:22 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
-#include "42sh.h"
+#include "sh.h"
 
 void		ft_echo(t_p *p)
 {

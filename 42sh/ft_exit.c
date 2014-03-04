@@ -6,13 +6,13 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/25 18:15:32 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/03 11:08:54 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:08:16 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include "42sh.h"
+#include "sh.h"
 
 static int		ft_verif_num_exit(char *num)
 {
@@ -30,7 +30,7 @@ static int		ft_verif_num_exit(char *num)
 	return (0);
 }
 
-int			ft_exit(t_p *p)
+int				ft_exit(t_p *p)
 {
 	int		status;
 

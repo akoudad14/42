@@ -6,14 +6,14 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 14:30:45 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/28 17:09:23 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:10:01 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
-#include "42sh.h"
+#include "sh.h"
 #include "libft.h"
 
 int				ft_putc(int c)
@@ -115,6 +115,8 @@ int				ft_save_line(t_hl **hlist, char **line, t_hl *move)
 	save.copy = NULL;
 	save.cursor_l = 0;
 	save.cursor_hl = 0;
+	usleep(100000);
+	ft_putstr("_$> ");
 	while (save.cursor_l != -1)
 	{
 		ft_bzero(buf, MAX_KEY_LEN + 1);

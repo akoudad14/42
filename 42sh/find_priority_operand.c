@@ -6,11 +6,11 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 11:48:19 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/27 13:46:28 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:07:43 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42sh.h"
+#include "sh.h"
 
 static t_p		*ft_check_if_type_to_split(t_p *p, int type)
 {

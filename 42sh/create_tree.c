@@ -6,11 +6,11 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/26 10:49:40 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/27 11:56:46 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:07:00 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42sh.h"
+#include "sh.h"
 #include "libft.h"
 
 int			ft_init_tree(t_tree **t)

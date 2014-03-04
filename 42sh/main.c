@@ -6,31 +6,22 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 10:27:26 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/03 15:41:22 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:09:34 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "42sh.h"
+#include "sh.h"
 #include "libft.h"
 
-static int		ft_find_the_line(t_env e)
+static int		ft_find_the_line(t_env e, char *line, t_hl *hlist, t_tree *t)
 {
-	char	*line;
-	int		exit;
-	t_hl	*hlist;
-	t_tree	*t;
 	int		i;
 	t_p		*p;
 
-	line = NULL;
-	hlist = NULL;
-	t = NULL;
-	exit = 0;
-	while (exit <= 0)
+	while (1)
 	{
-		ft_putstr_fd("_$> ", 1);
 		i = 0;
 		p = NULL;
 		if ((i = ft_save_line(&hlist, &line, hlist)) == -2)
@@ -43,15 +34,14 @@ static int		ft_find_the_line(t_env e)
 			i = ft_p_list_sub(&(t->p), p, NULL);
 		if (i == 0 && t && t->p && line[0] != '\0')
 			i = ft_syntaxical_analyzer(&t);
-		if (i == 0 && t)
+		if (i == 0 && line[0] != '\0' && t && t->p)
 		{
 			ft_execute_all(t, &e);
 			ft_free_tree(&t);
 		}
 		t = NULL;
 	}
-	exit -= 1;
-	return (exit);
+	return (0);
 }
 
 static int		ft_init_basic_env(char ***env)
@@ -94,7 +84,7 @@ int				main(int ac, char **av, char **env)
 		return (-1);
 	}
 	if (ft_init_terminal_mode(tattr) != -1)
-		exit = ft_find_the_line(e);
+		exit = ft_find_the_line(e, NULL, NULL, NULL);
 	cfree();
 	return (exit);
 }

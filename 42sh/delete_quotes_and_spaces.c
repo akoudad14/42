@@ -6,11 +6,11 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/26 10:45:34 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 14:28:48 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:07:11 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42sh.h"
+#include "sh.h"
 #include "libft.h"
 
 static void		ft_delete_plist_last_elem(t_p **p, t_p **move)

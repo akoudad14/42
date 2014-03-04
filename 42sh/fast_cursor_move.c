@@ -6,11 +6,11 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/02 10:54:59 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/26 11:02:26 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:07:38 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "42sh.h"
+#include "sh.h"
 
 static void		ft_go_to_prev_word(t_sl **list, int *cursor_l)
 {

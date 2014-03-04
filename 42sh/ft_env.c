@@ -6,12 +6,12 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/03 16:30:45 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/03 20:00:18 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 18:08:11 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "42sh.h"
+#include "sh.h"
 
 int		ft_exe_cmd_with_new_env(t_p *p, t_env *e)
 {

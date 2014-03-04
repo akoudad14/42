@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/18 17:52:57 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/03 15:07:11 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/04 12:10:54 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 #include <signal.h>
 #include "libft.h"
 
-static void		catch_sign(int sign)
+void			catch_sign(int sign)
 {
 	if (sign == SIGINT)
 	{
 		ft_putstr_fd("\n_$> ", 1);
+		return ;
+	}
+	if (sign == SIGSEGV)
+	{
+		ft_putendl_fd("Segmentation fault", 2);
 		return ;
 	}
 }

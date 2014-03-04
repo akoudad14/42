@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/03/03 19:07:03 by makoudad         ###   ########.fr        #
+#    Updated: 2014/03/04 17:59:17 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -59,6 +59,7 @@ SRC =		main.c							\
 			ft_cd.c							\
 			ft_env.c						\
 			ft_unsetenv.c					\
+			exe_the_cmd.c					\
 			ft_setenv.c						\
 			free.c							\
 			ft_exit.c
