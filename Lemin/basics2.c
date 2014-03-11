@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   basics2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afollin <afollin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/04 16:00:20 by afollin           #+#    #+#             */
-/*   Updated: 2014/03/11 18:27:56 by makoudad         ###   ########.fr       */
+/*   Created: 2014/03/04 16:00:20 by makoudad          #+#    #+#             */
+/*   Updated: 2014/03/11 19:10:08 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,13 @@ void		ft_print_path(t_game *game, t_link *path)
 		path = path->next;
 		while (path)
 		{
+			ft_putchar('L');
 			ft_putnbr(ant);
-			ft_putstr("-");
+			ft_putchar('-');
 			ft_putstr(path->name);
-			if (path->next)
-				ft_putstr("  ");
+			ft_putchar('\n');
 			path = path->next;
 		}
-		ft_putchar('\n');
 		++ant;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afollin <afollin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/03 14:09:03 by afollin           #+#    #+#             */
-/*   Updated: 2014/03/11 18:26:38 by makoudad         ###   ########.fr       */
+/*   Created: 2014/03/03 14:09:03 by makoudad          #+#    #+#             */
+/*   Updated: 2014/03/11 19:09:55 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,22 @@ t_game		*ft_find_trail(t_game *game)
 	return (game);
 }
 
+int			ft_treat_the_line(int *index, t_game **game, char *line)
+{
+	if (!(ft_strcmp(line, "")))
+		return (ft_error("I dont like empty line", "", -1));
+	*index = ft_check_line(*index, line, *game);
+	if (*index >= 0)
+		*index = ft_save_line(*index, line, *game);
+	if (*index == -1 && !(ft_strcmp(line + 2, "start")))
+		(*game)->i_start = 1;
+	else if (*index == -1)
+		(*game)->i_end = 1;
+	if (*index < 0)
+		*index *= -1;
+	return (0);
+}
+
 t_game		*ft_save_input(t_game *game)
 {
 	char		*line;
@@ -65,22 +81,12 @@ t_game		*ft_save_input(t_game *game)
 	ft_init_vars(&index, &line, &game);
 	while (index < 3 && get_next_line(0, &line))
 	{
+		if (!(line = (char *)c_calls("trim", line)))
+			return (NULL);
 		if (!(is_comment(line)))
 		{
-			if (!(ft_strcmp(line, "")))
-			{
-				ft_putendl_fd("I dont like empty line", 2);
+			if (ft_treat_the_line(&index, &game, line) == -1)
 				return (NULL);
-			}
-			index = ft_check_line(index, line, game);
-			if (index >= 0)
-				index = ft_save_line(index, line, game);
-			if (index == -1 && !(ft_strcmp(line + 2, "start")))
-				game->i_start = 1;
-			else if (index == -1)
-				game->i_end = 1;
-			if (index < 0)
-				index *= -1;
 		}
 	}
 	return (game = (index == 5) ? NULL : game);

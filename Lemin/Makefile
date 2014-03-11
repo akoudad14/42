@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/03/11 18:23:28 by makoudad         ###   ########.fr        #
+#    Updated: 2014/03/11 19:06:14 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -22,7 +22,7 @@ HDFLAGS =	-I$(LIBH) -I$(LIBLS)
 
 MAKELIB =	make -C libft/
 
-NAME =		lemin2
+NAME =		lem-in
 
 SRC =		main.c 					\
 			basics.c				\
