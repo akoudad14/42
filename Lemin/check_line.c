@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/03 14:43:39 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/12 11:57:47 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/12 18:26:04 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,32 @@ static int			ft_check_links(char *line, t_game *game)
 	return (-5);
 }
 
+int					ft_upper_to_int(char *line)
+{
+	int		nb;
+
+	nb = 0;
+	if (ft_strlen(line) > 10)
+		return (1);
+	if (ft_strlen(line) < 9)
+		return (0);
+	else if (line[0] == '2')
+	{
+		nb = ft_atoi(line + 1);
+		if (nb > 147483647)
+			return (1);
+		else
+			return (0);
+	}
+	else
+		return (1);
+}
+
 int					ft_check_line(int index, char *line, t_game *game)
 {
 	if (index == 0)
 	{
-		if (*line == '-' || ft_strlen(line) > 9
+		if (*line == '-' || ft_upper_to_int(line) == 1
 			|| !(is_number(line)) || *line == '0')
 		{
 			ft_putendl_fd("ERROR", 2);
