@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/01 14:30:45 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/04 18:10:01 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/05 14:05:10 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,6 @@ int				ft_save_line(t_hl **hlist, char **line, t_hl *move)
 	save.copy = NULL;
 	save.cursor_l = 0;
 	save.cursor_hl = 0;
-	usleep(100000);
 	ft_putstr("_$> ");
 	while (save.cursor_l != -1)
 	{

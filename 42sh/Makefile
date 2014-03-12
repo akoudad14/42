@@ -6,7 +6,7 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 11:09:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/03/04 17:59:17 by makoudad         ###   ########.fr        #
+#    Updated: 2014/03/05 14:17:00 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -22,7 +22,7 @@ HDFLAGS =	-I$(LIBH) -I$(LIBLS)
 
 MAKELIB =	make -C libft/
 
-NAME =		ft_minishell3
+NAME =		ft_sh
 
 SRC =		main.c							\
 			change_terminal_mode.c			\

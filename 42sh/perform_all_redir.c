@@ -6,10 +6,11 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/02 10:48:13 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/04 18:09:45 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/05 14:16:11 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -82,14 +83,15 @@ int				ft_perform_pipe2(t_tree *t, t_env *e)
 	{
 		dup2(fd_pipe[0], 0);
 		close(fd_pipe[1]);
-		value = ft_execute_all(t->ri, e);
+		*ft_value() = ft_execute_all(t->ri, e);
 	}
 	else
 	{
 		dup2(fd_pipe[1], 1);
 		close(fd_pipe[0]);
-		value = ft_execute_all(t->le, e);
+		*ft_value() = ft_execute_all(t->le, e);
 	}
+	value = *ft_value();
 	return (value);
 }
 
@@ -104,7 +106,7 @@ int				ft_perform_pipe(t_tree *t, t_env *e)
 		wait(&father);
 	else
 	{
-		*ft_value() = ft_perform_pipe2(t, e);
+		value = ft_perform_pipe2(t, e);
 		exit(1);
 	}
 	value = *ft_value();
