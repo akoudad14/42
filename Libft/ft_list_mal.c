@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/22 19:49:22 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/25 13:02:28 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/05 10:38:17 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,7 @@ static void		ft_list_mal_clean(int i, void *s, t_mal **mal)
 			move = move->next;
 		}
 		if (!(move))
-		{
-			ft_putendl_fd("Warning: double free avoided", 2);
 			return ;
-		}
 		*mal = (move == *mal) ? (*mal)->next : *mal;
 		tmp->next = move->next;
 		free(move->s);

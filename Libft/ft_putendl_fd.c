@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:42:28 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/12 13:52:42 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/31 09:50:55 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 void	ft_putendl_fd(char const *s, int fd)
 {
 	if (s == NULL)
+	{
+		ft_putstr_fd("(null)", fd);
+		ft_putchar_fd('\n', fd);
 		return ;
+	}
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }

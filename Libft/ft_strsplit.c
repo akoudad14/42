@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 10:17:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/23 14:05:31 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/31 09:45:53 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char			**ft_strsplit(char const *s, char c)
 	int		i;
 	int		k;
 
-	if (!(s3 = (char **)gmalloc(sizeof(*s3) * (ft_wc_w(s, c) + 1))))
+	if (!s || !(s3 = (char **)gmalloc(sizeof(*s3) * (ft_wc_w(s, c) + 1))))
 		return (NULL);
 	i = 0;
 	k = 0;

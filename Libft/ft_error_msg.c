@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   realloc.c                                          :+:      :+:    :+:   */
+/*   ft_error_msg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/26 14:42:11 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/26 21:08:34 by makoudad         ###   ########.fr       */
+/*   Created: 2014/03/08 08:56:13 by makoudad          #+#    #+#             */
+/*   Updated: 2014/03/08 09:22:05 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_realloc(void *old, size_t size)
+int		ft_error(char *s1, char *s2, int ret)
 {
-	void	*new;
-
-	if (!(new = gmalloc(size)))
-		return (NULL);
-	new = ft_strcpy(new, old);
-	gfree(old);
-	return (new);
+	ft_putstr_fd(s1, 2);
+	ft_putendl_fd(s2, 2);
+	return (ret);
 }

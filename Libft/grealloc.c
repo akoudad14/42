@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gfree.c                                            :+:      :+:    :+:   */
+/*   grealloc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/22 19:41:19 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/05 10:38:00 by makoudad         ###   ########.fr       */
+/*   Created: 2014/01/26 14:42:11 by makoudad          #+#    #+#             */
+/*   Updated: 2014/01/31 09:35:51 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			gfree(void *s)
+char		*grealloc(char *old, size_t size)
 {
-	if (!(ft_list_mal(0, s)))
-		return (0);
-	return (1);
+	char	*new;
+
+	if (!(new = gmalloc(size)))
+		return (NULL);
+	new = ft_strcpy(new, old);
+	gfree(old);
+	return (new);
 }

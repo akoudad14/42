@@ -6,11 +6,11 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 13:06:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/01/26 15:01:08 by makoudad         ###   ########.fr        #
+#    Updated: 2014/03/08 09:21:56 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-GCC = 		gcc -Wall -Wextra -Werror -pedantic
+GCC = 		gcc -Wall -Wextra -Werror -pedantic -ansi
 
 NAME = 		libft.a
 
@@ -19,7 +19,8 @@ SRC = 		c_call.c						\
 			ft_atoi.c						\
 			ft_bzero.c						\
 			ft_char2_len.c					\
-			ft_error.c						\
+			ft_copy_ts.c					\
+			ft_error_msg.c					\
 			ft_find.c						\
 			ft_free_char2.c					\
 			ft_isalnum.c					\
@@ -88,7 +89,7 @@ SRC = 		c_call.c						\
 			get_next_line.c					\
 			gfree.c							\
 			gmalloc.c						\
-			realloc.c						\
+			grealloc.c						\
 
 OBJ = 		$(SRC:.c=.o)
 

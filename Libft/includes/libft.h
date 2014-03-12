@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 11:44:25 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/26 21:09:27 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/08 09:21:39 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,14 @@ typedef struct		s_list
 
 # endif
 
-void				*c_call(char *str, void *s1);
+void				*c_calls(char *str, char *s1);
+void				*c_calld(char *str, char *s1, char *s2);
 int					cfree(void);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 int					ft_char2_len(char **str);
-void				ft_error(char *error, char *str);
+char				**ft_copy_ts(char **ts);
+int					ft_error(char *s1, char *s2, int ret);
 int					ft_find(char *s1, char *s2);
 int					ft_free_char2(char **s);
 int					ft_isalnum(int c);
@@ -103,7 +105,7 @@ char				*ft_strrchr(const char *s, int c);
 char				**ft_strsplit(char const *s, char c);
 char				**ft_strsplim(char const *s);
 char				*ft_strstr(const char *s1, const char *s2);
-char				*ft_strsub(char const *s, unsigned int starts,
+char				*ft_strsub(char const *s, unsigned int start,
 							   size_t len);
 char				*ft_strtrim(char const *s);
 char				*ft_toa(unsigned int n, char *base);
@@ -113,6 +115,6 @@ int					ft_wc_w(char const *s, char c);
 int					get_next_line(int const fd, char **line);
 int					gfree(void *s);
 void				*gmalloc(size_t size);
-void				*ft_realloc(void *old, size_t size);
+char				*grealloc(char *old, size_t size);
 
 #endif	/* !LIBFT_H */
