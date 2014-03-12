@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/03 14:43:39 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/11 18:39:17 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/12 11:57:47 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ static int			ft_check_coords(int index, char *line, t_game *game)
 			end++;
 		else
 		{
-			ft_putstr_fd(line, 2);
-			ft_putendl_fd(": I don't understand", 2);
+			ft_putendl_fd("ERROR", 2);
 			return (-5);
 		}
 		return (-index);
@@ -62,9 +61,7 @@ static int			ft_check_links(char *line, t_game *game)
 			return (2);
 		}
 	}
-	ft_putstr_fd("You want to link a room wich is not existing\n", 2);
-	ft_putendl_fd("You must be some kind of retard...", 2);
-	ft_putendl_fd("Go play in the garden baby", 2);
+	ft_putendl_fd("ERROR", 2);
 	return (-5);
 }
 
@@ -75,7 +72,7 @@ int					ft_check_line(int index, char *line, t_game *game)
 		if (*line == '-' || ft_strlen(line) > 9
 			|| !(is_number(line)) || *line == '0')
 		{
-			ft_putstr_fd("Error about the number of ant\n", 2);
+			ft_putendl_fd("ERROR", 2);
 			cfree();
 			exit(0);
 		}

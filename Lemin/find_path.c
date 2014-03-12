@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/11 11:51:50 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/11 18:39:39 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/12 11:48:44 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,26 @@ int			ft_find_path2(t_game *game, t_room *move, t_room *end, t_link **p)
 	*p = rem;
 	return (2);
 }
+void		ft_find_little_path(t_game *game, t_link **p)
+{
+	t_link	*move;
+	t_room	*start;
+
+	start = game->tmp_room;
+	while (ft_strcmp(start->name, game->start))
+		start = start->next;
+	move = *p;
+	while (move->next)
+		move = move->next;
+	while (start->tmp_link->next)
+		start->tmp_link = start->tmp_link->next;
+	while (move->prev && ft_check_p(move->name, start->tmp_link))
+		move = move->prev;
+	if (*p == move)
+		*p = (*p)->next;
+	else
+		*p = move;
+}
 
 int			ft_find_path(t_game *game, t_room *start, t_room *end, t_link **p)
 {
@@ -63,6 +83,11 @@ int			ft_find_path(t_game *game, t_room *start, t_room *end, t_link **p)
 	ret = 0;
 	if (start && start != end)
 	{
+		if (ft_check_p(end->name, start->tmp_link) == 0)
+		{
+			while (ft_strcmp(start->tmp_link->name, end->name))
+				start->tmp_link = start->tmp_link->next;
+		}
 		while (start->tmp_link)
 		{
 			if ((ret = ft_find_path2(game, start, end, p)) == 0
