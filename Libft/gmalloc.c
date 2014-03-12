@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/22 19:29:22 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/26 21:06:18 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/12 19:24:56 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		*gmalloc(size_t size)
 {
 	void	*s;
 
-	if (!(s = malloc(size * 10000)))
+	if (!(s = malloc(size)))
 	{
 		ft_putendl_fd("Problem malloc: not enough space" , 2);
 		return (NULL);
