@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/25 13:26:51 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/04 18:10:11 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/20 16:16:38 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,9 @@ int		ft_check_wrong_nb_of_pth(t_p *p)
 
 int		ft_syntaxical_analyzer(t_tree **t)
 {
-	int		ind_pth;
 	t_p		*keep;
 	int		type;
 
-	ind_pth = 0;
 	keep = (*t)->p;
 	type = 0;
 	ft_find_priority_operand(&keep, &type);
