@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/14 15:02:27 by jaubert           #+#    #+#             */
-/*   Updated: 2014/03/27 11:36:05 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/27 12:25:59 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ t_c		ft_trace(t_obj obj, t_r *r, t_save *save)
 	}
 	if (save->i == -1)
 		return (obj.bg_clr);
-	r->hit_i = i;
-	r->hit_j = j;
+	r->hit_i = save->i;
+	r->hit_j = save->j;
 	obj.treatment[save->i]((obj.type)[save->i][save->j],
 						   &color, &obj, r);
 	return (color);

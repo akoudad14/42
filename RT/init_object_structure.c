@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/20 16:26:25 by jaubert           #+#    #+#             */
-/*   Updated: 2014/03/27 10:40:25 by jaubert          ###   ########.fr       */
+/*   Updated: 2014/03/27 18:37:20 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int		ft_init_object_structure(t_obj *obj)
 int		ft_do_scene(t_obj *obj)
 {
 	t_sph	**lsph;
-	t_box	**lbox;
 	t_pla	**lpla;
 	t_dis	**ldis;
 	int		i;
@@ -66,7 +65,7 @@ int		ft_do_scene(t_obj *obj)
 		if (!(lsph[i] = (t_sph *)gmalloc(sizeof(t_sph))))
 			return (-1);
 	}
-	ft_init_vect(&lsph[0]->c, 0, 0, -2000);
+	ft_init_vect(&lsph[0]->c, 0.3, 1, -2000);
 	lsph[0]->r = 2;
 	ft_init_color(&lsph[0]->sf, 80, 0, 0);
 	ft_init_color(&lsph[0]->em, 0, 0, 0);
@@ -76,7 +75,7 @@ int		ft_do_scene(t_obj *obj)
 	ft_init_vect(&lsph[1]->c, -7, -7, -1995);
 	lsph[1]->r = 3;
 	ft_init_color(&lsph[1]->sf, 20, 100, 20);
-	ft_init_color(&lsph[1]->em, 255, 255, 255);
+	ft_init_color(&lsph[1]->em, 0, 0, 0);
 	lsph[1]->trsp = 0;
 	lsph[1]->refl = 0;
 	lsph[1]->ior = 0;
@@ -87,34 +86,16 @@ int		ft_do_scene(t_obj *obj)
 	lsph[2]->trsp = 0;
 	lsph[2]->refl = 0;
 	lsph[2]->ior = 0;
-	ft_init_vect(&lsph[3]->c, 3, 3, -2000);
-	lsph[3]->r = 3;
+	ft_init_vect(&lsph[3]->c, 3, 0, -1990);
+	lsph[3]->r = 0.5;
 	ft_init_color(&lsph[3]->sf, 255, 255, 255);
 	ft_init_color(&lsph[3]->em, 255, 255, 255);
 	lsph[3]->trsp = 0;
 	lsph[3]->refl = 0;
 	lsph[3]->ior = 0;
 
-	obj->nb[BOX] = 1;
-	if (!(((t_box ***)obj->type)[BOX]
-		  = (t_box **)gmalloc(sizeof(t_box *) * obj->nb[BOX])))
-		return (-1);
-	lbox = ((t_box ***)obj->type)[BOX];
-	i = -1;
-	while (++i < obj->nb[BOX])
-	{
-		if (!(lbox[i] = (t_box *)gmalloc(sizeof(t_box))))
-			return (-1);
-	}
-	lbox[0]->xmin = -8;
-	lbox[0]->xmax = -10;
-	lbox[0]->ymin = 4;
-	lbox[0]->ymax = 6;
-	lbox[0]->zmin = -2002;
-	lbox[0]->zmax = -2006;
-	ft_init_color(&lbox[0]->sf, 100, 0, 100);
 
-	obj->nb[PLA] = 1;
+	obj->nb[PLA] = 5;
 	if (!(((t_pla ***)obj->type)[PLA]
 		  = (t_pla **)gmalloc(sizeof(t_pla *) * obj->nb[PLA])))
 		return (-1);
@@ -125,11 +106,33 @@ int		ft_do_scene(t_obj *obj)
 		if (!(lpla[i] = (t_pla *)gmalloc(sizeof(t_pla))))
 			return (-1);
 	}
-	ft_init_vect(&lpla[0]->c, 2, 10, -2000);
-	ft_init_vect(&lpla[0]->n, -1, 0, 0);
-	ft_init_color(&lpla[0]->sf, 0, 80, 80);
+	ft_init_vect(&lpla[0]->c, 0, 0, -2015);
+	ft_init_vect(&lpla[0]->n, 0, 0, 1);
+	ft_normalize_vect(&lpla[0]->n);
+	ft_init_color(&lpla[0]->sf, 50, 50, 50);
 
-	obj->nb[DIS] = 1;
+	ft_init_vect(&lpla[1]->c, 0, 10, -2000);
+	ft_init_vect(&lpla[1]->n, 0, -1, 0);
+	ft_normalize_vect(&lpla[1]->n);
+	ft_init_color(&lpla[1]->sf, 10, 10, 80);
+	
+	ft_init_vect(&lpla[2]->c, 0, -10, -2000);
+	ft_init_vect(&lpla[2]->n, 0, 1, 0);
+	ft_normalize_vect(&lpla[2]->n);
+	ft_init_color(&lpla[2]->sf, 10, 10, 80);
+	
+	ft_init_vect(&lpla[3]->c, -15, 0, -2000);
+	ft_init_vect(&lpla[3]->n, 1, 0, 0);
+	ft_normalize_vect(&lpla[3]->n);
+	ft_init_color(&lpla[3]->sf, 80, 10, 10);
+	
+	ft_init_vect(&lpla[4]->c, 15, 0, -2000);
+	ft_init_vect(&lpla[4]->n, -1, 0, 0);
+	ft_normalize_vect(&lpla[4]->n);
+	ft_init_color(&lpla[4]->sf, 80, 10, 10);
+
+
+	obj->nb[DIS] = 4;
 	if (!(((t_dis ***)obj->type)[DIS]
 		  = (t_dis **)gmalloc(sizeof(t_dis *) * obj->nb[DIS])))
 		return (-1);
@@ -142,7 +145,28 @@ int		ft_do_scene(t_obj *obj)
 	}
 	ft_init_vect(&ldis[0]->c, -4, 2, -2000);
 	ldis[0]->r = 1;
-	ft_init_vect(&ldis[0]->n, 0, -1, -1);
+	ft_init_vect(&ldis[0]->n, 1, 1, 1);
+	ft_normalize_vect(&ldis[0]->n);
 	ft_init_color(&ldis[0]->sf, 80, 0, 80);
+
+	ft_init_vect(&ldis[1]->c, -4, 2, -2000);
+	ldis[1]->r = 1;
+	ft_init_vect(&ldis[1]->n, 1, 0, 0.5);
+	ft_normalize_vect(&ldis[1]->n);
+	ft_init_color(&ldis[1]->sf, 20, 120, 80);
+	
+	ft_init_vect(&ldis[2]->c, -4, 2, -2000);
+	ldis[2]->r = 1;
+	ft_init_vect(&ldis[2]->n, 1, 0, 0.5);
+	ft_normalize_vect(&ldis[2]->n);
+	ft_init_color(&ldis[2]->sf, 20, 120, 80);
+
+	ft_init_vect(&ldis[3]->c, -4, 2, -2000);
+	ldis[3]->r = 1;
+	ft_init_vect(&ldis[3]->n, 1, 0, 0.5);
+	ft_normalize_vect(&ldis[3]->n);
+	ft_init_color(&ldis[3]->sf, 20, 120, 80);
+
+
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jaubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/14 11:43:47 by jaubert           #+#    #+#             */
-/*   Updated: 2014/03/27 11:22:39 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/27 14:45:10 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ typedef struct		s_obj
 	void			***type;
 	int				*nb;
 	int				(*intersect[NB_TYPE])(t_r *, void *);
-	int				(*treatment[NB_TYPE])(void *, t_c *, t_r *r, t_save *save);
+	int				(*treatment[NB_TYPE])(void *, t_c *, struct s_obj *, t_r *);
 	t_c				bg_clr;
 }					t_obj;
 
@@ -186,10 +186,10 @@ int			ft_intersect_a_box(t_r *r, void *data);
 int			ft_intersect_a_sphere(t_r *r, void *data);
 int			ft_intersect_a_plane(t_r *r, void *data);
 
-int			ft_treat_a_box(void *data, t_c *color);
-int			ft_treat_a_sphere(void *data, t_c *color);
-int			ft_treat_a_disk(void *data, t_c *color);
-int			ft_treat_a_plane(void *data, t_c *color);
+int			ft_treat_a_box(void *data, t_c *color, t_obj *obj, t_r *r);
+int			ft_treat_a_sphere(void *data, t_c *color, t_obj *obj, t_r *r);
+int			ft_treat_a_disk(void *data, t_c *color, t_obj *obj, t_r *r);
+int			ft_treat_a_plane(void *data, t_c *color,t_obj *obj, t_r *r);
 double		ft_mix(double a, double b, double mix);
 int			ft_init_object_structure(t_obj *obj);
 
@@ -198,5 +198,9 @@ t_c			ft_trace(t_obj obj, t_r *r, t_save *save);
 int			ft_do_scene(t_obj *obj);
 
 void		ft_swap(double *tmin, double *tmax);
+
+double		ft_hit_light(t_r *r, t_obj *obj);
+
+int			ft_init_save_and_ray(t_r *r, t_save *save);
 
 #endif	/* !RT_H */

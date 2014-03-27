@@ -6,7 +6,7 @@
 #    By: jaubert <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/03/20 15:44:10 by jaubert           #+#    #+#              #
-#    Updated: 2014/03/24 15:23:59 by jaubert          ###   ########.fr        #
+#    Updated: 2014/03/27 11:53:38 by makoudad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ CFILE =			main.c							\
 				treat_a_disk.c					\
 				treat_a_plane.c					\
 				ft_diffuse_object.c				\
+				ft_hit_light.c					\
 				ft_error.c
 
 OBJ =			$(CFILE:.c=.o)
