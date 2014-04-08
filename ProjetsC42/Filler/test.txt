@@ -1,0 +1,1 @@
+~/.bin/.sbin/ruby-2.1.0/bin/ruby vm_beta.rb -f .map/map1 -p1 ./filler -t 3
