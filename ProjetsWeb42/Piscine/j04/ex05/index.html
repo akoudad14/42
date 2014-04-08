@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>42chat</title>
+		<style>
+			#body
+			{
+				min-width: 1000px;
+				border: 2px #D2691E solid;
+
+			}
+			#chat42 
+			{
+				color: #B0C4DE;
+				border: 2px #D2691E solid;
+				width: 250px;
+				height: 100px;
+				text-align: center;
+				font-size: 50px;
+				margin-left: 350px;
+				float: left;
+			}
+			#p_logo
+			{
+				border: 2px #D2691E solid;
+				margin-left: 10px;
+				width: 150px;
+				float: left;
+			}
+			#img_logo
+			{
+				height: 100%;
+				width: 100%;
+			}
+			#formulaire
+			{
+
+				clear: both;
+				margin-top: 220px;
+				border: 2px  #D2691E solid;
+			}
+			#form
+			{
+				background-color: #CD853F;
+				font-size: 18px;
+				margin-left: 480px;
+				width: 300px;
+				height: 90px;
+				text-align: center;
+				padding-top: 15px;
+			}
+			#ident
+			{
+				margin-left: 21px;
+			}
+			#mdp
+			{
+				margin: 5px 0px 5px 0px;
+			}
+		</style>
+	</head>
+	<body bgcolor="#D2691E">
+	<div id="body">
+		<p id="p_logo"><img id="img_logo" src="http://www.maisondelanature.ch/images/gallerie-13/originals/logoChat2.jpg" alt="logo_chat" title="chat42" /></p>
+		<h1 id="chat42">42chat</h1>
+		<form id="formulaire" action="login.php" method="POST">
+			<p id="form">Identifiant: <input id="ident" type='text' name="login" value=""/>
+				<br />Mot de passe: <input id="mdp" type="password" name="passwd" value=""/>
+				<br /><input type="submit" name="submit" value="OK"/>
+				<br />
+			</p>
+		</form>
+		<p>
+			<br /><a href="create.html">Inscription</a>
+			<br /><a href="modif.html">Modifier votre mot de passe</a>
+		</p>
+	</div>
+	</body>
+</html>

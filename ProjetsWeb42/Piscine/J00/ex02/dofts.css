@@ -1,0 +1,266 @@
+body
+{
+	background-color: #505050;
+}
+
+#lien_ikea
+{
+	color: white;
+}
+
+#ikea
+{
+	height: 15px;
+	width: 150px;
+	position: relative;
+	bottom: 1300px;
+	left: 800px;
+}
+
+#brick_pour_title
+{
+	height: 0px;
+	width: 0px;
+	position: relative;
+	bottom: 1332px;
+	left: 1490px;
+}
+
+#flou_rouge
+{
+	text-shadow: 18px 6px 6px red;
+}
+
+#bouton_recherche
+{
+	width: 70px;
+	height: 20px;
+	border-radius: 0px;
+}
+
+#barre_recherche
+{
+	width: 370px;
+	height: 15px;
+	box-shadow: 2px 2px 2px white inset;
+}
+
+form
+{
+	position: relative;
+	bottom: 1095px;
+	left: 182px;
+}
+
+#div_white
+{
+	background-color: white;
+	margin-left: 200px;
+	height: 15px;
+	width: 300px;
+	position: relative;
+	bottom: 1050px;
+}
+
+#entrez
+{
+	font-family: Times;
+	font-size: 210%;
+}
+
+#phrase_green
+{
+	font-family: Verdana;
+	position: relative;
+	top: 5px;
+	left: 10px;
+
+}
+
+#div_green
+{
+	background-color: rgb(131,255,131);
+	border-radius: 10px;
+	padding: 0px;
+	margin-left: 170px;
+	width: 530px;
+	height: 180px;
+	box-shadow: 10px 10px 6px;
+	position: relative;
+	bottom: 1000px
+}
+
+#table_red
+{
+	border: solid 5px red;
+	border-radius: 5px;
+	width: 70px;
+	height: 70px;
+	position: relative;
+	bottom: 1253px;
+	left: 294px;
+}
+
+#space
+{
+	height: 10px;
+}
+
+#brick
+{
+	background-image: url(resources/brick.jpg);
+	width: 120px;
+	height: 70px;
+	position: relative;
+	left: 10px;
+	top: 15px;
+}
+
+#towel_photo
+{
+	height: 55px;
+	width: 70px;
+	position: relative;
+	left: 32px;
+	top: 15px;
+}
+
+#book_photo
+{
+	height: 85px;
+	width: 70px;
+	position: relative;
+	left: 32px;
+	top: 15px;
+}
+
+#third_col
+{
+	border-radius: 10px;
+	margin-left: 1480px;
+	height: 430px;
+	width: 140px;
+	background-color: #909090;
+	box-shadow: 10px 10px 6px black;
+	position: relative;
+	bottom: 995px;
+}
+
+#cluster_photo
+{
+	width: 1000px;
+	height: 565px;
+	position: relative;
+	top: 10px;
+	left: 10px;
+}
+
+#second_col
+{
+	border-radius: 10px;
+	margin-left: 430px;
+	height: 585px;
+	width: 1020px;
+	background-color: #909090;
+	box-shadow: 10px 10px 6px black;
+	position: relative;
+	bottom: 409px;
+}
+
+#chat-incon_photo
+{
+	height: 70px;
+	width: 70px;
+	position: relative;
+	top: 180px;
+	right: 35px;
+}
+
+#outil_photo
+{
+	height: 60px;
+	width: 60px;
+	position: relative;
+	top: 95px;
+	left: 40px;
+}
+
+#oeil_photo
+{
+	height: 60px;
+	width: 60px;
+	position: relative;
+	top: 93px;
+	right: 35px;
+}
+
+#main_photo
+{
+	height: 70px;
+	width: 70px;
+	position: relative;
+	top: 20px;
+	left: 32px;
+}
+
+#arrow_photo
+{
+	height: 70px;
+	width: 70px;
+	position: relative;
+	top: 16px;
+	left: 32px;
+}
+
+#first_col
+{
+	border-radius: 10px;
+	margin-left: 260px;
+	height: 430px;
+	width: 140px;
+	background-color: #909090;
+	box-shadow: 10px 10px 6px black;
+	position: relative;
+	top: 20px;
+}
+
+#loop_photo
+{
+	position: relative;
+	left: 695px;
+	top: 5px;
+}
+
+#close_photo
+{
+	position: relative;
+	left: 695px;
+	bottom: 25px;
+}
+
+#reload_photo
+{
+	float: right;
+	width: 21px;
+	height: 21px;
+}
+
+#day_photo
+{
+	width: 30%;
+	height: 100%;
+	position: relative;
+	bottom: 27px;
+
+}
+
+#header
+{
+	border-radius: 10px;
+	margin-left: 230px;
+	padding: 10px;
+	height: 120px;
+	width: 1400px;
+	background-color: #909090;
+	box-shadow: 10px 10px 6px black;
+}

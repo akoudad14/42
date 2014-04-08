@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Inscription</title>
+		<style>
+			#all
+			{
+				min-width: 1000px;
+			}
+			h1
+			{
+				border: 2px #B0C4DE solid;
+				padding-left: 550px;
+				margin: 0px;
+				font-size: 50px;
+				color: #FF6347; 
+			}
+			#p_insc
+			{
+				border: 2px #B0C4DE solid;
+				width: 370px;
+				margin-left: 480px;
+			}
+			#img_insc
+			{
+				height: 50%;
+				width: 50%;
+			}
+			#inscription
+			{
+				border: 2px #B0C4DE solid;
+				margin-top: 100px;
+			}
+			#inscr
+			{
+				font-size: 18px;
+				background-color: #D3D3D3;
+				width: 250px;
+				height: 100px;
+				padding-left: 5px;
+				padding-top: 5px;
+				margin-left: 550px;
+			}
+			#ident
+			{
+				margin-left: 21px;
+			}
+			#mdp
+			{
+				margin: 5px 0px 5px 0px;
+			}
+		</style>
+	</head>
+	<body bgcolor="#B0C4DE">
+	<div id="all">
+		<h1>Inscription</h1>
+		<p id="p_insc"><img id="img_insc "src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQpZi72AMdCjU4S4El4NfhfS11bvyXnrDQqPTLIQJqHh-ZhkLRXjQ"></p>
+		<form id="inscription" action="create.php" method="POST">
+			<p id="inscr">Identifiant: <input id="ident" type='text' name="login" value=""/>
+				<br>Mot de passe: <input id="mdp" type="password" name="passwd" value=""/>
+				<br />
+				<input type="submit" name="submit" value="OK"/>
+			</p>
+		</form>
+	</div>
+	</body>
+</html>
