@@ -4,10 +4,10 @@ require_once 'Color.class.php';
 
 Class Vertex
 {
-	private $_x	= 0;
-	private $_y = 0;
-	private $_z = 0;
-	private $_w = 0;
+	private $_x	= 0.0;
+	private $_y = 0.0;
+	private $_z = 0.0;
+	private $_w = 0.0;
 	private $_color;
 	public static $verbose = FALSE;
 
@@ -37,18 +37,16 @@ Class Vertex
 		if (array_key_exists("w", $kwargs))
 			$this->_w = $kwargs['w'];
 		else
-			$this->_w = 1;
+			$this->_w = 1.0;
 	
 		if (array_key_exists("color", $kwargs))
-		{
 			$this->_color = $kwargs['color'];
-		}
 		else
 			$this->_color = new COLOR(array("red" => 255, "green" => 255, "blue" => 255));
 		if (self::$verbose == TRUE)
 		{
 			echo "Vertex( x: ".$this->getX().", y: ".$this->getY().", z: ".$this->getZ().", w: ".$this->getW().", ";
-			echo "Color( red: ".$this->getColor()->red.", green: ".$this->getColor()->green.", blue: ".$this->getColor()->blue." ) constructed\n";
+			echo "Color( red: ".$this->getColor()->red.", green: ".$this->getColor()->green.", blue: ".$this->getColor()->blue." ) ) constructed\n";
 			return ;
 		}
 	}
@@ -58,7 +56,7 @@ Class Vertex
 		if (self::$verbose == TRUE)
 		{
 			echo "Vertex( x: ".$this->getX().", y: ".$this->getY().", z: ".$this->getZ().", w: ".$this->getW().", ";
-			echo "Color( red: ".$this->getColor()->red.", green: ".$this->getColor()->green.", blue: ".$this->getColor()->blue." ) destructed\n";
+			echo "Color( red: ".$this->getColor()->red.", green: ".$this->getColor()->green.", blue: ".$this->getColor()->blue." ) ) destructed\n";
 			return ;
 		}
 	}
@@ -68,7 +66,7 @@ Class Vertex
 		if (self::$verbose == FALSE)
 			return ("Vertex( x: ".$this->getX().", y: ".$this->getY().", z: ".$this->getZ().", w: ".$this->getW()." )");
 		else
-			return ("Vertex( x: ".$this->getX().", y: ".$this->getY().", z: ".$this->getZ().", w: ".$this->getW().", Color( red: ".$this->getColor()->red.", green: ".$this->getColor()->green.", blue: ".$this->getColor()->blue." )");
+			return ("Vertex( x: ".$this->getX().", y: ".$this->getY().", z: ".$this->getZ().", w: ".$this->getW().", Color( red: ".$this->getColor()->red.", green: ".$this->getColor()->green.", blue: ".$this->getColor()->blue." ) )");
 	}
 }
 

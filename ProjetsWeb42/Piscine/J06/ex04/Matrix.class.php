@@ -14,43 +14,35 @@ Class Matrix
 						   array(0.00, 1.00, 0.00, 0.00),
 						   array(0.00, 0.00, 1.00, 0.00),
 						   array(0.00, 0.00, 0.00, 1.00));
-	private $_what_matrix = "";
-	private $_n;
-	private $_f;
-	private $_t;
-	private $_b;
-	private $_r;
-	private $_l;
-	private $_scale;
 
 	public function getPreset() {return print_r($this->_preset);}
 
 	public static function doc()
 	{
-		return (file_get_contents("Vector.doc.txt"));
+		return (file_get_contents("Matrix.doc.txt"));
 	}
 
 	public function __construct(array $kwargs)
 	{
 		if ($kwargs['preset'] == self::IDENTITY)
-			$this->_what_matrix = "IDENTITY";
+			$what_matrix = "IDENTITY";
 		else if ($kwargs['preset'] == self::TRANSLATION)
 		{
-			$this->_what_matrix = "TRANSLATION";
+			$what_matrix = "TRANSLATION";
 			$this->preset[0][3] = $kwargs['vtc']->getX();
 			$this->preset[1][3] = $kwargs['vtc']->getY();
 			$this->preset[2][3] = $kwargs['vtc']->getZ();
 		}
 		else if ($kwargs['preset'] == self::SCALE)
 		{
-			$this->_what_matrix = "SCALE";
+			$what_matrix = "SCALE";
 			$this->preset[0][0] = $kwargs['scale'];
 			$this->preset[1][1] = $kwargs['scale'];
 			$this->preset[2][2] = $kwargs['scale'];
 		}
 		else if ($kwargs['preset'] == self::RX)
 		{
-			$this->_what_matrix = "Ox ROTATION";
+			$what_matrix = "Ox ROTATION";
 			$this->preset[1][1] = cos($kwargs['angle']);
 			$this->preset[1][2] = -sin($kwargs['angle']);
 			$this->preset[2][1] = sin($kwargs['angle']);
@@ -58,7 +50,7 @@ Class Matrix
 		}
 		else if ($kwargs['preset'] == self::RY)
 		{
-			$this->_what_matrix = "Oy ROTATION";
+			$what_matrix = "Oy ROTATION";
 			$this->preset[0][0] = cos($kwargs['angle']);
 			$this->preset[0][2] = sin($kwargs['angle']);
 			$this->preset[2][0] = -sin($kwargs['angle']);
@@ -67,7 +59,7 @@ Class Matrix
 		}
 		else if ($kwargs['preset'] == self::RZ)
 		{
-			$this->_what_matrix = "Oz ROTATION";
+			$what_matrix = "Oz ROTATION";
 			$this->preset[0][0] = cos($kwargs['angle']);
 			$this->preset[0][1] = -sin($kwargs['angle']);
 			$this->preset[1][0] = sin($kwargs['angle']);
@@ -75,25 +67,25 @@ Class Matrix
 		}
 		else if ($kwargs['preset'] == self::PROJECTION)
 		{
-			$this->_what_matrix = "PROJECTION";
-			$this->_n = $kwargs['near'];
-			$this->_f = $kwargs['far'];
-			$this->_scale = tan(deg2rad($kwargs['fov']) / 2);
-			$this->_t = $this->_scale;
-			$this->_b = -$this->_t;
-			$this->_r = $this->_scale * $kwargs['ratio'];
-			$this->_l = -$this->_r;
-			$this->preset[0][0] = 2 *  $this->_n / ($this->_r - $this->_l);
-			$this->preset[1][1] = 2 * $this->_n / ($this->_t - $this->_b);
-			$this->preset[0][2] = ($this->_r + $this->_l) / ($this->_r - $this->_l);			
-			$this->preset[1][2] = ($this->_t + $this->_b) / ($this->_t - $this->_b);
-			$this->preset[2][2] = -($this->_f + $this->_n) / ($this->_f - $this->_n);
+			$what_matrix = "PROJECTION";
+			$n = $kwargs['near'];
+			$f = $kwargs['far'];
+			$scale = tan(deg2rad($kwargs['fov']) / 2);
+			$t = $scale;
+			$b = -$t;
+			$r = $scale * $kwargs['ratio'];
+			$l = -$r;
+			$this->preset[0][0] = 2 *  $n / ($r - $l);
+			$this->preset[1][1] = 2 * $n / ($t - $b);
+			$this->preset[0][2] = ($r + $l) / ($r - $l);			
+			$this->preset[1][2] = ($t + $b) / ($t - $b);
+			$this->preset[2][2] = -($f + $n) / ($f - $n);
 			$this->preset[3][2] = -1;
-			$this->preset[2][3] = -2 * $this->_f * $this->_n / ($this->_f - $this->_n);
+			$this->preset[2][3] = -2 * $f * $n / ($f - $n);
 			$this->preset[3][3] = 0;
 		}
 		if (self::$verbose == TRUE)
-			echo "Matrix ".$this->_what_matrix." instance construced\n";
+			echo "Matrix ".$what_matrix." instance construced\n";
 	}
 
 	public function __destruct()

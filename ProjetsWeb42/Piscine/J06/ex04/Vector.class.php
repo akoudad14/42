@@ -4,22 +4,17 @@ require_once 'Vertex.class.php';
 
 Class Vector
 {
-	private $_x	= 0;
-	private $_y = 0;
-	private $_z = 0;
-	private $_w = 0;
+	private $_x	= 0.0;
+	private $_y = 0.0;
+	private $_z = 0.0;
+	private $_w = 0.0;
 	public static $verbose = FALSE;
-	public $dest;
-	public $orig;
 
 	public function 	getX() { return str_replace(',', '', number_format($this->_x, 2)); }
 	public function 	getY() { return str_replace(',', '', number_format($this->_y, 2)); }
 	public function 	getZ() { return str_replace(',', '', number_format($this->_z, 2)); }
 	public function 	getW() { return str_replace(',', '', number_format($this->_w, 2)); }
-	public function 	setX($val) { $this->_x = $val; }
-	public function 	setY($val) { $this->_y = $val; }
-	public function 	setZ($val) { $this->_z = $val; }
-
+	
 	public static function doc()
 	{
 		return (file_get_contents("Vector.doc.txt"));
@@ -63,7 +58,9 @@ Class Vector
 
 	public function normalize()
 	{
-		$dest = new Vertex(array( 'x' => ($this->getX() / $this->magnitude()), 'y' => ($this->getY() / $this->magnitude()), 'z' => ($this->getZ() / $this->magnitude())));
+		$dest = new Vertex(array( 'x' => ($this->getX() / $this->magnitude()),
+								  'y' => ($this->getY() / $this->magnitude()),
+								  'z' => ($this->getZ() / $this->magnitude())));
 		return (new Vector(array("dest" => $dest)));
 	}
 
@@ -98,7 +95,7 @@ Class Vector
 
 	public function cos(Vector $rhs)
 	{
-		return ($this->dotProduct($rhs) / ($this->magnitude() * $this->_magnitude($rhs)));
+		return ($this->dotProduct($rhs) / ($this->magnitude() * $rhs->magnitude()));
 	}
 
 	public function crossProduct(Vector $rhs)
@@ -108,12 +105,6 @@ Class Vector
 								 "z" => $this->getX() * $rhs->getY() - $this->getY() * $rhs->getX()));
 		return (new Vector(array("dest" => $dest)));
 	}
-
-	private function _magnitude(Vector $rhs)
-	{
-		return (sqrt(pow($rhs->getX(), 2) + pow($rhs->getY(), 2) + pow($rhs->getZ(), 2)));
-	}
-
 }
 
 ?>
