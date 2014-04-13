@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculatrice</title>
+</head>
+<body>
+	<div>
+		<input id="left" type="text">
+		<select id="ope">
+			<option>+</option>
+			<option>-</option>
+			<option>*</option>
+			<option>/</option>
+			<option>%</option>
+		</select>
+		<input id="right" type="text">
+		<input type="submit" value="Try me!" onclick="myFunction()">
+	</div>
+	<script>
+
+		var time = setInterval("myTime()", 30000);
+
+		function myTime() {
+
+			alert("Please, use me...");
+		} 
+
+		function myFunction() {
+		
+			var left = document.getElementById("left").value;
+			var right = document.getElementById("right").value;
+			var ope = document.getElementById("ope").value;
+			var resultat = 0;
+
+			left = left.trim();
+			right = right.trim();
+			if (isNaN(left) || isNaN(right) || left  < 0 || right  < 0 || left == "" || right == "") {
+
+				alert("Error :(");
+				return ;
+			}
+			else if (ope == '+')
+				resultat = left  * 1 + right * 1 ;
+			else if (ope == '-')
+				resultat = left - right;
+			else if (ope == '*')
+				resultat = left * right;
+			else if ((ope == '/' || ope == '%') && right * 1 == 0) {
+
+				alert("It's over 9000!");
+				console.log("It's over 9000");
+				return ;
+			}
+			else if (ope == '/')
+				resultat = left / right;
+			else
+				resultat = left % right;
+			console.log(resultat);
+			alert(resultat);
+		}
+	</script>
+</body>

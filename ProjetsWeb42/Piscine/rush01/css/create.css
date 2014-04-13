@@ -1,0 +1,21 @@
+body
+{
+	background: url(http://www.lcaid.com/images/full/2012/09/18/outer-space-nebulae-windows-microsoft-nighttime-fresh_-Outer-Space-Nebulae-Windows-8-Microsoft-Windows-Nighttime-Fresh-New-Hd-Wallpaper--.jpg) no-repeat black;
+}
+
+h1
+{
+	color: white;
+	text-align: center;
+}
+
+form
+{
+	text-align: right;
+	margin-top: 100px;
+}
+
+#form
+{
+	color: white;
+}

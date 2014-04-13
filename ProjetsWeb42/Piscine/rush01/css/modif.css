@@ -1,0 +1,26 @@
+body
+{
+	background: black url(http://www.pedals2people.org/wp-content/uploads/2011/07/Space.jpg) no-repeat center center;
+}
+
+h1
+{
+	color: white;
+	text-align: center;
+}
+
+form
+{
+	text-align: right;
+	margin-top: 100px;
+}
+
+#form
+{
+	color: white;
+}
+
+.lien
+{
+	color: white;
+}

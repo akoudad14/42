@@ -1,0 +1,34 @@
+table {
+border-collapse: collapse;
+ border-width: 1px; 
+ border-style: solid; 
+ border-color: yellow;
+ width:100%;
+ }
+
+#playground
+{
+    height: 1000px;
+    width: 1500px;
+}
+
+#carre
+{
+    display: inline-block;
+    border-left: 1px solid rgba(255, 255, 255, 0.09);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 10px;
+    height: 10px;
+}
+
+#carre:hover 
+{
+border-color: red;
+}
+
+#grid
+{
+	display: grid;
+	grid-template-columns: 150px 1fr;
+    grid-template-rows: 50px 1fr 50px;
+}

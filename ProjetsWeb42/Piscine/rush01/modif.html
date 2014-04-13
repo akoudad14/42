@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Modifier son mot de passe</title>
+		<link rel="stylesheet" type="text/css" href="css/modif.css">
+	</head>
+	<body>
+	<div>
+		<h1>Modifier son mot de passe</h1>
+		<form id="form" action="modif.php" method="POST">
+			<p>Identifiant: <input id="in_id" type='text' name="login" value=""/>
+				<br>Ancien mot de passe: <input id="in_old_pw" type="password" name="oldpw" value=""/>
+				<br>Nouveau mot de passe: <input type="password" name="newpw" value=""/>
+				<br /><input id="submit" type="submit" name="submit" value="Modifier"/>
+			</p>
+		</form>
+	</div>
+	</body>
+</html>
