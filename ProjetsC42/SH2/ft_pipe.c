@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/21 18:21:54 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/26 18:38:36 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/27 14:26:16 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,15 @@
 #include "sh2.h"
 #include "libft.h"
 
-static int		ft_pipe_n_n(t_env *e, char **tab)
+int		ft_pipe_n_n(t_env *e, char **tab)
 {
 	int		fd_pipe[2];
 	pid_t	father;
 
 	pipe(fd_pipe);
 	father = fork();
-	if (father > 0)
+	if (father == 0)
 	{
-		wait(&father);
 		dup2(fd_pipe[0], 0);
 		close(fd_pipe[1]);
 		ft_check(tab[1], e, ft_check_spe(tab[1]));

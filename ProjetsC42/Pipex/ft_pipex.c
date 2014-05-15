@@ -6,7 +6,7 @@
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/30 17:16:07 by rkharif           #+#    #+#             */
-/*   Updated: 2014/01/05 15:16:51 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/22 19:00:52 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static void		ft_pipex(char **av, t_p *path, char **env, int in)
 	int				fd_pipe[2];
 	char			**tab;
 
+	ft_putendl_fd(path->path1, 2);
+	ft_putendl_fd(path->path2, 2);
 	if ((out = open(av[4], O_WRONLY | O_CREAT | O_TRUNC, 0644)) == -1)
 		ft_error("open", "second_file/ft_pipex/ft_pipex.c");
 	pipe(fd_pipe);

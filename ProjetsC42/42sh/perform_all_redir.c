@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/02 10:48:13 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/18 13:50:27 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/26 10:37:21 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,18 +84,12 @@ int				ft_perform_pipe2(t_tree *t, t_env *e)
 		dup2(fd_pipe[0], 0);
 		close(fd_pipe[1]);
 		*ft_value() = ft_execute_all(t->ri, e);
-		ft_putstr("fils = ");
-		ft_putnbr(getpid());
-		ft_putchar('\n');
 	}
-	else
+	else if (father > 0)
 	{
 		dup2(fd_pipe[1], 1);
 		close(fd_pipe[0]);
 		*ft_value() = ft_execute_all(t->le, e);
-		ft_putstr("pere = ");
-		ft_putnbr(getpid());
-		ft_putchar('\n');
 	}
 	value = *ft_value();
 	return (value);
@@ -105,22 +99,20 @@ int				ft_perform_pipe(t_tree *t, t_env *e)
 {
 	pid_t	father;
 	int		value;
+	int		i;
 
 	value = 0;
-	ft_putstr("mort = ");
-	ft_putnbr(getpid());
-	ft_putchar('\n');
+	i = 0;
 	father = fork();
 	if (father > 0)
 		wait(&father);
-	else
+	else if (father == 0)
 	{
-		value = ft_perform_pipe2(t, e);
-		ft_putstr("grand-pere = ");
-		ft_putnbr(getpid());
-		ft_putchar('\n');
+		*ft_value() = ft_perform_pipe2(t, e);
 		exit(1);
 	}
 	value = *ft_value();
+	while (i < 100000000)
+		++i;
 	return (value);
 }

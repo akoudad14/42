@@ -6,13 +6,13 @@
 #    By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 13:06:10 by makoudad          #+#    #+#              #
-#    Updated: 2014/04/18 16:51:52 by makoudad         ###   ########.fr        #
+#    Updated: 2014/04/19 18:35:53 by makoudad         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 GCC = 		gcc -Wall -Wextra -Werror -shared
 
-NAME = 		libft_malloc_$HOSTTYPE.so
+NAME = 		libft_malloc_$(HOSTTYPE).so
 
 LINK =		libft_malloc.so
 

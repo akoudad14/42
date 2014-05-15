@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/28 19:19:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/05 14:17:07 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/27 23:25:19 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,71 +103,72 @@ typedef struct		s_tree
 	struct s_tree	*ri;
 }					t_tree;
 
-int			ft_exe_the_cmd(t_p *p, char *path, char **env);
-int			ft_perform_exe(t_p *p, t_env *e);
-int			ft_change_value_variable(char *var, char *val, char ***env);
-int			ft_env(t_p *p, t_env *e);
-int			ft_setenv(t_p *p, char ***env);
-int			ft_unsetenv(t_p *p, char ***env);
-int			ft_cd(t_p *p, t_env *e);
-int			ft_exit(t_p *p);
-void		ft_echo(t_p *p);
-int			ft_execute_all(t_tree *t, t_env *e);
-int			ft_perform_redir(t_tree *t, t_env *e);
-int			ft_perform_pipe(t_tree *t, t_env *e);
-int			ft_perform_cmd(t_tree *t, t_env *e);
-void		ft_find_priority_operand(t_p **keep, int *type);
-int			*ft_value(void);
-int			ft_word_size_before_ope(char *line, int *ind, int *type);
-int			ft_delete_quotes_and_spaces(t_p **p, int ind);
-int			ft_delete_backslashes(t_p **p);
-int			ft_lexical_analyzer(char *line, t_p **p);
-int			ft_syntaxical_analyzer(t_tree **t);
-int			ft_check_wrong_nb_of_pth(t_p *p);
-int			ft_init_tree(t_tree **t);
-int			ft_error_msg(char *s1, char *s2);
-int			ft_put_parenthesis_in_tree(t_tree **t);
-int			ft_new_tree_elem(t_tree **t, t_p *keep);
-int			ft_p_list_sub(t_p **list, t_p *start, t_p *end);
-void		ft_free_list(t_p *move);
-void		ft_free_tree(t_tree **t);
-int			ft_check_signal(void);
-int			ft_init_terminal_mode(struct termios tattr);
-int			ft_default_terminal_mode(struct termios tattr);
-int			ft_save_line(t_hl **hlist, char **line, t_hl *move);
-int			ft_putc(int c);
-int			ft_do_line(char **line, t_sl *list);
-int			ft_is_key_ctrl_d(char *buf);
-int			ft_is_key_arrow_left(char *buf);
-int			ft_is_key_arrow_right(char *buf);
-int			ft_is_key_arrow_down(char *buf);
-int			ft_is_key_arrow_up(char *buf);
-int			ft_is_key_opt_arrow_left(char *buf);
-int			ft_is_key_opt_arrow_right(char *buf);
-int			ft_is_key_ctrl_a(char *buf);
-int			ft_is_key_ctrl_e(char *buf);
-int			ft_is_key_opt_arrow_up(char *buf);
-int			ft_is_key_opt_arrow_down(char *buf);
-int			ft_is_key_ctrl_u(char *buf);
-int			ft_is_key_ctrl_i(char *buf);
-int			ft_is_key_ctrl_h(char *buf);
-int			ft_is_key_ctrl_r(char *buf);
-int			ft_is_key_ctrl_t(char *buf);
-int			ft_is_key_ctrl_f(char *buf);
-int			ft_is_key_ctrl_g(char *buf);
-int			ft_is_key_enter(char *buf);
-int			ft_is_key_del_right(char *buf);
-int			ft_is_key_del_left(char *buf);
-int			ft_slist_len(t_sl *list);
-int			ft_hlist_len(t_hl *hlist);
-t_sl		*ft_list_new_elem(char c);
-int			ft_list_put_elem(char c, t_sl **list, int cursor);
-int			ft_fast_move(char *buf, t_sl **list, int *cursor);
-t_sl		*ft_listdup(t_sl *list);
-int			ft_historic(char *buf, t_sl **list, t_save *save, t_hl **hlist);
-int			ft_put_in_hist(t_hl **hlist, t_sl *list);
-void		ft_list_del_elem(t_sl **list, int cursor);
-int			ft_print(t_sl *list, t_save *save, int old_line);
-int			ft_cut_copy_or_paste(char *buf, t_sl **list, t_save *save);
+int					ft_exe_the_cmd(t_p *p, char *path, char **env);
+int					ft_perform_exe(t_p *p, t_env *e);
+int					ft_change_value_variable(char *var, char *val, char ***env);
+int					ft_env(t_p *p, t_env *e);
+int					ft_setenv(t_p *p, char ***env);
+int					ft_unsetenv(t_p *p, char ***env);
+int					ft_cd(t_p *p, t_env *e);
+int					ft_exit(t_p *p);
+void				ft_echo(t_p *p);
+int					ft_execute_all(t_tree *t, t_env *e);
+int					ft_perform_redir(t_tree *t, t_env *e);
+int					ft_perform_pipe(t_tree *t, t_env *e);
+int					ft_perform_cmd(t_tree *t, t_env *e);
+void				ft_find_priority_operand(t_p **keep, int *type);
+int					*ft_value(void);
+int					ft_word_size_before_ope(char *line, int *ind, int *type);
+int					ft_delete_quotes_and_spaces(t_p **p, int ind);
+int					ft_delete_backslashes(t_p **p);
+int					ft_lexical_analyzer(char *line, t_p **p);
+int					ft_syntaxical_analyzer(t_tree **t);
+int					ft_check_wrong_nb_of_pth(t_p *p);
+int					ft_init_tree(t_tree **t);
+int					ft_error_msg(char *s1, char *s2);
+int					ft_put_parenthesis_in_tree(t_tree **t);
+int					ft_new_tree_elem(t_tree **t, t_p *keep);
+int					ft_p_list_sub(t_p **list, t_p *start, t_p *end);
+void				ft_free_list(t_p *move);
+void				ft_free_tree(t_tree **t);
+int					ft_check_signal(void);
+int					ft_init_terminal_mode(struct termios tattr);
+int					ft_default_terminal_mode(struct termios tattr);
+int					ft_save_line(t_hl **hlist, char **line, t_hl *move);
+int					ft_putc(int c);
+int					ft_do_line(char **line, t_sl *list);
+int					ft_is_key_ctrl_d(char *buf);
+int					ft_is_key_arrow_left(char *buf);
+int					ft_is_key_arrow_right(char *buf);
+int					ft_is_key_arrow_down(char *buf);
+int					ft_is_key_arrow_up(char *buf);
+int					ft_is_key_opt_arrow_left(char *buf);
+int					ft_is_key_opt_arrow_right(char *buf);
+int					ft_is_key_ctrl_a(char *buf);
+int					ft_is_key_ctrl_e(char *buf);
+int					ft_is_key_opt_arrow_up(char *buf);
+int					ft_is_key_opt_arrow_down(char *buf);
+int					ft_is_key_ctrl_u(char *buf);
+int					ft_is_key_ctrl_i(char *buf);
+int					ft_is_key_ctrl_h(char *buf);
+int					ft_is_key_ctrl_r(char *buf);
+int					ft_is_key_ctrl_t(char *buf);
+int					ft_is_key_ctrl_f(char *buf);
+int					ft_is_key_ctrl_g(char *buf);
+int					ft_is_key_enter(char *buf);
+int					ft_is_key_del_right(char *buf);
+int					ft_is_key_del_left(char *buf);
+int					ft_slist_len(t_sl *list);
+int					ft_hlist_len(t_hl *hlist);
+t_sl				*ft_list_new_elem(char c);
+int					ft_list_put_elem(char c, t_sl **list, int cursor);
+int					ft_fast_move(char *buf, t_sl **list, int *cursor);
+t_sl				*ft_listdup(t_sl *list);
+int					ft_historic(char *buf, t_sl **list, t_save *save,
+								t_hl **hlist);
+int					ft_put_in_hist(t_hl **hlist, t_sl *list);
+void				ft_list_del_elem(t_sl **list, int cursor);
+int					ft_print(t_sl *list, t_save *save, int old_line);
+int					ft_cut_copy_or_paste(char *buf, t_sl **list, t_save *save);
 
-#endif	/* !42SH_H */
+#endif

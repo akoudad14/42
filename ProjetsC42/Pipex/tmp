@@ -1,0 +1,14 @@
+Makefile
+a.out
+auteur
+b
+ft_check.c
+ft_check.o
+ft_pipex.c
+ft_pipex.o
+includes
+libft
+pipex
+test.c
+tmp
+toto

@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/18 14:52:23 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/26 17:59:56 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/29 11:14:42 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,13 @@ int				ft_executable(char *line, char **env)
 	if (!(buf = (struct stat *)gmalloc(sizeof(*buf))))
 		return (-1);
 	exe = ft_strsplim(line);
-	while (ft_strncmp(env[++i], "PATH=", 5))
+	while (env[++i] && ft_strncmp(env[i], "PATH=", 5))
 		;
-	path = ft_strdup(&env[i][5]);
-	paths = ft_strsplit(path, ':');
-	gfree((void *)path);
-	if (ft_test(paths, exe, env) != 1)
+	path = env[i] ? ft_strdup(&env[i][5]) : NULL;
+	paths = env[i] ? ft_strsplit(path, ':') : NULL;
+	if (path && ft_test(paths, exe, env) != 1)
 	{
+		gfree((void *)path);
 		if (lstat(exe[0], buf) == 0 && buf->st_mode & S_IXUSR)
 			return (ft_execution(line, exe, env, buf));
 		gfree((void *)buf);

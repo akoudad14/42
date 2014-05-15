@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 11:44:25 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/08 09:21:39 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/07 15:18:58 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 int					ft_char2_len(char **str);
 char				**ft_copy_ts(char **ts);
-int					ft_error(char *s1, char *s2, int ret);
+void				ft_error(char *error, char *str);
 int					ft_find(char *s1, char *s2);
 int					ft_free_char2(char **s);
 int					ft_isalnum(int c);

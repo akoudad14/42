@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 10:27:26 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/26 18:03:01 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/27 12:51:27 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void			ft_check(char *line, t_env *e, int i)
 	else if (ft_strncmp(line, "cd", 2) == 0
 			&& (*(line + 2) == ' ' || *(line + 2) == '\0'
 				|| *(line + 2) == '\t'))
-		e = ft_cd(line + 3, e);
+		e = ft_cd(line, e);
 	else if (i)
 		e = ft_check_special(line, e, i);
 	else if (ft_strncmp(line, "pwd", 3) == 0

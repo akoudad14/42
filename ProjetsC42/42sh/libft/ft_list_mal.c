@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/22 19:49:22 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/05 10:38:17 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/26 09:50:34 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int				ft_list_mal(int i, void *s)
 	if (mal == NULL && i == 1)
 	{
 		if (!(mal = ft_lstnew_mal(s)))
-			return (0) ;
+			return (0);
 	}
 	else if (i == 1)
 	{

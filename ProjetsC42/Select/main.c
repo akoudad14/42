@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/08 14:55:27 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/12 16:34:25 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/02/01 13:19:28 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ int				main(int ac, char **av, char **env)
 	if (!(sel = (t_sel *)malloc(sizeof(*sel))))
 		ft_error("malloc", "sel/main/main.c");
 	if (ac < 2)
-		ft_error("ac", "main/main.c");
+		exit(1);/*		ft_error("ac", "main/main.c");*/
 	if (env == NULL)
-		ft_error("env", "main/main.c");
+		/*ft_error("env", "main/main.c");*/exit(1);
 	sel->list = ft_do_list(ac, av, 1);
 	if (!(name_term = getenv("TERM")))
 		ft_error_termp("getenv", "name_term/main/main.c");

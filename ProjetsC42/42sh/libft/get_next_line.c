@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/02 17:01:51 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/23 13:04:24 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/03/26 09:50:54 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static int		ft_read(char *buf, int fd, int ret)
 
 static int		ft_is_new_line(char **line, char *buf, int i)
 {
-		ft_strncat(*line, buf, i);
-		ft_strcpy(buf, ft_strsub(buf, i + 1, BUFF_SIZE - i - 1));
-		return (1);
+	ft_strncat(*line, buf, i);
+	ft_strcpy(buf, ft_strsub(buf, i + 1, BUFF_SIZE - i - 1));
+	return (1);
 }
 
 static int		ft_no_new_line(char **line, char *buf, int j)

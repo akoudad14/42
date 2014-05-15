@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/24 15:47:43 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/26 16:55:42 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/29 11:09:54 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,21 @@ static t_env	*ft_good_env(t_env *e, char *pwd, char *oldpwd)
 	return (e);
 }
 
-static t_env	*ft_actualize(t_env *e, char *oldpwd, char *line, char **tab)
+static t_env	*ft_actualize(t_env *e, char *oldpwd, char **tab, int i)
 {
 	char	*pwd;
 
 	pwd = (char *)gmalloc(sizeof(char) * 20000);
 	getcwd(pwd, 20000);
-	if ((!tab[1]  || tab[1][0] == '>' || tab[1][0] == '<')
-		&& ft_strcmp(pwd, oldpwd))
-		e = ft_good_env(e, pwd, oldpwd);
-	else
+	if (!i && tab[1] && !tab[2])
 	{
-		ft_putstr_fd("cd: not a directory, permission denied or too args: ", 2);
-		ft_putendl_fd(line, 2);
+		ft_putstr_fd("cd: not a directory or permission denied: ", 2);
+		ft_putendl_fd(tab[1], 2);
 	}
+	else if (!i && tab[1] && tab[2])
+		ft_putendl_fd("cd: too args", 2);
+	else
+		e = ft_good_env(e, pwd, oldpwd);
 	ft_free_char2(tab);
 	gfree(oldpwd);
 	gfree(pwd);
@@ -71,23 +72,23 @@ t_env			*ft_cd(char *line, t_env *e)
 	buf = (char *)gmalloc(sizeof(char) * 20000);
 	getcwd(buf, 20000);
 	i = 0;
-	if ((!t[1] || t[1][0] == '<' || t[1][0] == '>') && chdir(t[0]) >= 0)
-		return (ft_actualize(e, buf, line, t));
-	if (!t[0])
+	if (t[1] && !t[2] && chdir(t[1]) >= 0)
+		return (ft_actualize(e, buf, t, 1));
+	if (!t[1])
 	{
 		while (e->env[i] && ft_strncmp(e->env[i], "HOME", 4) != 0)
 			++i;
 		if (e->env[i])
 			chdir(&(e->env[i][5]));
 	}
-	else if (!ft_strcmp(t[0], "-") && (!t[1] || *t[1] == '<' || *t[1] == '>'))
+	else if (!ft_strcmp(t[1], "-") && !t[2])
 	{
 		while (e->env[i] && ft_strncmp(e->env[i], "OLDPWD", 6) != 0)
 			++i;
 		if (e->env[i])
 			chdir(&(e->env[i][7]));
 	}
-	return (ft_actualize(e, buf, line, t));
+	return (ft_actualize(e, buf, t, i));
 }
 
 void			ft_pwd(char *line)
