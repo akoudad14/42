@@ -1,0 +1,6 @@
+[2014-06-06 07:08:29] request.INFO: Matched route "ccdn_forum_user_subscription_index" (parameters: "_controller": "CCDNForum\ForumBundle\Controller\UserSubscriptionController::indexAction", "_locale": "en", "forumName": "default", "_route": "ccdn_forum_user_subscription_index") [] []
+[2014-06-06 07:08:29] security.DEBUG: Read SecurityContext from the session [] []
+[2014-06-06 07:08:29] security.DEBUG: Reloading user from user provider. [] []
+[2014-06-06 07:08:29] security.DEBUG: Username "aaa" was reloaded from user provider. [] []
+[2014-06-06 07:08:29] request.ERROR: Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "Page you are looking for could not be found!" at /Volumes/Data/nfs/zfs-student-3/users/2013/makoudad/mamp/apps/symfony/htdocs/vendor/codeconsortium/ccdn-forum-bundle/CCDNForum/ForumBundle/Controller/BaseController.php line 326 {"exception":"[object] (Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException: Page you are looking for could not be found! at /Volumes/Data/nfs/zfs-student-3/users/2013/makoudad/mamp/apps/symfony/htdocs/vendor/codeconsortium/ccdn-forum-bundle/CCDNForum/ForumBundle/Controller/BaseController.php:326)"} []
+[2014-06-06 07:08:29] security.DEBUG: Write SecurityContext in the session [] []

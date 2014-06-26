@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <style>
+            #top
+            {
+                height: 70px;
+                width: 100%;
+                background-color: black;
+
+            }
+
+            #title a
+            {
+                color: white;
+                text-decoration: none;
+                font-size: 3em;
+                padding-left: 2%;
+            }
+
+            #welcome
+            {
+                color: white;
+                float: right;
+                padding-right: 2%;
+                padding-top: 25px;
+            }
+        </style>
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+    {% block stylesheets %}
+         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}" type="text/css" />
+         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    {% endblock %}
+    </head>
+    <body>
+        <header>
+            <div id="top">
+                <span id="title"><a href="{{ path('homepage') }}">INTRA</a></span>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <span id="welcome">
+                        Bienvenue {{app.user.username}} | 
+                        <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a> 
+                    </span>
+                {% endif %}
+            </div>
+        </header>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

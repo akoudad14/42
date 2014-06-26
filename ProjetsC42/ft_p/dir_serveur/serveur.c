@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/15 15:00:51 by makoudad          #+#    #+#             */
-/*   Updated: 2014/05/15 19:26:16 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/05/16 11:38:52 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,25 @@ int		create_server(int port)
 	return (sock);
 }
 
-int		ft_exe(char *str, char **path)
+int		ft_exe(char *str, char **path, int sock)
 {
 	char	**tab;
 	char	*tmp;
+	char	*msg;
 
 	tab = NULL;
 	tmp = NULL;
+	msg = NULL;
+	tmp = msg;
 	tab = ft_strsplit(str, ' ');
 	if (ft_strcmp(str, "ls") == 0)
 	{
 		ft_putendl("\nls:");
-		ft_ls(*path);
+		msg = ft_ls();
+		if (send(sock, "coucou", 6, 0) == -1)
+			ft_putendl("Message pas envoye");
+		else
+			ft_putendl("Message envoye");
 	}
 	else if (ft_strcmp(tab[0], "cd") == 0)
 	{
@@ -111,7 +118,7 @@ int		main(int ac, char **av)
 	while (!quit)
 	{
 		get_next_line(cs, &line);
-		if (ft_exe(line, &path) == -1)
+		if (ft_exe(line, &path, sock) == -1)
 		{
 			quit = 1;
 			ft_putendl("\nquit");

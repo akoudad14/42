@@ -6,7 +6,7 @@
 /*   By: makoudad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/15 15:00:51 by makoudad          #+#    #+#             */
-/*   Updated: 2014/05/15 17:25:09 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/05/16 11:35:48 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int		ft_send(int sock)
 {
 	char	*line;
 	int		quit;
+	char	*buffer;
 
+	buffer = (char *)gmalloc(sizeof(char) * 1024);
 	quit = 0;
 	while (quit == 0)
 	{
@@ -33,6 +35,9 @@ int		ft_send(int sock)
 		if (ft_strcmp(line, "quit") == 0)
 			quit = 1;
 		gfree(line);
+		if (recv(sock, buffer, sizeof(buffer), 0) == -1)
+			ft_putendl("recv failed");
+		ft_putendl(buffer);
 	}
 	return (0);
 }

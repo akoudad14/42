@@ -1,0 +1,12 @@
+parameters:
+#    intra_user.example.class: Intra\UserBundle\Example
+
+services:
+#    intra_user.example:
+#        class: %intra_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    intra_user.admin.user:
+        class: Intra\UserBundle\Admin\UserAdmin
+        arguments: [~, Intra\UserBundle\Entity\User, IntraUserBundle:UserAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: User}

@@ -1,0 +1,17 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+<a href="{{ path('ccdn_homepage') }}">Forum</a>
+<br />
+<a href="{{ path('hackzilla_ticket') }}">Tickets</a>
+<br />
+
+{% if is_granted("ROLE_ADMIN") %}
+	<a href="{{ path('sonata_admin_redirect') }}">Admin</a>
+	<br />
+{% endif %}
+
+<a href="{{ path('fos_user_profile_show') }}">Profil</a>
+
+{% endblock fos_user_content %}

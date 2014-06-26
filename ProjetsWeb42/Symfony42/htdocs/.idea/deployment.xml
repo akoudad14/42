@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Gros Projet Web 42">
+    <serverData>
+      <paths name="Gros Projet Web 42">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="app_dev.php" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
+
