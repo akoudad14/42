@@ -6,17 +6,17 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 11:44:25 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/27 23:25:59 by makoudad         ###   ########.fr       */
+/*   Updated: 2015/01/27 11:24:47 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		LIBFT_H
-# define	LIBFT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-# define	BUFF_SIZE 1
+# define BUFF_SIZE 1
 
-# include	<string.h>
-# include	<stdarg.h>
+# include <string.h>
+# include <stdarg.h>
 
 # ifndef T_LIST
 #  define T_LIST

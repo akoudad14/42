@@ -6,57 +6,57 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/28 19:19:49 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/27 23:25:19 by makoudad         ###   ########.fr       */
+/*   Updated: 2015/01/27 11:24:05 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		SH_H
-# define	SH_H
+#ifndef SH_H
+# define SH_H
 
-# define	MAX_KEY_LEN					6
-# define	P_LEN						4
+# define MAX_KEY_LEN				6
+# define P_LEN						4
 
-# define	KEY_ENTER(buf)				ft_is_key_enter(buf)
-# define	KEY_CTRL_D(buf)				ft_is_key_ctrl_d(buf)
-# define	KEY_DEL_LEFT(buf)			ft_is_key_del_left(buf)
-# define	KEY_DEL_RIGHT(buf)			ft_is_key_del_right(buf)
-# define	KEY_ARROW_UP(buf)			ft_is_key_arrow_up(buf)
-# define	KEY_ARROW_DOWN(buf)			ft_is_key_arrow_down(buf)
-# define	KEY_ARROW_LEFT(buf)			ft_is_key_arrow_left(buf)
-# define	KEY_ARROW_RIGHT(buf)		ft_is_key_arrow_right(buf)
-# define	KEY_OPT_ARROW_UP(buf)		ft_is_key_opt_arrow_up(buf)
-# define	KEY_OPT_ARROW_DOWN(buf)		ft_is_key_opt_arrow_down(buf)
-# define	KEY_OPT_ARROW_LEFT(buf)		ft_is_key_opt_arrow_left(buf)
-# define	KEY_OPT_ARROW_RIGHT(buf)	ft_is_key_opt_arrow_right(buf)
-# define	KEY_CTRL_A(buf)				ft_is_key_ctrl_a(buf)
-# define	KEY_CTRL_E(buf)				ft_is_key_ctrl_e(buf)
-# define	KEY_CTRL_U(buf)				ft_is_key_ctrl_u(buf)
-# define	KEY_CTRL_I(buf)				ft_is_key_ctrl_i(buf)
-# define	KEY_CTRL_H(buf)				ft_is_key_ctrl_h(buf)
-# define	KEY_CTRL_R(buf)				ft_is_key_ctrl_r(buf)
-# define	KEY_CTRL_T(buf)				ft_is_key_ctrl_t(buf)
-# define	KEY_CTRL_F(buf)				ft_is_key_ctrl_f(buf)
-# define	KEY_CTRL_G(buf)				ft_is_key_ctrl_g(buf)
+# define KEY_ENTER(buf)				ft_is_key_enter(buf)
+# define KEY_CTRL_D(buf)			ft_is_key_ctrl_d(buf)
+# define KEY_DEL_LEFT(buf)			ft_is_key_del_left(buf)
+# define KEY_DEL_RIGHT(buf)			ft_is_key_del_right(buf)
+# define KEY_ARROW_UP(buf)			ft_is_key_arrow_up(buf)
+# define KEY_ARROW_DOWN(buf)		ft_is_key_arrow_down(buf)
+# define KEY_ARROW_LEFT(buf)		ft_is_key_arrow_left(buf)
+# define KEY_ARROW_RIGHT(buf)		ft_is_key_arrow_right(buf)
+# define KEY_OPT_ARROW_UP(buf)		ft_is_key_opt_arrow_up(buf)
+# define KEY_OPT_ARROW_DOWN(buf)	ft_is_key_opt_arrow_down(buf)
+# define KEY_OPT_ARROW_LEFT(buf)	ft_is_key_opt_arrow_left(buf)
+# define KEY_OPT_ARROW_RIGHT(buf)	ft_is_key_opt_arrow_right(buf)
+# define KEY_CTRL_A(buf)			ft_is_key_ctrl_a(buf)
+# define KEY_CTRL_E(buf)			ft_is_key_ctrl_e(buf)
+# define KEY_CTRL_U(buf)			ft_is_key_ctrl_u(buf)
+# define KEY_CTRL_I(buf)			ft_is_key_ctrl_i(buf)
+# define KEY_CTRL_H(buf)			ft_is_key_ctrl_h(buf)
+# define KEY_CTRL_R(buf)			ft_is_key_ctrl_r(buf)
+# define KEY_CTRL_T(buf)			ft_is_key_ctrl_t(buf)
+# define KEY_CTRL_F(buf)			ft_is_key_ctrl_f(buf)
+# define KEY_CTRL_G(buf)			ft_is_key_ctrl_g(buf)
 
-# define	B_SLASH						1
-# define	QUO_S						2
-# define	QUO_D						3
-# define	SEMI_C						4
-# define	AND							5
-# define	OR							6
-# define	PIPE						7
-# define	RED_R						8
-# define	RED_DR						9
-# define	RED_L						10
-# define	WORD						11
-# define	CMD							12
-# define	ARG							13
-# define	SPACE						14
-# define	PTH_B						15
-# define	PTH_E						16
-# define	PTH							17
+# define B_SLASH					1
+# define QUO_S						2
+# define QUO_D						3
+# define SEMI_C						4
+# define AND						5
+# define OR							6
+# define PIPE						7
+# define RED_R						8
+# define RED_DR						9
+# define RED_L						10
+# define WORD						11
+# define CMD						12
+# define ARG						13
+# define SPACE						14
+# define PTH_B						15
+# define PTH_E						16
+# define PTH						17
 
-# include	<term.h>
+# include <term.h>
 
 typedef struct		s_sl
 {

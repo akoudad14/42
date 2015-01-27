@@ -6,13 +6,14 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 17:38:28 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/04 14:16:51 by makoudad         ###   ########.fr       */
+/*   Updated: 2015/01/27 11:25:58 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
 #include "libft.h"
+
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t		i;
