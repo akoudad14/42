@@ -1,65 +1,66 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_toa.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 19:27:12 by makoudad          #+#    #+#             */
-/*   Updated: 2014/01/23 13:08:03 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 13:02:46 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static char		*ft_itoa_next(int n, char *s, int i)
+static unsigned int		ft_strlenn(char *base)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (*(base + i))
+		i++;
+	return (i);
+}
+
+static char				*ft_toa_next(unsigned int n, char *s, int i, char *base)
 {
 	int		k;
 	int		j;
 
 	k = 0;
 	i++;
-	if (n < 0)
-	{
-		*s = '-';
-		n *= -1;
-		k = 1;
-		i++;
-	}
 	j = i;
 	while (i > k)
 	{
-		*(s + i - 1) = (n % 10) + '0';
-		n = n / 10;
+		*(s + i - 1) = base[n % ft_strlenn(base)];
+		n = n / ft_strlenn(base);
 		i--;
 	}
 	*(s + j + k) = '\0';
 	return (s);
 }
 
-char			*ft_itoa(int n)
+char					*ft_toa(unsigned int n, char *base)
 {
-	char	*s;
-	int		i;
-	int		k;
+	char				*s;
+	int					i;
+	unsigned int		k;
 
 	i = 0;
 	k = n;
-	if (!(s = (char *)gmalloc(sizeof(*s) * 12)))
+	if (!(s = (char *)gmalloc(sizeof(*s) * 120)))
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strcpy(s, "-2147483648"));
 	if (n == 0)
 	{
 		*s = '0';
 		*(s + 1) = '\0';
 		return (s);
 	}
-	while ((k > 9) || (k < -9))
+	while (k > ft_strlenn(base))
 	{
 		i++;
-		k = k / 10;
+		k = k / ft_strlenn(base);
 	}
-	return (ft_itoa_next(n, s, i++));
+	return (ft_toa_next(n, s, i++, base));
 }

@@ -5,86 +5,76 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/02 12:06:04 by makoudad          #+#    #+#             */
-/*   Updated: 2013/12/12 12:14:04 by makoudad         ###   ########.fr       */
+/*   Created: 2013/12/02 17:01:51 by makoudad          #+#    #+#             */
+/*   Updated: 2014/03/26 09:50:54 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
 #include "libft.h"
 
-static int		ft_read(char *tab, int ret, int const fd)
+static int		ft_read(char *buf, int fd, int ret)
 {
-	ret = read(fd, tab, BUFF_SIZE);
+	ret = read(fd, buf, BUFF_SIZE);
 	if (ret < 0)
 		return (-1);
-	tab[ret] = '\0';
+	buf[ret] = '\0';
 	return (ret);
 }
 
-static int		ft_transfer(char **line, char *tab)
+static int		ft_is_new_line(char **line, char *buf, int i)
+{
+	ft_strncat(*line, buf, i);
+	ft_strcpy(buf, ft_strsub(buf, i + 1, BUFF_SIZE - i - 1));
+	return (1);
+}
+
+static int		ft_no_new_line(char **line, char *buf, int j)
 {
 	char			*tmp;
 
-	tmp = (char *)malloc(sizeof(*tmp) * (ft_strlen(*line) * 2 + 1));
-	if (tmp == NULL)
+	if (!(tmp = (char *)gmalloc(sizeof(*tmp) * BUFF_SIZE * j + 1)))
 		return (-1);
 	ft_strclr(tmp);
 	ft_strcpy(tmp, *line);
-	free((void *)*line);
-	*line = (char *)malloc(sizeof(**line) * ft_strlen(tmp) + 2);
-	if (*line == NULL)
+	gfree((void *)*line);
+	j++;
+	if (!(*line = (char *)gmalloc(sizeof(**line) * BUFF_SIZE * j + 1)))
 		return (-1);
 	ft_strclr(*line);
 	ft_strcpy(*line, tmp);
-	free((void *)tmp);
-	ft_strcat(*line, tab);
-	tab[0] = '\0';
-	return (1);
-}
-
-static int		ft_new_line(char **line, char *tab, int i)
-{
-	ft_strncat(*line, tab, i);
-	ft_strcpy(tab, ft_strsub(tab, i + 1, BUFF_SIZE - i - 1));
-	return (1);
-}
-
-static int		ft_one(char **line)
-{
-	if ((*line = (char *)malloc(sizeof(**line) * (BUFF_SIZE + 1))) == NULL)
-		return (-1);
-	ft_strclr(*line);
-	return (1);
+	gfree((void *)tmp);
+	ft_strcat(*line, buf);
+	buf[0] = '\0';
+	return (j);
 }
 
 int				get_next_line(int const fd, char **line)
 {
 	int				ret;
-	static char		tab[BUFF_SIZE + 1];
+	static char		buf[BUFF_SIZE + 1];
 	int				i;
+	int				j;
 
-	if ((ret = ft_one(line)) == -1)
+	if (!(*line = ft_strnew(BUFF_SIZE + 1)))
 		return (-1);
+	ret = 1;
+	j = 1;
 	while (ret > 0)
 	{
-		if (!tab[0])
+		if (buf[0] == '\0')
 		{
-			if (!(ret = ft_read(tab, ret, fd)) && *line[0] != '\0')
+			if (!(ret = ft_read(buf, fd, ret)) && *line[0] != '\0')
 				return (1);
 		}
 		i = 0;
-		while (tab[i] && tab[i] != '\n' && ret > 0)
+		while (buf[i] && buf[i] != '\n' && ret > 0)
 			i++;
-		if (tab[i] == '\n' && ret > 0)
-			return (ft_new_line(line, tab, i));
-		else if (ret > 0)
-		{
-			if (ft_transfer(line, tab) == -1)
-				return (-1);
-		}
+		if (buf[i] == '\n' && ret > 0)
+			return (ft_is_new_line(line, buf, i));
+		else if (ret > 0 && (j = ft_no_new_line(line, buf, j)) == -1)
+			return (-1);
 	}
 	return (ret);
 }

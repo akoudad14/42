@@ -6,12 +6,12 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 10:03:46 by makoudad          #+#    #+#             */
-/*   Updated: 2013/12/13 15:46:51 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 12:59:42 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strnew(size_t size)
 {
@@ -19,8 +19,7 @@ char	*ft_strnew(size_t size)
 	size_t		i;
 
 	i = 0;
-	s = (char *)malloc(sizeof(*s) * (size + 1));
-	if (s == NULL)
+	if (!(s = (char *)gmalloc(sizeof(*s) * (size + 1))))
 		return (NULL);
 	while (i < size)
 	{

@@ -6,11 +6,10 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 19:06:47 by makoudad          #+#    #+#             */
-/*   Updated: 2013/11/30 19:29:16 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/12 13:49:34 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))

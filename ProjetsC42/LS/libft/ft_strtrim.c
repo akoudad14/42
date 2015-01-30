@@ -6,12 +6,11 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/26 12:15:39 by makoudad          #+#    #+#             */
-/*   Updated: 2013/12/01 14:58:50 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 14:03:19 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
 #include "libft.h"
 
 static int		ft_verification(char const *s, int i)
@@ -54,8 +53,7 @@ char			*ft_strtrim(char const *s)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	trim = (char *)malloc(sizeof(*trim) * (ft_strlen(s) + 1));
-	if (trim == NULL)
+	if (!(trim = (char *)gmalloc(sizeof(*trim) * (ft_strlen(s) + 1))))
 		return (NULL);
 	while ((*(s + i) == ' ' || *(s + i) == '\n' || *(s + i) == '\t')
 	&& *(s + i))

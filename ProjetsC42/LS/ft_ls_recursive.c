@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 11:38:24 by makoudad          #+#    #+#             */
-/*   Updated: 2013/12/13 19:28:27 by makoudad         ###   ########.fr       */
+/*   Updated: 2015/01/30 16:56:22 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_ls		*ft_ls_rec(char *dir)
 		ft_exist_or_not(dir, 'R');
 	if ((e = readdir(fd)) != NULL)
 	{
-		n = ft_lst(e->d_name, sizeof (char *) * ft_strlen(e->d_name));
+		n = ft_lst(e->d_name, sizeof(char *) * ft_strlen(e->d_name));
 		tmp = n;
 	}
 	while ((e = readdir(fd)) != NULL && n != NULL)

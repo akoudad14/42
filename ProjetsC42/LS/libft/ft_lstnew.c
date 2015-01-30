@@ -6,11 +6,10 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 19:02:23 by makoudad          #+#    #+#             */
-/*   Updated: 2013/12/01 18:13:32 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/23 13:17:29 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdlib.h>
 #include "libft.h"
 
@@ -20,8 +19,7 @@ static t_list	*ft_new(void const *content, size_t content_size, t_list *new)
 	size_t			i;
 
 	i = 0;
-	ptr = (unsigned char *)malloc(sizeof(*ptr) * content_size);
-	if (ptr == NULL)
+	if (!(ptr = (unsigned char *)gmalloc(sizeof(*ptr) * content_size)))
 		return (NULL);
 	while (i < content_size)
 	{
@@ -38,8 +36,7 @@ t_list			*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list			*new;
 
-	new = (t_list *)malloc(sizeof(*new));
-	if (new == NULL)
+	if (!(new = (t_list *)gmalloc(sizeof(*new))))
 		return (NULL);
 	if (content == NULL)
 	{

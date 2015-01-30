@@ -6,11 +6,10 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:44:53 by makoudad          #+#    #+#             */
-/*   Updated: 2013/11/30 15:28:21 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/12 13:53:30 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)

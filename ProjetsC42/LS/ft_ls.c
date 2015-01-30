@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 11:38:24 by makoudad          #+#    #+#             */
-/*   Updated: 2013/12/15 15:01:53 by makoudad         ###   ########.fr       */
+/*   Updated: 2015/01/30 16:55:59 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,8 @@ t_ls	*ft_ls_a(char *dir)
 
 	if ((fd = opendir(dir)) == NULL)
 		ft_exist_or_not(dir, 'a');
-	n = ((e = readdir(fd)) != NULL) ? ft_lst(e->d_name, \
+	e = readdir(fd);
+	n = (e != NULL) ? ft_lst(e->d_name, \
 	sizeof(char *) * ft_strlen(e->d_name)) : NULL;
 	tmp = n;
 	while ((e = readdir(fd)) != NULL && n != NULL)

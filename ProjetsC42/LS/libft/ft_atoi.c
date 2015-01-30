@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 12:01:26 by makoudad          #+#    #+#             */
-/*   Updated: 2013/11/30 19:16:17 by makoudad         ###   ########.fr       */
+/*   Updated: 2013/12/30 21:13:15 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_atoi(const char *str)
 		str++;
 	}
 	if (*str == '+')
-	  str++;
+		str++;
 	while (*str <= '9' && *str >= '0')
 	{
 		j = *str - '0' + j * 10;

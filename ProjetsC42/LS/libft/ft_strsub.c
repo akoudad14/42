@@ -6,23 +6,22 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 15:02:35 by makoudad          #+#    #+#             */
-/*   Updated: 2013/11/27 20:17:51 by makoudad         ###   ########.fr       */
+/*   Updated: 2014/01/25 13:24:46 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char		*s2;
 	size_t		i;
 
+	i = 0;
 	if (s == NULL)
 		return (NULL);
-	s2 = (char *)malloc(sizeof(*s2) * (len + 1));
-	i = 0;
-	if (s2 == NULL)
+	if (!(s2 = (char *)gmalloc(sizeof(*s2) * (len + 1))))
 		return (NULL);
 	while (i < len)
 	{

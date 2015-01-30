@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/06 17:03:51 by makoudad          #+#    #+#             */
-/*   Updated: 2014/05/15 19:17:35 by makoudad         ###   ########.fr       */
+/*   Updated: 2015/01/30 16:51:31 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void		ft_show(char *str, char **argv, t_ls *finish, char *tmp)
 		finish = (argv[2] == '\0') ? ft_ls_l(".") : ft_ls_l(argv[2]);
 	else if (!ft_compare(str, 'l'))
 	{
-		ft_putndl(c = (!ft_compare(str, 'a') ? ft_total('a') : ft_total('b')));
+		ft_putendl(ft_itoa(c = (!ft_compare(str, 'a') ? ft_total('a') : ft_total('b'))));
 		while (finish != NULL)
 		{
 			ft_info(finish, (tmp = (argv[2] == '\0' ? "." : argv[2])), 'o');

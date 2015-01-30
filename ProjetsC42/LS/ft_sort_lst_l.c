@@ -6,7 +6,7 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 11:38:24 by makoudad          #+#    #+#             */
-/*   Updated: 2013/12/13 19:35:40 by makoudad         ###   ########.fr       */
+/*   Updated: 2015/01/30 16:52:26 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void			ft_sort_lst_l(t_ls *new, char *directory)
 			exit(-1);
 		tmp2 = really;
 		ft_finish(tmp, really, tmp2, tmp2);
-		ft_putndl(ft_total('b'));
+		ft_putendl(ft_itoa(ft_total('b')));
 		ft_info(tmp2, directory, 'o');
 		while ((tmp2 = tmp2->next) != NULL)
 			ft_info(tmp2, directory, 'o');

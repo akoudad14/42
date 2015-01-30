@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   c_call.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 16:54:56 by makoudad          #+#    #+#             */
-/*   Updated: 2014/03/02 12:21:38 by makoudad         ###   ########.fr       */
+/*   Created: 2014/01/24 11:34:40 by makoudad          #+#    #+#             */
+/*   Updated: 2014/03/02 12:36:01 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdlib.h>
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+void	*c_calls(char *str, char *s1)
 {
-	char	*s3;
+	void		*s2;
 
-	if (!s1 && s2)
-		s3 = ft_strdup(s2);
-	else if (s1 && !s2)
-		s3 = ft_strdup(s1);
-	else
-	{
-		if (!(s3 = (char *)gmalloc(sizeof(*s3) * (ft_strlen(s1)
-												+ ft_strlen(s2) + 1))))
-			return (NULL);
-		ft_strcpy(s3, s1);
-		ft_strcat(s3, s2);
-	}
+	if (!ft_strcmp(str, "trim"))
+		s2 = ft_strtrim(s1);
+	else if (!(ft_strcmp(str, "dup")))
+		s2 = ft_strdup(s1);
+	else if (!(ft_strcmp(str, "plim")))
+		s2 = ft_strsplim(s1);
+	gfree(s1);
+	return (s2);
+}
+
+void	*c_calld(char *str, char *s1, char *s2)
+{
+	void		*s3;
+
+	if (!(ft_strcmp(str, "join")))
+		s3 = ft_strjoin(s1, s2);
+	gfree(s1);
+	gfree(s2);
 	return (s3);
 }
