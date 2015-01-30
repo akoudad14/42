@@ -6,17 +6,17 @@
 /*   By: makoudad <makoudad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 11:44:25 by makoudad          #+#    #+#             */
-/*   Updated: 2014/02/07 15:18:58 by makoudad         ###   ########.fr       */
+/*   Updated: 2015/01/27 11:24:47 by makoudad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		LIBFT_H
-# define	LIBFT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-# define	BUFF_SIZE 1
+# define BUFF_SIZE 1
 
-# include	<string.h>
-# include	<stdarg.h>
+# include <string.h>
+# include <stdarg.h>
 
 # ifndef T_LIST
 #  define T_LIST
@@ -106,7 +106,7 @@ char				**ft_strsplit(char const *s, char c);
 char				**ft_strsplim(char const *s);
 char				*ft_strstr(const char *s1, const char *s2);
 char				*ft_strsub(char const *s, unsigned int start,
-							   size_t len);
+								size_t len);
 char				*ft_strtrim(char const *s);
 char				*ft_toa(unsigned int n, char *base);
 int					ft_tolower(int c);
@@ -117,4 +117,4 @@ int					gfree(void *s);
 void				*gmalloc(size_t size);
 char				*grealloc(char *old, size_t size);
 
-#endif	/* !LIBFT_H */
+#endif
